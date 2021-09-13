@@ -62,6 +62,7 @@ namespace SITS
             this.pnlProducto.Controls.Add(this.txtPrecio);
             this.pnlProducto.Controls.Add(this.txtCantidad);
             this.pnlProducto.Controls.Add(this.lblCodigoDeBarras);
+            this.pnlProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlProducto.Location = new System.Drawing.Point(43, 29);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(631, 155);
@@ -69,9 +70,9 @@ namespace SITS
             // 
             // txtCodigoDeBarras
             // 
-            this.txtCodigoDeBarras.Location = new System.Drawing.Point(170, 8);
+            this.txtCodigoDeBarras.Location = new System.Drawing.Point(233, 8);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(86, 20);
+            this.txtCodigoDeBarras.Size = new System.Drawing.Size(189, 26);
             this.txtCodigoDeBarras.TabIndex = 11;
             // 
             // lblNombreDelProducto
@@ -79,7 +80,7 @@ namespace SITS
             this.lblNombreDelProducto.AutoSize = true;
             this.lblNombreDelProducto.Location = new System.Drawing.Point(59, 48);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
-            this.lblNombreDelProducto.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreDelProducto.Size = new System.Drawing.Size(167, 20);
             this.lblNombreDelProducto.TabIndex = 0;
             this.lblNombreDelProducto.Text = "Nombre del Producto";
             // 
@@ -88,7 +89,7 @@ namespace SITS
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(59, 121);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(56, 20);
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "Precio";
             // 
@@ -97,29 +98,29 @@ namespace SITS
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(59, 86);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(78, 20);
             this.lblCantidad.TabIndex = 4;
             this.lblCantidad.Text = "Cantidad";
             // 
             // txtNombreDelProducto
             // 
-            this.txtNombreDelProducto.Location = new System.Drawing.Point(170, 46);
+            this.txtNombreDelProducto.Location = new System.Drawing.Point(233, 46);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(86, 20);
+            this.txtNombreDelProducto.Size = new System.Drawing.Size(189, 26);
             this.txtNombreDelProducto.TabIndex = 6;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(170, 121);
+            this.txtPrecio.Location = new System.Drawing.Point(233, 121);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(86, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(189, 26);
             this.txtPrecio.TabIndex = 7;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(170, 86);
+            this.txtCantidad.Location = new System.Drawing.Point(233, 86);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(86, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(189, 26);
             this.txtCantidad.TabIndex = 10;
             // 
             // lblCodigoDeBarras
@@ -127,7 +128,7 @@ namespace SITS
             this.lblCodigoDeBarras.AutoSize = true;
             this.lblCodigoDeBarras.Location = new System.Drawing.Point(59, 10);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
-            this.lblCodigoDeBarras.Size = new System.Drawing.Size(88, 13);
+            this.lblCodigoDeBarras.Size = new System.Drawing.Size(137, 20);
             this.lblCodigoDeBarras.TabIndex = 0;
             this.lblCodigoDeBarras.Text = "Codigo de Barras";
             this.lblCodigoDeBarras.Click += new System.EventHandler(this.label1_Click);
@@ -136,6 +137,7 @@ namespace SITS
             // 
             this.pnlDgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDgvInventario.Controls.Add(this.dgvInventario);
+            this.pnlDgvInventario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlDgvInventario.Location = new System.Drawing.Point(43, 189);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
             this.pnlDgvInventario.Size = new System.Drawing.Size(631, 151);
@@ -151,7 +153,7 @@ namespace SITS
             this.clEntradas,
             this.clSalidas,
             this.clTotal});
-            this.dgvInventario.Location = new System.Drawing.Point(16, 16);
+            this.dgvInventario.Location = new System.Drawing.Point(11, 16);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowTemplate.Height = 25;
             this.dgvInventario.Size = new System.Drawing.Size(610, 130);

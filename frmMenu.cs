@@ -31,5 +31,17 @@ namespace SITS
             MessageBox.Show("Sistema de Inventario para Tienda de Sentimientos (SITS) \n" +
                 "Version 1.0", "Acerca de",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmPedido = new frmPedido();
+            frmPedido.Show();
+        }
+
+        private void combosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmCombos = new frmCombos();
+            frmCombos.Show();
+        }
     }
 }
