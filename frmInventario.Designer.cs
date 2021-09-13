@@ -30,6 +30,7 @@ namespace SITS
         private void InitializeComponent()
         {
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.txtCodigoDeBarras = new System.Windows.Forms.TextBox();
             this.lblNombreDelProducto = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
@@ -39,13 +40,12 @@ namespace SITS
             this.lblCodigoDeBarras = new System.Windows.Forms.Label();
             this.pnlDgvInventario = new System.Windows.Forms.Panel();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clEntradas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSalidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodigoDeBarras = new System.Windows.Forms.TextBox();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -62,65 +62,72 @@ namespace SITS
             this.pnlProducto.Controls.Add(this.txtPrecio);
             this.pnlProducto.Controls.Add(this.txtCantidad);
             this.pnlProducto.Controls.Add(this.lblCodigoDeBarras);
-            this.pnlProducto.Location = new System.Drawing.Point(50, 33);
+            this.pnlProducto.Location = new System.Drawing.Point(43, 29);
             this.pnlProducto.Name = "pnlProducto";
-            this.pnlProducto.Size = new System.Drawing.Size(682, 179);
+            this.pnlProducto.Size = new System.Drawing.Size(631, 155);
             this.pnlProducto.TabIndex = 0;
+            // 
+            // txtCodigoDeBarras
+            // 
+            this.txtCodigoDeBarras.Location = new System.Drawing.Point(170, 8);
+            this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
+            this.txtCodigoDeBarras.Size = new System.Drawing.Size(86, 20);
+            this.txtCodigoDeBarras.TabIndex = 11;
             // 
             // lblNombreDelProducto
             // 
             this.lblNombreDelProducto.AutoSize = true;
-            this.lblNombreDelProducto.Location = new System.Drawing.Point(69, 55);
+            this.lblNombreDelProducto.Location = new System.Drawing.Point(59, 48);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
-            this.lblNombreDelProducto.Size = new System.Drawing.Size(122, 15);
+            this.lblNombreDelProducto.Size = new System.Drawing.Size(107, 13);
             this.lblNombreDelProducto.TabIndex = 0;
             this.lblNombreDelProducto.Text = "Nombre del Producto";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(69, 140);
+            this.lblPrecio.Location = new System.Drawing.Point(59, 121);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 15);
+            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "Precio";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(69, 99);
+            this.lblCantidad.Location = new System.Drawing.Point(59, 86);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(55, 15);
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 4;
             this.lblCantidad.Text = "Cantidad";
             // 
             // txtNombreDelProducto
             // 
-            this.txtNombreDelProducto.Location = new System.Drawing.Point(198, 53);
+            this.txtNombreDelProducto.Location = new System.Drawing.Point(170, 46);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(100, 23);
+            this.txtNombreDelProducto.Size = new System.Drawing.Size(86, 20);
             this.txtNombreDelProducto.TabIndex = 6;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(198, 140);
+            this.txtPrecio.Location = new System.Drawing.Point(170, 121);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(86, 20);
             this.txtPrecio.TabIndex = 7;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(198, 99);
+            this.txtCantidad.Location = new System.Drawing.Point(170, 86);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 23);
+            this.txtCantidad.Size = new System.Drawing.Size(86, 20);
             this.txtCantidad.TabIndex = 10;
             // 
             // lblCodigoDeBarras
             // 
             this.lblCodigoDeBarras.AutoSize = true;
-            this.lblCodigoDeBarras.Location = new System.Drawing.Point(69, 12);
+            this.lblCodigoDeBarras.Location = new System.Drawing.Point(59, 10);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
-            this.lblCodigoDeBarras.Size = new System.Drawing.Size(97, 15);
+            this.lblCodigoDeBarras.Size = new System.Drawing.Size(88, 13);
             this.lblCodigoDeBarras.TabIndex = 0;
             this.lblCodigoDeBarras.Text = "Codigo de Barras";
             this.lblCodigoDeBarras.Click += new System.EventHandler(this.label1_Click);
@@ -129,36 +136,36 @@ namespace SITS
             // 
             this.pnlDgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDgvInventario.Controls.Add(this.dgvInventario);
-            this.pnlDgvInventario.Location = new System.Drawing.Point(50, 218);
+            this.pnlDgvInventario.Location = new System.Drawing.Point(43, 189);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
-            this.pnlDgvInventario.Size = new System.Drawing.Size(682, 174);
+            this.pnlDgvInventario.Size = new System.Drawing.Size(631, 151);
             this.pnlDgvInventario.TabIndex = 1;
             // 
             // dgvInventario
             // 
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cCodigo,
-            this.cProducto,
+            this.cCodigoBarras,
+            this.cNombreProducto,
             this.clPrecio,
             this.clEntradas,
             this.clSalidas,
             this.clTotal});
-            this.dgvInventario.Location = new System.Drawing.Point(19, 19);
+            this.dgvInventario.Location = new System.Drawing.Point(16, 16);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowTemplate.Height = 25;
-            this.dgvInventario.Size = new System.Drawing.Size(642, 150);
+            this.dgvInventario.Size = new System.Drawing.Size(610, 130);
             this.dgvInventario.TabIndex = 0;
             // 
-            // cCodigo
+            // cCodigoBarras
             // 
-            this.cCodigo.HeaderText = "Codigo";
-            this.cCodigo.Name = "cCodigo";
+            this.cCodigoBarras.HeaderText = "Codigo de Barras";
+            this.cCodigoBarras.Name = "cCodigoBarras";
             // 
-            // cProducto
+            // cNombreProducto
             // 
-            this.cProducto.HeaderText = "Producto";
-            this.cProducto.Name = "cProducto";
+            this.cNombreProducto.HeaderText = "Producto";
+            this.cNombreProducto.Name = "cNombreProducto";
             // 
             // clPrecio
             // 
@@ -180,18 +187,11 @@ namespace SITS
             this.clTotal.HeaderText = "Total";
             this.clTotal.Name = "clTotal";
             // 
-            // txtCodigoDeBarras
-            // 
-            this.txtCodigoDeBarras.Location = new System.Drawing.Point(198, 9);
-            this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(100, 23);
-            this.txtCodigoDeBarras.TabIndex = 11;
-            // 
             // frmInventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(773, 390);
             this.Controls.Add(this.pnlDgvInventario);
             this.Controls.Add(this.pnlProducto);
             this.Name = "frmInventario";
@@ -216,13 +216,13 @@ namespace SITS
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.DataGridView dgvInventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
+        private System.Windows.Forms.TextBox txtCodigoDeBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clEntradas;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSalidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTotal;
-        private System.Windows.Forms.TextBox txtCodigoDeBarras;
     }
 }
 
