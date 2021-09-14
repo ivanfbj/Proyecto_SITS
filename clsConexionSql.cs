@@ -9,7 +9,7 @@ namespace SITS
     class clsConexionSql
     {
 
-        static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='.\\dbSistemaInventarioTiendaSentimientos.mdf';Integrated Security=True;Connect Timeout=30";
+        static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\ivan.bedoya\\Documents\\Proyecto_SITS\\dbSistemaInventarioTiendaSentimientos.mdf;Integrated Security=True;Connect Timeout=30";
         private SqlConnection conexion = new SqlConnection(cadenaConexion);
 
         public SqlConnection abrirConexion()
