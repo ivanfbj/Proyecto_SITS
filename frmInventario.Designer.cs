@@ -71,7 +71,7 @@ namespace SITS
             this.pnlProducto.Controls.Add(this.txtCantidad);
             this.pnlProducto.Controls.Add(this.lblCodigoDeBarras);
             this.pnlProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlProducto.Location = new System.Drawing.Point(50, 36);
+            this.pnlProducto.Location = new System.Drawing.Point(27, 22);
             this.pnlProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(889, 190);
@@ -193,8 +193,10 @@ namespace SITS
             this.pnlDgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDgvInventario.Controls.Add(this.dgvInventario);
             this.pnlDgvInventario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlDgvInventario.Location = new System.Drawing.Point(50, 233);
+            this.pnlDgvInventario.Location = new System.Drawing.Point(27, 219);
             this.pnlDgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlDgvInventario.MaximumSize = new System.Drawing.Size(889, 308);
+            this.pnlDgvInventario.MinimumSize = new System.Drawing.Size(889, 308);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
             this.pnlDgvInventario.Size = new System.Drawing.Size(889, 308);
             this.pnlDgvInventario.TabIndex = 1;
@@ -270,13 +272,15 @@ namespace SITS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 577);
+            this.ClientSize = new System.Drawing.Size(930, 547);
             this.Controls.Add(this.pnlDgvInventario);
             this.Controls.Add(this.pnlProducto);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(950, 590);
+            this.MinimumSize = new System.Drawing.Size(950, 590);
             this.Name = "frmInventario";
             this.Text = "Inventario";
             this.pnlProducto.ResumeLayout(false);
