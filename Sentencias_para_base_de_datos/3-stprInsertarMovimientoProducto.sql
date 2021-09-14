@@ -28,9 +28,10 @@ BEGIN
 		@tipoMovimiento_Id = Id
 	  FROM tblTipoMovimiento
 	  WHERE descripcion = @tipoMovimiento_Descripcion;
-
+	DECLARE @producto_id int;
 
   BEGIN TRY
+	BEGIN TRANSACTION
 	--SI el tipo de movimiento ingresado en el procedimiento almacenado existe comenzará a realizar las validaciones.
     IF EXISTS (SELECT Id FROM tblTipoMovimiento WHERE descripcion = @tipoMovimiento_Descripcion)
 		BEGIN
@@ -40,7 +41,7 @@ BEGIN
 				--Insertará el registro en la tabla "tblMovimientoProducto"
 				IF EXISTS (SELECT ID FROM tblProducto WHERE codigoBarras = @codigoBarras)
 					BEGIN
-						DECLARE @producto_id int;
+						
 						
 						SELECT @producto_id = Id 
 							FROM tblProducto 
@@ -68,15 +69,27 @@ BEGIN
 						INSERT INTO tblMovimientoProducto (producto_Id, tipoMovimiento_Id,cantidad,fechaMovimiento)
 							VALUES (@idProductoInsertado, @tipoMovimiento_Id,@cantidad ,@fechaCreacion)
 
-				SELECT
-				  'PRODUCTO CREADO EXITOSAMENTE ' AS 'stpr';
 					END
 
 			  END
 		  ELSE IF @tipoMovimiento_Id = 2
-			  BEGIN
-				SELECT
-				  'TIPO MOVIMIENTO ES 2'
+			  BEGIN						
+				SELECT @producto_id = Id 
+					FROM tblProducto 
+					WHERE codigoBarras = @codigoBarras;
+
+				if (select cantidad - @cantidad from tblProducto where id = @producto_id) >= 0
+					BEGIN
+						UPDATE tblProducto 
+							SET cantidad = cantidad - @cantidad
+						FROM tblProducto
+						WHERE ID = @producto_id
+
+						INSERT INTO tblMovimientoProducto (producto_Id, tipoMovimiento_Id, cantidad, fechaMovimiento)
+							VALUES (@producto_id, @tipoMovimiento_Id,@cantidad ,@fechaCreacion);
+					END
+				else
+					select 'La cantidad a descontar es superior a la cantidad actual en el inventario'
 			  END
 		  ELSE IF @tipoMovimiento_Id = 3
 			  BEGIN
@@ -100,11 +113,12 @@ BEGIN
       SELECT
         'No existe este tipo de movimiento para el producto'
 
+COMMIT TRANSACTION;
 
   END TRY
   BEGIN CATCH
 
-    --ROLLBACK TRANSACTION;
+    ROLLBACK TRANSACTION;
     SELECT
       ERROR_MESSAGE();
 
