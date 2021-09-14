@@ -89,6 +89,7 @@ namespace SITS
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             this.btnIngresar.MouseLeave += new System.EventHandler(this.btnIngresar_MouseLeave);
             this.btnIngresar.MouseHover += new System.EventHandler(this.btnIngresar_MouseHover);
             // 
