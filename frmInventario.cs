@@ -31,5 +31,22 @@ namespace SITS
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form frmNovedad = new frmNovedad();
+            frmNovedad.Show();
+        }
+
+        private void btnIngresar_MouseHover(object sender, EventArgs e)
+        {
+            btnIngresar.Size = new Size(109, 34);
+          
+        }
+
+        private void btnIngresar_MouseLeave(object sender, EventArgs e)
+        {
+            btnIngresar.Size = new Size(104, 29);
+        }
     }
 }

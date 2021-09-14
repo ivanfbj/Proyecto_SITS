@@ -65,6 +65,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNovedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNovedad.Designer.cs">
+      <DependentUpon>frmNovedad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\ingresar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
