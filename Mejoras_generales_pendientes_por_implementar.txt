@@ -1,6 +1,6 @@
 Mejoras en Base de datos:
 	- El procedimiento almacenado [stprInsertarMovimientoProducto] consume campos IDNETITY de la tabla tblProducto cuando se genera error en el TRY CATCH.
 	- La función RollBack en el CATCH no funciona genera error relacionado a la implementacion de BEGIN TRANSACTION.
-
+	. Se puede guardar codigos de barras y nombre de producto vacios.
 Mejoras en la Aplicación:
 	-

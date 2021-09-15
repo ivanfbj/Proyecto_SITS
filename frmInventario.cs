@@ -20,26 +20,7 @@ namespace SITS
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form frmNovedad = new frmNovedad();
-            frmNovedad.Show();
-        }
 
         private void btnIngresar_MouseHover(object sender, EventArgs e)
         {
@@ -77,6 +58,12 @@ namespace SITS
             {
                 MessageBox.Show("Ha ocurrido un error" + error.Message);
             }
+        }
+
+        private void btnNovedad_Click(object sender, EventArgs e)
+        {
+            Form frmNovedad = new frmNovedad();
+            frmNovedad.Show();
         }
     }
 }
