@@ -15,6 +15,9 @@ namespace SITS
     {
         clsConexionSql cn;
         SqlCommand cmd;
+        SqlDataAdapter da;
+        DataTable dt;
+        int i = 0;
         public frmInventario()
         {
             InitializeComponent();
@@ -24,13 +27,13 @@ namespace SITS
 
         private void btnIngresar_MouseHover(object sender, EventArgs e)
         {
-            btnIngresar.Size = new Size(109, 34);
+            btnIngresar.Size = new Size(121, 41);
           
         }
 
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
         {
-            btnIngresar.Size = new Size(104, 29);
+            btnIngresar.Size = new Size(121, 36);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -64,6 +67,30 @@ namespace SITS
         {
             Form frmNovedad = new frmNovedad();
             frmNovedad.Show();
+        }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = 0;
+            Double total = 0;
+            cmd = new SqlCommand("select * from tblProducto", cn.abrirConexion());
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count != 0)
+            {
+                n = dt.Rows.Count;
+                dgvInventario.Rows.Add(n - 1);
+                for (i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvInventario.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
+                    dgvInventario.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
+                    dgvInventario.Rows[i].Cells[5].Value = dt.Rows[i][3].ToString();
+                    dgvInventario.Rows[i].Cells[6].Value = dt.Rows[i][4].ToString();
+                    total = (Convert.ToDouble(dt.Rows[i][3].ToString()) * Convert.ToInt32(dt.Rows[i][4].ToString()));
+                    dgvInventario.Rows[i].Cells[7].Value = total;
+                }
+            }
         }
     }
 }
