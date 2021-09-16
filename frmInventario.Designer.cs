@@ -85,7 +85,7 @@ namespace SITS
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(121, 36);
-            this.btnIngresar.TabIndex = 2;
+            this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@ namespace SITS
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(121, 36);
-            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@ namespace SITS
             this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNovedad.Name = "btnNovedad";
             this.btnNovedad.Size = new System.Drawing.Size(121, 36);
-            this.btnNovedad.TabIndex = 4;
+            this.btnNovedad.TabIndex = 6;
             this.btnNovedad.Text = "Novedad";
             this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovedad.UseVisualStyleBackColor = true;
@@ -126,7 +126,8 @@ namespace SITS
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
             this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
-            this.txtCodigoDeBarras.TabIndex = 11;
+            this.txtCodigoDeBarras.TabIndex = 0;
+
             // 
             // lblNombreDelProducto
             // 
@@ -161,7 +162,7 @@ namespace SITS
             this.txtNombreDelProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
             this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 26);
-            this.txtNombreDelProducto.TabIndex = 6;
+            this.txtNombreDelProducto.TabIndex = 1;
             // 
             // txtPrecio
             // 
@@ -169,7 +170,7 @@ namespace SITS
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(220, 26);
-            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.TabIndex = 3;
             // 
             // txtCantidad
             // 
@@ -177,7 +178,7 @@ namespace SITS
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(220, 26);
-            this.txtCantidad.TabIndex = 10;
+            this.txtCantidad.TabIndex = 2;
             // 
             // lblCodigoDeBarras
             // 
@@ -218,8 +219,7 @@ namespace SITS
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 25;
             this.dgvInventario.Size = new System.Drawing.Size(859, 273);
-            this.dgvInventario.TabIndex = 0;
-            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
+            this.dgvInventario.TabIndex = 7;
             // 
             // cCodigoBarras
             // 
@@ -292,6 +292,7 @@ namespace SITS
             this.MinimumSize = new System.Drawing.Size(950, 590);
             this.Name = "frmInventario";
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.frmInventario_Load);
             this.pnlProducto.ResumeLayout(false);
             this.pnlProducto.PerformLayout();
             this.pnlDgvInventario.ResumeLayout(false);

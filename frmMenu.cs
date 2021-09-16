@@ -43,5 +43,31 @@ namespace SITS
             Form frmCombos = new frmCombos();
             frmCombos.Show();
         }
+
+
+
+        private void tsbtnInventario_Click(object sender, EventArgs e)
+        {
+            Form frmInventarioMenu = new frmInventario();
+            frmInventarioMenu.Show();
+        }
+
+        private void tsbtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsbtnCombos_Click(object sender, EventArgs e)
+        {
+            Form frmCombos = new frmCombos();
+            frmCombos.Show();
+        }
+
+        private void tsbtnPedidos_Click(object sender, EventArgs e)
+        {
+            Form frmPedido = new frmPedido();
+            frmPedido.Show();
+        }
     }
+    
 }

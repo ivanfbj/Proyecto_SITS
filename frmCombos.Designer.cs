@@ -33,7 +33,6 @@ namespace SITS
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCodigoDeBarras = new System.Windows.Forms.TextBox();
             this.lblNroCombo = new System.Windows.Forms.Label();
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelProducto = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@ namespace SITS
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -57,9 +57,9 @@ namespace SITS
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnIngresar);
             this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.txtCodigoDeBarras);
             this.panel1.Controls.Add(this.lblNroCombo);
             this.panel1.Controls.Add(this.lblNombreDelCombo);
             this.panel1.Controls.Add(this.txtNombreDelProducto);
@@ -94,13 +94,6 @@ namespace SITS
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtCodigoDeBarras
-            // 
-            this.txtCodigoDeBarras.Location = new System.Drawing.Point(217, 20);
-            this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(195, 26);
-            this.txtCodigoDeBarras.TabIndex = 15;
             // 
             // lblNroCombo
             // 
@@ -226,6 +219,15 @@ namespace SITS
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "____";
+            // 
             // frmCombos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +236,7 @@ namespace SITS
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(853, 597);
             this.MinimumSize = new System.Drawing.Size(853, 597);
             this.Name = "frmCombos";
@@ -253,7 +256,6 @@ namespace SITS
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtCodigoDeBarras;
         private System.Windows.Forms.Label lblNroCombo;
         private System.Windows.Forms.Label lblNombreDelCombo;
         private System.Windows.Forms.TextBox txtNombreDelProducto;
@@ -268,5 +270,6 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -90,6 +90,7 @@ namespace SITS
             this.dgvInventario.RowTemplate.Height = 25;
             this.dgvInventario.Size = new System.Drawing.Size(666, 164);
             this.dgvInventario.TabIndex = 1;
+            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
             // 
             // clAgregar
             // 
@@ -234,7 +235,7 @@ namespace SITS
             this.pnlDgvInventario.Location = new System.Drawing.Point(21, 137);
             this.pnlDgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
-            this.pnlDgvInventario.Size = new System.Drawing.Size(695, 157);
+            this.pnlDgvInventario.Size = new System.Drawing.Size(695, 169);
             this.pnlDgvInventario.TabIndex = 5;
             // 
             // dataGridView1
@@ -321,6 +322,7 @@ namespace SITS
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(765, 758);
             this.MinimumSize = new System.Drawing.Size(765, 655);
             this.Name = "frmPedido";

@@ -46,5 +46,10 @@ namespace SITS
                 }
             }
         }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

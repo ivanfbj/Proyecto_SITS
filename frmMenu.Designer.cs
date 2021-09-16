@@ -40,7 +40,15 @@ namespace SITS
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnInventario = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnCombos = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnPedidos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSalir = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,7 +78,7 @@ namespace SITS
             // 
             this.inventarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventarioToolStripMenuItem.Image")));
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -86,14 +94,14 @@ namespace SITS
             // combosToolStripMenuItem
             // 
             this.combosToolStripMenuItem.Name = "combosToolStripMenuItem";
-            this.combosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.combosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.combosToolStripMenuItem.Text = "Combos";
             this.combosToolStripMenuItem.Click += new System.EventHandler(this.combosToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
@@ -126,17 +134,93 @@ namespace SITS
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnInventario,
+            this.tsbtnCombos,
+            this.tsbtnPedidos,
+            this.toolStripButton4,
+            this.tsbtnSalir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(686, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnInventario
+            // 
+            this.tsbtnInventario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnInventario.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnInventario.Image")));
+            this.tsbtnInventario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnInventario.Name = "tsbtnInventario";
+            this.tsbtnInventario.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnInventario.Text = "toolStripButton1";
+            this.tsbtnInventario.Click += new System.EventHandler(this.tsbtnInventario_Click);
+            // 
+            // tsbtnCombos
+            // 
+            this.tsbtnCombos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCombos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCombos.Image")));
+            this.tsbtnCombos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCombos.Name = "tsbtnCombos";
+            this.tsbtnCombos.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnCombos.Text = "toolStripButton2";
+            this.tsbtnCombos.Click += new System.EventHandler(this.tsbtnCombos_Click);
+            // 
+            // tsbtnPedidos
+            // 
+            this.tsbtnPedidos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPedidos.Image")));
+            this.tsbtnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPedidos.Name = "tsbtnPedidos";
+            this.tsbtnPedidos.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnPedidos.Text = "toolStripButton3";
+            this.tsbtnPedidos.Click += new System.EventHandler(this.tsbtnPedidos_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // tsbtnSalir
+            // 
+            this.tsbtnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSalir.Image")));
+            this.tsbtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSalir.Name = "tsbtnSalir";
+            this.tsbtnSalir.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnSalir.Text = "toolStripButton5";
+            this.tsbtnSalir.Click += new System.EventHandler(this.tsbtnSalir_Click);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Location = new System.Drawing.Point(0, 53);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(686, 25);
+            this.toolStrip2.TabIndex = 2;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +238,12 @@ namespace SITS
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem combosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbtnInventario;
+        private System.Windows.Forms.ToolStripButton tsbtnCombos;
+        private System.Windows.Forms.ToolStripButton tsbtnPedidos;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton tsbtnSalir;
+        private System.Windows.Forms.ToolStrip toolStrip2;
     }
 }
