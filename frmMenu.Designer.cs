@@ -94,14 +94,14 @@ namespace SITS
             // combosToolStripMenuItem
             // 
             this.combosToolStripMenuItem.Name = "combosToolStripMenuItem";
-            this.combosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.combosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.combosToolStripMenuItem.Text = "Combos";
             this.combosToolStripMenuItem.Click += new System.EventHandler(this.combosToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
@@ -155,7 +155,7 @@ namespace SITS
             this.tsbtnInventario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnInventario.Name = "tsbtnInventario";
             this.tsbtnInventario.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnInventario.Text = "toolStripButton1";
+            this.tsbtnInventario.Text = "Inventario";
             this.tsbtnInventario.Click += new System.EventHandler(this.tsbtnInventario_Click);
             // 
             // tsbtnCombos
@@ -165,7 +165,7 @@ namespace SITS
             this.tsbtnCombos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnCombos.Name = "tsbtnCombos";
             this.tsbtnCombos.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnCombos.Text = "toolStripButton2";
+            this.tsbtnCombos.Text = "Combos";
             this.tsbtnCombos.Click += new System.EventHandler(this.tsbtnCombos_Click);
             // 
             // tsbtnPedidos
@@ -175,7 +175,7 @@ namespace SITS
             this.tsbtnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnPedidos.Name = "tsbtnPedidos";
             this.tsbtnPedidos.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnPedidos.Text = "toolStripButton3";
+            this.tsbtnPedidos.Text = "Pedidos";
             this.tsbtnPedidos.Click += new System.EventHandler(this.tsbtnPedidos_Click);
             // 
             // toolStripButton4
@@ -194,7 +194,7 @@ namespace SITS
             this.tsbtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnSalir.Name = "tsbtnSalir";
             this.tsbtnSalir.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnSalir.Text = "toolStripButton5";
+            this.tsbtnSalir.Text = "Salir";
             this.tsbtnSalir.Click += new System.EventHandler(this.tsbtnSalir_Click);
             // 
             // toolStrip2
