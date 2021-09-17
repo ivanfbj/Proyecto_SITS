@@ -85,16 +85,16 @@ namespace SITS
                 dgvInventario.Rows.Add(n - 1);
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
-                    dgvInventario.Rows[i].Cells[0].Value = dt.Rows[i][0].ToString();
-                    dgvInventario.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
-                    dgvInventario.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
-                    dgvInventario.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
-                    dgvInventario.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
-                    dgvInventario.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
-                    cantidad = Convert.ToInt32(dt.Rows[i][4].ToString());
-                    precio = Convert.ToDouble(dt.Rows[i][5].ToString());
+                    dgvInventario.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
+                    dgvInventario.Rows[i].Cells["cNombreProducto"].Value = dt.Rows[i]["nombre"].ToString();
+                    dgvInventario.Rows[i].Cells["clEntradas"].Value = dt.Rows[i]["Entradas"].ToString();
+                    dgvInventario.Rows[i].Cells["clSalidas"].Value = dt.Rows[i]["Salidas"].ToString();
+                    dgvInventario.Rows[i].Cells["clCantidad"].Value = dt.Rows[i]["stock"].ToString();
+                    dgvInventario.Rows[i].Cells["clPrecio"].Value = dt.Rows[i]["precio"].ToString();
+                    cantidad = Convert.ToInt32(dt.Rows[i]["stock"].ToString());
+                    precio = Convert.ToDouble(dt.Rows[i]["precio"].ToString());
                     total = cantidad*precio;
-                    dgvInventario.Rows[i].Cells[6].Value = total.ToString();
+                    dgvInventario.Rows[i].Cells["clTotal"].Value = total.ToString();
                 }
             }
         }
