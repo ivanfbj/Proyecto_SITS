@@ -1,25 +1,23 @@
-select codigoBarras
-	,nombre
-	,Entradas.Total as 'Entradas'
-	,isNull(Salidas.Total,0) as 'Salidas'
-	, cantidad as 'stock'
-	,precio
-from tblProducto as pro
-inner join (
-			select	producto_Id
-					,TipMov.descripcion as 'TipoMovimiento'
-					,sum(cantidad) as 'Total'
-				from tblMovimientoProducto as MovPro
-					inner join tblTipoMovimiento as TipMov on MovPro.tipoMovimiento_Id=TipMov.id
-			where TipMov.descripcion in ('Entrada')
-			group by producto_Id,TipMov.descripcion ) AS "Entradas"  on pro.id=Entradas.producto_Id
-left join (
-			select	producto_Id
-					,TipMov.descripcion as 'TipoMovimiento'
-					,sum(cantidad) as 'Total'
-				from tblMovimientoProducto as MovPro
-					inner join tblTipoMovimiento as TipMov on MovPro.tipoMovimiento_Id=TipMov.id
-			where TipMov.descripcion in ('Salida','Averia','Consumo Personal','Otro')
-			group by producto_Id,TipMov.descripcion ) AS "Salidas"  on pro.id=Salidas.producto_Id
-
-			
+SELECT codigoBarras, 
+       nombre, 
+       Entradas.Total AS 'Entradas', 
+       ISNULL(Salidas.Total, 0) AS 'Salidas', 
+       cantidad AS 'stock', 
+       precio
+FROM tblProducto AS pro
+     INNER JOIN(SELECT producto_Id, 
+                       TipMov.descripcion AS 'TipoMovimiento', 
+                       SUM(cantidad) AS 'Total'
+                FROM tblMovimientoProducto AS MovPro
+                     INNER JOIN tblTipoMovimiento AS TipMov ON MovPro.tipoMovimiento_Id = TipMov.id
+                WHERE TipMov.descripcion IN('Entrada')
+                GROUP BY producto_Id, 
+                         TipMov.descripcion) AS "Entradas" ON pro.id = Entradas.producto_Id
+     LEFT JOIN(SELECT producto_Id, 
+                      TipMov.descripcion AS 'TipoMovimiento', 
+                      SUM(cantidad) AS 'Total'
+               FROM tblMovimientoProducto AS MovPro
+                    INNER JOIN tblTipoMovimiento AS TipMov ON MovPro.tipoMovimiento_Id = TipMov.id
+               WHERE TipMov.descripcion IN('Salida', 'Averia', 'Consumo Personal', 'Otro')
+               GROUP BY producto_Id, 
+                        TipMov.descripcion) AS "Salidas" ON pro.id = Salidas.producto_Id;
