@@ -75,7 +75,8 @@ namespace SITS
         {
             int n = 0, cantidad=0;
             Double total = 0, precio=0;
-            cmd = new SqlCommand("select codigoBarras, nombre , Entradas.Total AS Entradas , isNull(Salidas.Total, 0) AS Salidas , cantidad AS stock, precio from tblProducto AS pro inner join( select  producto_Id, TipMov.descripcion AS TipoMovimiento , sum(cantidad) AS Total from tblMovimientoProducto as MovPro inner join tblTipoMovimiento AS TipMov on MovPro.tipoMovimiento_Id = TipMov.id where TipMov.descripcion in ('Entrada') group by producto_Id, TipMov.descripcion) AS Entradas  on pro.id = Entradas.producto_Id left join( select  producto_Id , TipMov.descripcion as TipoMovimiento , sum(cantidad) AS Total from tblMovimientoProducto AS MovPro inner join tblTipoMovimiento AS TipMov on MovPro.tipoMovimiento_Id = TipMov.id where TipMov.descripcion in ('Salida', 'Averia', 'Consumo Personal', 'Otro') group by producto_Id, TipMov.descripcion) AS Salidas  on pro.id = Salidas.producto_Id", cn.abrirConexion());
+            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
