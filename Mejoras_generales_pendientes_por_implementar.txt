@@ -3,4 +3,4 @@ Mejoras en Base de datos:
 	- La función RollBack en el CATCH no funciona genera error relacionado a la implementacion de BEGIN TRANSACTION.
 	. Se puede guardar codigos de barras y nombre de producto vacios.
 Mejoras en la Aplicación:
-	-
+	- DataGridView convertir columna "Stock" en numerica para poder ordenar ya que lo ordena es como un String

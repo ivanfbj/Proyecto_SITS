@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[tblProducto]
 (
 	[Id] INT NOT NULL PRIMARY KEY identity, 
     [codigoBarras] NVARCHAR(50) NOT NULL unique, 
-    [nombre] NVARCHAR(255) NOT NULL, 
+    [nombre] NVARCHAR(255) NOT NULL unique, 
     [cantidad] INT NOT NULL, 
     [precio] MONEY NOT NULL, 
     [fechaCreacion] DATETIME NOT NULL DEFAULT Getdate() 
@@ -26,3 +26,8 @@ CREATE TABLE [dbo].[tblMovimientoProducto]
  
 )
 
+/*
+Drop table tblMovimientoProducto
+Drop table tblProducto
+Drop table tblTipoMovimiento
+*/
