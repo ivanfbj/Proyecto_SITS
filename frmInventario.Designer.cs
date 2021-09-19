@@ -127,7 +127,6 @@ namespace SITS
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
             this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
             this.txtCodigoDeBarras.TabIndex = 0;
-
             // 
             // lblNombreDelProducto
             // 
@@ -158,6 +157,8 @@ namespace SITS
             // 
             // txtNombreDelProducto
             // 
+            this.txtNombreDelProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNombreDelProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNombreDelProducto.Location = new System.Drawing.Point(272, 57);
             this.txtNombreDelProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
