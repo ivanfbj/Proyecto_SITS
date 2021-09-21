@@ -18,7 +18,10 @@ namespace SITS
         //static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='D:\\Nubes\\OneDrive - Institución Universitaria de Envigado - IUE\\Ing_Sistemas_IUE\\2021-2\\Dllo Software Orientado a Objetos\\Proyecto_SITS\\dbSistemaInventarioTiendaSentimientos.mdf';Integrated Security=True;Connect Timeout=30";
 
         ////Conexión a Base de datos Computador Personal Ivan con SQL EXPRESS
-        static private string cadenaConexion = "server=AGN5\\SQLEXPRESS ; database = replica_dbSistemaInventarioTiendaSentimientos; integrated security = true ";
+        //static private string cadenaConexion = "server=AGN5\\SQLEXPRESS ; database = replica_dbSistemaInventarioTiendaSentimientos; integrated security = true ";
+
+        ////Conexión a Base de datos Computador trabajo Ivan con SQL EXPRESS
+        static private string cadenaConexion = "server=LMEIBEDOYA\\SQLEXPRESS ; database = replica_dbSistemaInventarioTiendaSentimientos; integrated security = true ";
         private SqlConnection conexion = new SqlConnection(cadenaConexion);
 
         public SqlConnection abrirConexion()
