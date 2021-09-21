@@ -82,6 +82,12 @@ namespace SITS
         {
             int n = 0, cantidad=0;
             Double total = 0, precio=0;
+            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+
 
             if (dt.Rows.Count != 0)
             {
