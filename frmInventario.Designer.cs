@@ -188,7 +188,7 @@ namespace SITS
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
             this.lblCodigoDeBarras.Size = new System.Drawing.Size(137, 20);
             this.lblCodigoDeBarras.TabIndex = 0;
-            this.lblCodigoDeBarras.Text = "Codigo de Barras";
+            this.lblCodigoDeBarras.Text = "Código de Barras";
             // 
             // pnlDgvInventario
             // 
@@ -225,7 +225,7 @@ namespace SITS
             // cCodigoBarras
             // 
             this.cCodigoBarras.FillWeight = 150F;
-            this.cCodigoBarras.HeaderText = "Codigo de Barras";
+            this.cCodigoBarras.HeaderText = "Código de Barras";
             this.cCodigoBarras.MinimumWidth = 6;
             this.cCodigoBarras.Name = "cCodigoBarras";
             this.cCodigoBarras.Width = 140;

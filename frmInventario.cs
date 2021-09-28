@@ -46,31 +46,37 @@ namespace SITS
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "") {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
+                    cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
+                    cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
+                    cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("El producto se a guardado exitosamente");
+                    limpiar();
+                    llenarProducto(dt, i);
+
+
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
+            } else
             {
-                cn = new clsConexionSql();
-                cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
-                cmd.CommandType = CommandType.StoredProcedure;
-
-
-
-                cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
-                cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
-                cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
-                cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
-                cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("El producto se a guardado exitosamente");
-                limpiar();
-                llenarProducto(dt, i);
-
-
-
+                MessageBox.Show("Por favor diligenciar los campos Código de Barras y Nombre del Producto como minimo","Campos vacios",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ha ocurrido un error" + error.Message);
-            }
+            
         }
 
         private void btnNovedad_Click(object sender, EventArgs e)
