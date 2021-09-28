@@ -122,11 +122,14 @@ namespace SITS
             // 
             // txtCodigoDeBarras
             // 
+            this.txtCodigoDeBarras.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtCodigoDeBarras.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCodigoDeBarras.Location = new System.Drawing.Point(272, 10);
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
             this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
             this.txtCodigoDeBarras.TabIndex = 0;
+            
             // 
             // lblNombreDelProducto
             // 
