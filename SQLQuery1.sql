@@ -40,14 +40,13 @@ CREATE TABLE [dbo].[tblproductoxCombo]
     [combo_Id] INT NOT NULL, 
     [producto_Id] INT NOT NULL, 
 	CONSTRAINT FK_tblCombo_Id_tblproductoxCombo_combo_Id FOREIGN KEY (combo_Id) REFERENCES tblCombo (Id),
-	CONSTRAINT FK_tblProducto_Id_tblproductoxCombo_producto_Id FOREIGN KEY (producto_Id) REFERENCES tblProducto (Id)
+	CONSTRAINT FK_tblProducto_Id_tblproductoxCombo_producto_Id FOREIGN KEY (producto_Id) REFERENCES tblProducto (Id),
 )
 CREATE TABLE [dbo].[tblPedido]
 (
 	[Id] INT NOT NULL PRIMARY KEY identity, 
     [nroPedido] NVARCHAR(50) NOT NULL unique, 
     [nombreCombo] NVARCHAR(50) NOT NULL unique,
-    [fechaPedido] DATETIME NOT NULL DEFAULT Getdate()
     [envio] BIT NOT NULL, 
     [valorEnvio] MONEY NOT NULL,
     [subtotal] MONEY NOT NULL, 
@@ -60,5 +59,5 @@ CREATE TABLE [dbo].[tblproductoxPedido]
     [pedido_Id] INT NOT NULL, 
     [producto_Id] INT NOT NULL, 
 	CONSTRAINT FK_tblPedido_Id_tblproductoxPedido_pedido_Id FOREIGN KEY (pedido_Id) REFERENCES tblPedido (Id),
-	CONSTRAINT FK_tblProducto_Id_tblproductoxPedido_producto_Id FOREIGN KEY (producto_Id) REFERENCES tblProducto (Id)
+	CONSTRAINT FK_tblProducto_Id_tblproductoxPedido_producto_Id FOREIGN KEY (producto_Id) REFERENCES tblProducto (Id),
 )
