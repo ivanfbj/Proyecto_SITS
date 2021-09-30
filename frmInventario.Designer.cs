@@ -51,6 +51,8 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditarNombreProducto = new System.Windows.Forms.Button();
+            this.btnEditarPrecio = new System.Windows.Forms.Button();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -59,6 +61,8 @@ namespace SITS
             // pnlProducto
             // 
             this.pnlProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProducto.Controls.Add(this.btnEditarPrecio);
+            this.pnlProducto.Controls.Add(this.btnEditarNombreProducto);
             this.pnlProducto.Controls.Add(this.btnIngresar);
             this.pnlProducto.Controls.Add(this.btnBuscar);
             this.pnlProducto.Controls.Add(this.btnNovedad);
@@ -129,7 +133,6 @@ namespace SITS
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
             this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
             this.txtCodigoDeBarras.TabIndex = 0;
-            
             // 
             // lblNombreDelProducto
             // 
@@ -281,6 +284,25 @@ namespace SITS
             this.clTotal.Name = "clTotal";
             this.clTotal.Width = 90;
             // 
+            // btnEditarNombreProducto
+            // 
+            this.btnEditarNombreProducto.Location = new System.Drawing.Point(498, 52);
+            this.btnEditarNombreProducto.Name = "btnEditarNombreProducto";
+            this.btnEditarNombreProducto.Size = new System.Drawing.Size(124, 36);
+            this.btnEditarNombreProducto.TabIndex = 7;
+            this.btnEditarNombreProducto.Text = "Editar nombre producto";
+            this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
+            this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
+            // 
+            // btnEditarPrecio
+            // 
+            this.btnEditarPrecio.Location = new System.Drawing.Point(498, 141);
+            this.btnEditarPrecio.Name = "btnEditarPrecio";
+            this.btnEditarPrecio.Size = new System.Drawing.Size(124, 36);
+            this.btnEditarPrecio.TabIndex = 8;
+            this.btnEditarPrecio.Text = "Editar Precio";
+            this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -328,6 +350,8 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTotal;
+        private System.Windows.Forms.Button btnEditarPrecio;
+        private System.Windows.Forms.Button btnEditarNombreProducto;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic;
 
 namespace SITS
 {
@@ -146,5 +147,13 @@ namespace SITS
             txtCodigoDeBarras.AutoCompleteCustomSource = listaCodigoProducto;
         }
 
+        private void btnEditarNombreProducto_Click(object sender, EventArgs e)
+        {
+            int valor1 = 0, valor2 = 0;
+            valor1 = Convert.ToInt32(Interaction.InputBox("Ingrese Numero 1"));
+            valor2 = Convert.ToInt32(Interaction.InputBox("Ingrese Numero 2"));
+
+            MessageBox.Show($"El valor de la varible 1 es {valor1} y el valor de la variable 2 es {valor2}");
+        }
     }
 }
