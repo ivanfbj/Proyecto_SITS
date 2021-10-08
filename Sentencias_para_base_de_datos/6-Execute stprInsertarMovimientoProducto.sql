@@ -8,3 +8,5 @@ EXECUTE [dbo].[stprInsertarMovimientoProducto] '040000514251','Snickers',1,2000,
 EXECUTE [dbo].[stprInsertarMovimientoProducto] '7702993016589','Oka Loka Nanos',1,3000,'Entrada'
 EXECUTE [dbo].[stprInsertarMovimientoProducto] '7702993043004','Gomitas Rellenas Trululu',1,2000,'Entrada'
 EXECUTE [dbo].[stprInsertarMovimientoProducto] '03423909','Hersheys',1,5500,'Entrada'
+EXECUTE [dbo].[stprInsertarMovimientoProducto] '7702189056856','Cheetos Horneados Maxi',1,1000,'Entrada'
+EXECUTE [dbo].[stprInsertarMovimientoProducto] '7702993031285','Gomitas Trululu Clásicas',1,1200,'Entrada'
