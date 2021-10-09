@@ -30,7 +30,7 @@ namespace SITS
             da.Fill(dt);
             InitializeComponent();
             autoCompletar();
-            
+
         }
 
 
@@ -38,7 +38,7 @@ namespace SITS
         private void btnIngresar_MouseHover(object sender, EventArgs e)
         {
             btnIngresar.Size = new Size(121, 41);
-          
+
         }
 
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
@@ -48,7 +48,8 @@ namespace SITS
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "") {
+            if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "")
+            {
                 try
                 {
                     cn = new clsConexionSql();
@@ -74,11 +75,12 @@ namespace SITS
                 {
                     MessageBox.Show("Ha ocurrido un error" + error.Message);
                 }
-            } else
-            {
-                MessageBox.Show("Por favor diligenciar los campos Código de Barras y Nombre del Producto como minimo","Campos vacios",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            
+            else
+            {
+                MessageBox.Show("Por favor diligenciar los campos Código de Barras y Nombre del Producto como minimo", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void btnNovedad_Click(object sender, EventArgs e)
@@ -88,8 +90,8 @@ namespace SITS
         }
         void llenarProducto(DataTable dt, int i)
         {
-            int n = 0, cantidad=0;
-            Double total = 0, precio=0;
+            int n = 0, cantidad = 0;
+            Double total = 0, precio = 0;
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -111,7 +113,7 @@ namespace SITS
                     dgvInventario.Rows[i].Cells["clPrecio"].Value = dt.Rows[i]["precio"].ToString();
                     cantidad = Convert.ToInt32(dt.Rows[i]["stock"].ToString());
                     precio = Convert.ToDouble(dt.Rows[i]["precio"].ToString());
-                    total = cantidad*precio;
+                    total = cantidad * precio;
                     dgvInventario.Rows[i].Cells["clTotal"].Value = total.ToString();
                 }
             }
@@ -154,6 +156,41 @@ namespace SITS
             valor2 = Convert.ToInt32(Interaction.InputBox("Ingrese Numero 2"));
 
             MessageBox.Show($"El valor de la varible 1 es {valor1} y el valor de la variable 2 es {valor2}");
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            bool existeProducto = false;
+            int idDataTable = -1;
+
+            if (txtCodigoDeBarras.Text != "")
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    if (dt.Rows[i]["codigoBarras"].ToString().Equals(txtCodigoDeBarras.Text))
+                    {
+                        existeProducto = true;
+                        idDataTable = i;
+
+                    }
+                }
+
+                if (existeProducto && idDataTable >= 0)
+                {
+                    txtCodigoDeBarras.Enabled = false;
+                    txtNombreDelProducto.Enabled = false;
+                    txtPrecio.Enabled = false;
+                    txtNombreDelProducto.Text = dt.Rows[idDataTable]["nombre"].ToString();
+                    txtPrecio.Text = dt.Rows[idDataTable]["precio"].ToString();
+                }
+            }
+
+
+
+            //txtCodigoDeBarras.Text;
+            MessageBox.Show(dt.Rows.Count.ToString());
+
         }
     }
 }
