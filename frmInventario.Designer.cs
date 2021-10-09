@@ -31,6 +31,8 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.btnEditarPrecio = new System.Windows.Forms.Button();
+            this.btnEditarNombreProducto = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNovedad = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditarNombreProducto = new System.Windows.Forms.Button();
-            this.btnEditarPrecio = new System.Windows.Forms.Button();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -80,6 +80,25 @@ namespace SITS
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(889, 190);
             this.pnlProducto.TabIndex = 0;
+            // 
+            // btnEditarPrecio
+            // 
+            this.btnEditarPrecio.Location = new System.Drawing.Point(498, 141);
+            this.btnEditarPrecio.Name = "btnEditarPrecio";
+            this.btnEditarPrecio.Size = new System.Drawing.Size(124, 36);
+            this.btnEditarPrecio.TabIndex = 8;
+            this.btnEditarPrecio.Text = "Editar Precio";
+            this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarNombreProducto
+            // 
+            this.btnEditarNombreProducto.Location = new System.Drawing.Point(498, 52);
+            this.btnEditarNombreProducto.Name = "btnEditarNombreProducto";
+            this.btnEditarNombreProducto.Size = new System.Drawing.Size(124, 36);
+            this.btnEditarNombreProducto.TabIndex = 7;
+            this.btnEditarNombreProducto.Text = "Editar nombre producto";
+            this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
+            this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
             // 
             // btnIngresar
             // 
@@ -109,6 +128,7 @@ namespace SITS
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNovedad
             // 
@@ -131,7 +151,7 @@ namespace SITS
             this.txtCodigoDeBarras.Location = new System.Drawing.Point(272, 10);
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
+            this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 30);
             this.txtCodigoDeBarras.TabIndex = 0;
             // 
             // lblNombreDelProducto
@@ -139,7 +159,7 @@ namespace SITS
             this.lblNombreDelProducto.AutoSize = true;
             this.lblNombreDelProducto.Location = new System.Drawing.Point(69, 59);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
-            this.lblNombreDelProducto.Size = new System.Drawing.Size(167, 20);
+            this.lblNombreDelProducto.Size = new System.Drawing.Size(207, 22);
             this.lblNombreDelProducto.TabIndex = 0;
             this.lblNombreDelProducto.Text = "Nombre del Producto";
             // 
@@ -148,7 +168,7 @@ namespace SITS
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(69, 149);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(56, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(66, 22);
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "Precio";
             // 
@@ -157,7 +177,7 @@ namespace SITS
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(69, 106);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(78, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(99, 22);
             this.lblCantidad.TabIndex = 4;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -168,7 +188,7 @@ namespace SITS
             this.txtNombreDelProducto.Location = new System.Drawing.Point(272, 57);
             this.txtNombreDelProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 26);
+            this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 30);
             this.txtNombreDelProducto.TabIndex = 1;
             // 
             // txtPrecio
@@ -176,7 +196,7 @@ namespace SITS
             this.txtPrecio.Location = new System.Drawing.Point(272, 149);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(220, 26);
+            this.txtPrecio.Size = new System.Drawing.Size(220, 30);
             this.txtPrecio.TabIndex = 3;
             // 
             // txtCantidad
@@ -184,7 +204,7 @@ namespace SITS
             this.txtCantidad.Location = new System.Drawing.Point(272, 106);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(220, 26);
+            this.txtCantidad.Size = new System.Drawing.Size(220, 30);
             this.txtCantidad.TabIndex = 2;
             // 
             // lblCodigoDeBarras
@@ -192,7 +212,7 @@ namespace SITS
             this.lblCodigoDeBarras.AutoSize = true;
             this.lblCodigoDeBarras.Location = new System.Drawing.Point(69, 12);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
-            this.lblCodigoDeBarras.Size = new System.Drawing.Size(137, 20);
+            this.lblCodigoDeBarras.Size = new System.Drawing.Size(169, 22);
             this.lblCodigoDeBarras.TabIndex = 0;
             this.lblCodigoDeBarras.Text = "Código de Barras";
             // 
@@ -284,30 +304,11 @@ namespace SITS
             this.clTotal.Name = "clTotal";
             this.clTotal.Width = 90;
             // 
-            // btnEditarNombreProducto
-            // 
-            this.btnEditarNombreProducto.Location = new System.Drawing.Point(498, 52);
-            this.btnEditarNombreProducto.Name = "btnEditarNombreProducto";
-            this.btnEditarNombreProducto.Size = new System.Drawing.Size(124, 36);
-            this.btnEditarNombreProducto.TabIndex = 7;
-            this.btnEditarNombreProducto.Text = "Editar nombre producto";
-            this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
-            this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
-            // 
-            // btnEditarPrecio
-            // 
-            this.btnEditarPrecio.Location = new System.Drawing.Point(498, 141);
-            this.btnEditarPrecio.Name = "btnEditarPrecio";
-            this.btnEditarPrecio.Size = new System.Drawing.Size(124, 36);
-            this.btnEditarPrecio.TabIndex = 8;
-            this.btnEditarPrecio.Text = "Editar Precio";
-            this.btnEditarPrecio.UseVisualStyleBackColor = true;
-            // 
             // frmInventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 547);
+            this.ClientSize = new System.Drawing.Size(928, 539);
             this.Controls.Add(this.pnlDgvInventario);
             this.Controls.Add(this.pnlProducto);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
