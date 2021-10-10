@@ -65,8 +65,8 @@ namespace SITS
                     cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("El producto se a guardado exitosamente");
-                    limpiar();
-                    llenarProducto();
+                    reiniciarCamposYDataGridView();
+
 
 
 
@@ -180,7 +180,8 @@ namespace SITS
                 txtCodigoDeBarras.Enabled = false;
                 txtNombreDelProducto.Enabled = false;
                 txtPrecio.Enabled = false;
-                txtNombreDelProducto.Text = dt.Rows[idDataTable]["codigoBarras"].ToString();
+                btnCancelarBuscar.Visible = true;
+                txtCodigoDeBarras.Text = dt.Rows[idDataTable]["codigoBarras"].ToString();
                 txtNombreDelProducto.Text = dt.Rows[idDataTable]["nombre"].ToString();
                 txtPrecio.Text = dt.Rows[idDataTable]["precio"].ToString();
 
@@ -241,6 +242,19 @@ namespace SITS
             }
         }
 
+        private void btnCancelarBuscar_Click(object sender, EventArgs e)
+        {
+            reiniciarCamposYDataGridView();
+        }
 
+        private void reiniciarCamposYDataGridView()
+        {
+            txtCodigoDeBarras.Enabled = true;
+            txtNombreDelProducto.Enabled = true;
+            txtPrecio.Enabled = true;
+            btnCancelarBuscar.Visible = false;
+            limpiar();
+            llenarProducto();
+        }
     }
 }
