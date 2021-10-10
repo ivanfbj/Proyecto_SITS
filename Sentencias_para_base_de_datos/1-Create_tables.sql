@@ -14,6 +14,8 @@ CREATE TABLE [dbo].[tblProducto]
     [fechaCreacion] DATETIME NOT NULL DEFAULT Getdate() 
 )
 
+ALTER TABLE [dbo].[tblProducto] ADD CONSTRAINT Check_tblProducto_precio CHECK(0 <= precio);
+
 CREATE TABLE [dbo].[tblMovimientoProducto]
 (
 	[Id] INT NOT NULL PRIMARY KEY identity, 
@@ -25,6 +27,8 @@ CREATE TABLE [dbo].[tblMovimientoProducto]
 	CONSTRAINT FK_tblTipoMovimiento_Id_tblMovimientoProducto_tipoMovimiento_Id FOREIGN KEY (tipoMovimiento_Id) REFERENCES tblTipoMovimiento (Id)
  
 )
+
+ALTER TABLE [dbo].[tblMovimientoProducto] ADD CONSTRAINT Check_tblMovimientoProducto_precio CHECK(0 <= precio);
 
 CREATE TABLE [dbo].[tblCombo]
 (
