@@ -66,7 +66,7 @@ namespace SITS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("El producto se a guardado exitosamente");
                     limpiar();
-                    llenarProducto(dt, i);
+                    llenarProducto();
 
 
 
@@ -88,7 +88,7 @@ namespace SITS
             Form frmNovedad = new frmNovedad();
             frmNovedad.Show();
         }
-        void llenarProducto(DataTable dt, int i)
+        void llenarProducto()
         {
             int n = 0, cantidad = 0;
             Double total = 0, precio = 0;
@@ -131,7 +131,7 @@ namespace SITS
 
         private void frmInventario_Load(object sender, EventArgs e)
         {
-            llenarProducto(dt, i);
+            llenarProducto();
         }
 
         void autoCompletar()
@@ -183,14 +183,27 @@ namespace SITS
                     txtPrecio.Enabled = false;
                     txtNombreDelProducto.Text = dt.Rows[idDataTable]["nombre"].ToString();
                     txtPrecio.Text = dt.Rows[idDataTable]["precio"].ToString();
+
+                    dgvInventario.Rows.Clear();
+
+                    int cantidad = 0;
+                    Double total = 0, precio = 0;
+                    dgvInventario.Rows[0].Cells["cCodigoBarras"].Value = dt.Rows[idDataTable]["codigoBarras"].ToString();
+                    dgvInventario.Rows[0].Cells["cNombreProducto"].Value = dt.Rows[idDataTable]["nombre"].ToString();
+                    dgvInventario.Rows[0].Cells["clEntradas"].Value = dt.Rows[idDataTable]["Entradas"].ToString();
+                    dgvInventario.Rows[0].Cells["clSalidas"].Value = dt.Rows[idDataTable]["Salidas"].ToString();
+                    dgvInventario.Rows[0].Cells["clCantidad"].Value = dt.Rows[idDataTable]["stock"].ToString();
+                    dgvInventario.Rows[0].Cells["clPrecio"].Value = dt.Rows[idDataTable]["precio"].ToString();
+                    cantidad = Convert.ToInt32(dt.Rows[idDataTable]["stock"].ToString());
+                    precio = Convert.ToDouble(dt.Rows[idDataTable]["precio"].ToString());
+                    total = cantidad * precio;
+                    dgvInventario.Rows[0].Cells["clTotal"].Value = total.ToString();
+                }
+                else if (existeProducto == false)
+                {
+                    MessageBox.Show("El producto no existe");
                 }
             }
-
-
-
-            //txtCodigoDeBarras.Text;
-            MessageBox.Show(dt.Rows.Count.ToString());
-
         }
     }
 }
