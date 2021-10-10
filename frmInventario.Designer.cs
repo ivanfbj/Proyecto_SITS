@@ -151,15 +151,16 @@ namespace SITS
             this.txtCodigoDeBarras.Location = new System.Drawing.Point(272, 10);
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 30);
+            this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
             this.txtCodigoDeBarras.TabIndex = 0;
+            this.txtCodigoDeBarras.Leave += new System.EventHandler(this.txtCodigoDeBarras_Leave);
             // 
             // lblNombreDelProducto
             // 
             this.lblNombreDelProducto.AutoSize = true;
             this.lblNombreDelProducto.Location = new System.Drawing.Point(69, 59);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
-            this.lblNombreDelProducto.Size = new System.Drawing.Size(207, 22);
+            this.lblNombreDelProducto.Size = new System.Drawing.Size(167, 20);
             this.lblNombreDelProducto.TabIndex = 0;
             this.lblNombreDelProducto.Text = "Nombre del Producto";
             // 
@@ -168,7 +169,7 @@ namespace SITS
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(69, 149);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(66, 22);
+            this.lblPrecio.Size = new System.Drawing.Size(56, 20);
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "Precio";
             // 
@@ -177,7 +178,7 @@ namespace SITS
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(69, 106);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(99, 22);
+            this.lblCantidad.Size = new System.Drawing.Size(78, 20);
             this.lblCantidad.TabIndex = 4;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -188,15 +189,16 @@ namespace SITS
             this.txtNombreDelProducto.Location = new System.Drawing.Point(272, 57);
             this.txtNombreDelProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 30);
+            this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 26);
             this.txtNombreDelProducto.TabIndex = 1;
+            this.txtNombreDelProducto.Leave += new System.EventHandler(this.txtNombreDelProducto_Leave);
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(272, 149);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(220, 30);
+            this.txtPrecio.Size = new System.Drawing.Size(220, 26);
             this.txtPrecio.TabIndex = 3;
             // 
             // txtCantidad
@@ -204,7 +206,7 @@ namespace SITS
             this.txtCantidad.Location = new System.Drawing.Point(272, 106);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(220, 30);
+            this.txtCantidad.Size = new System.Drawing.Size(220, 26);
             this.txtCantidad.TabIndex = 2;
             // 
             // lblCodigoDeBarras
@@ -212,7 +214,7 @@ namespace SITS
             this.lblCodigoDeBarras.AutoSize = true;
             this.lblCodigoDeBarras.Location = new System.Drawing.Point(69, 12);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
-            this.lblCodigoDeBarras.Size = new System.Drawing.Size(169, 22);
+            this.lblCodigoDeBarras.Size = new System.Drawing.Size(137, 20);
             this.lblCodigoDeBarras.TabIndex = 0;
             this.lblCodigoDeBarras.Text = "Código de Barras";
             // 
@@ -306,9 +308,9 @@ namespace SITS
             // 
             // frmInventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 539);
+            this.ClientSize = new System.Drawing.Size(930, 547);
             this.Controls.Add(this.pnlDgvInventario);
             this.Controls.Add(this.pnlProducto);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
