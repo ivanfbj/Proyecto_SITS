@@ -39,37 +39,12 @@ namespace SITS
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                cn = new clsConexionSql();
-                cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
-                cmd.CommandType = CommandType.StoredProcedure;
-
-
-
-                cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
-                cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
-                cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
-                cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
-                cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("El producto se a guardado exitosamente");
-                limpiar();
-                llenarProducto(dt, i);
-
-
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ha ocurrido un error" + error.Message);
-            }
+           
         }
 
         private void btnNovedad_Click(object sender, EventArgs e)
         {
-            Form frmNovedad = new frmNovedad();
-            frmNovedad.Show();
+            
         }
         void llenarProducto(DataTable dt, int i)
         {
@@ -114,6 +89,49 @@ namespace SITS
             llenarProducto(dt, i);
         }
 
+        private void btnIngresar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                cn = new clsConexionSql();
+                cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
 
+
+
+                cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
+                cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
+                cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
+                cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El producto se a guardado exitosamente");
+                limpiar();
+                llenarProducto(dt, i);
+
+
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ha ocurrido un error" + error.Message);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNovedad_Click_1(object sender, EventArgs e)
+        {
+            Form frmNovedad = new frmNovedad();
+            frmNovedad.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
