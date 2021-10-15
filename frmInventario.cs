@@ -151,11 +151,30 @@ namespace SITS
 
         private void btnEditarNombreProducto_Click(object sender, EventArgs e)
         {
-            int valor1 = 0, valor2 = 0;
-            valor1 = Convert.ToInt32(Interaction.InputBox("Ingrese Numero 1"));
-            valor2 = Convert.ToInt32(Interaction.InputBox("Ingrese Numero 2"));
 
-            MessageBox.Show($"El valor de la varible 1 es {valor1} y el valor de la variable 2 es {valor2}");
+            string nuevoNombreProducto;
+            nuevoNombreProducto = Interaction.InputBox($"Ingrese el nuevo nombre para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
+
+            if (nuevoNombreProducto != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombreOprecio", nuevoNombreProducto));
+                    cmd.Parameters.Add(new SqlParameter("@columnaActualizar", "nombre"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se actualizó el nombre del producto correctamente");
+                    reiniciarCamposYDataGridView();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -181,6 +200,8 @@ namespace SITS
                 txtNombreDelProducto.Enabled = false;
                 txtPrecio.Enabled = false;
                 btnCancelarBuscar.Visible = true;
+                btnEditarNombreProducto.Visible = true;
+                btnEditarPrecio.Visible = true;
                 txtCodigoDeBarras.Text = dt.Rows[idDataTable]["codigoBarras"].ToString();
                 txtNombreDelProducto.Text = dt.Rows[idDataTable]["nombre"].ToString();
                 txtPrecio.Text = dt.Rows[idDataTable]["precio"].ToString();
@@ -253,8 +274,38 @@ namespace SITS
             txtNombreDelProducto.Enabled = true;
             txtPrecio.Enabled = true;
             btnCancelarBuscar.Visible = false;
+            btnEditarNombreProducto.Visible = false;
+            btnEditarPrecio.Visible = false;
             limpiar();
             llenarProducto();
+        }
+
+        private void btnEditarPrecio_Click(object sender, EventArgs e)
+        {
+            string nuevoPrecioProducto;
+            nuevoPrecioProducto = Interaction.InputBox($"Ingrese el nuevo precio para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
+
+            if (nuevoPrecioProducto != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombreOprecio", nuevoPrecioProducto));
+                    cmd.Parameters.Add(new SqlParameter("@columnaActualizar", "precio"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se actualizó el precio del producto correctamente");
+                    reiniciarCamposYDataGridView();
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
+            }
         }
     }
 }

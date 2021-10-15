@@ -31,6 +31,7 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.btnCancelarBuscar = new System.Windows.Forms.Button();
             this.btnEditarPrecio = new System.Windows.Forms.Button();
             this.btnEditarNombreProducto = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelarBuscar = new System.Windows.Forms.Button();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -83,6 +83,17 @@ namespace SITS
             this.pnlProducto.Size = new System.Drawing.Size(889, 190);
             this.pnlProducto.TabIndex = 0;
             // 
+            // btnCancelarBuscar
+            // 
+            this.btnCancelarBuscar.Location = new System.Drawing.Point(794, 82);
+            this.btnCancelarBuscar.Name = "btnCancelarBuscar";
+            this.btnCancelarBuscar.Size = new System.Drawing.Size(47, 36);
+            this.btnCancelarBuscar.TabIndex = 9;
+            this.btnCancelarBuscar.Text = "X";
+            this.btnCancelarBuscar.UseVisualStyleBackColor = true;
+            this.btnCancelarBuscar.Visible = false;
+            this.btnCancelarBuscar.Click += new System.EventHandler(this.btnCancelarBuscar_Click);
+            // 
             // btnEditarPrecio
             // 
             this.btnEditarPrecio.Location = new System.Drawing.Point(498, 141);
@@ -91,6 +102,8 @@ namespace SITS
             this.btnEditarPrecio.TabIndex = 8;
             this.btnEditarPrecio.Text = "Editar Precio";
             this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            this.btnEditarPrecio.Visible = false;
+            this.btnEditarPrecio.Click += new System.EventHandler(this.btnEditarPrecio_Click);
             // 
             // btnEditarNombreProducto
             // 
@@ -100,6 +113,7 @@ namespace SITS
             this.btnEditarNombreProducto.TabIndex = 7;
             this.btnEditarNombreProducto.Text = "Editar nombre producto";
             this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
+            this.btnEditarNombreProducto.Visible = false;
             this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
             // 
             // btnIngresar
@@ -307,17 +321,6 @@ namespace SITS
             this.clTotal.MinimumWidth = 6;
             this.clTotal.Name = "clTotal";
             this.clTotal.Width = 90;
-            // 
-            // btnCancelarBuscar
-            // 
-            this.btnCancelarBuscar.Location = new System.Drawing.Point(794, 82);
-            this.btnCancelarBuscar.Name = "btnCancelarBuscar";
-            this.btnCancelarBuscar.Size = new System.Drawing.Size(47, 36);
-            this.btnCancelarBuscar.TabIndex = 9;
-            this.btnCancelarBuscar.Text = "X";
-            this.btnCancelarBuscar.UseVisualStyleBackColor = true;
-            this.btnCancelarBuscar.Visible = false;
-            this.btnCancelarBuscar.Click += new System.EventHandler(this.btnCancelarBuscar_Click);
             // 
             // frmInventario
             // 
