@@ -56,8 +56,6 @@ namespace SITS
                     cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 
-
-
                     cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
                     cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
                     cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
@@ -66,9 +64,6 @@ namespace SITS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("El producto se a guardado exitosamente");
                     reiniciarCamposYDataGridView();
-
-
-
 
                 }
                 catch (Exception error)
@@ -169,6 +164,7 @@ namespace SITS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Se actualizó el nombre del producto correctamente");
                     reiniciarCamposYDataGridView();
+
                 }
                 catch (Exception error)
                 {
