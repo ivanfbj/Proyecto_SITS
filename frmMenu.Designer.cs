@@ -30,363 +30,330 @@ namespace SITS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnInventario = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnCombos = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnPedidos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.btnConfiguraciones = new System.Windows.Forms.Button();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btnCombosVendidos = new System.Windows.Forms.Button();
+            this.btnProductosVendidos = new System.Windows.Forms.Button();
+            this.btnAuditoria = new System.Windows.Forms.Button();
+            this.btnPedidos = new System.Windows.Forms.Button();
+            this.btnCombos = new System.Windows.Forms.Button();
+            this.btnProcesosOperaciones = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnConfiguraciones = new System.Windows.Forms.Button();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.pnlBarra = new System.Windows.Forms.Panel();
+            this.lbltitulo = new System.Windows.Forms.Label();
+            this.pnlEscritorio = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
+            this.pnlBarra.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnInventario,
-            this.tsbtnCombos,
-            this.tsbtnPedidos,
-            this.toolStripButton4,
-            this.tsbtnSalir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(686, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbtnInventario
-            // 
-            this.tsbtnInventario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnInventario.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnInventario.Image")));
-            this.tsbtnInventario.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnInventario.Name = "tsbtnInventario";
-            this.tsbtnInventario.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnInventario.Text = "toolStripButton1";
-            this.tsbtnInventario.Click += new System.EventHandler(this.tsbtnInventario_Click);
-            // 
-            // tsbtnCombos
-            // 
-            this.tsbtnCombos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnCombos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCombos.Image")));
-            this.tsbtnCombos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnCombos.Name = "tsbtnCombos";
-            this.tsbtnCombos.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnCombos.Text = "toolStripButton2";
-            this.tsbtnCombos.Click += new System.EventHandler(this.tsbtnCombos_Click);
-            // 
-            // tsbtnPedidos
-            // 
-            this.tsbtnPedidos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPedidos.Image")));
-            this.tsbtnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnPedidos.Name = "tsbtnPedidos";
-            this.tsbtnPedidos.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnPedidos.Text = "toolStripButton3";
-            this.tsbtnPedidos.Click += new System.EventHandler(this.tsbtnPedidos_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // tsbtnSalir
-            // 
-            this.tsbtnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSalir.Image")));
-            this.tsbtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnSalir.Name = "tsbtnSalir";
-            this.tsbtnSalir.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnSalir.Text = "toolStripButton5";
-            this.tsbtnSalir.Click += new System.EventHandler(this.tsbtnSalir_Click);
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
             this.pnlMenu.Controls.Add(this.button9);
             this.pnlMenu.Controls.Add(this.button8);
-            this.pnlMenu.Controls.Add(this.button7);
-            this.pnlMenu.Controls.Add(this.button6);
-            this.pnlMenu.Controls.Add(this.button5);
-            this.pnlMenu.Controls.Add(this.button4);
-            this.pnlMenu.Controls.Add(this.button3);
-            this.pnlMenu.Controls.Add(this.button2);
-            this.pnlMenu.Controls.Add(this.button1);
+            this.pnlMenu.Controls.Add(this.btnCombosVendidos);
+            this.pnlMenu.Controls.Add(this.btnProductosVendidos);
+            this.pnlMenu.Controls.Add(this.btnAuditoria);
+            this.pnlMenu.Controls.Add(this.btnPedidos);
+            this.pnlMenu.Controls.Add(this.btnCombos);
+            this.pnlMenu.Controls.Add(this.btnProcesosOperaciones);
+            this.pnlMenu.Controls.Add(this.btnInventario);
             this.pnlMenu.Controls.Add(this.btnConfiguraciones);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 25);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(220, 636);
+            this.pnlMenu.Size = new System.Drawing.Size(256, 814);
             this.pnlMenu.TabIndex = 3;
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(58)))));
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(220, 100);
-            this.pnlLogo.TabIndex = 0;
-            // 
-            // btnConfiguraciones
-            // 
-            this.btnConfiguraciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguraciones.FlatAppearance.BorderSize = 0;
-            this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguraciones.ForeColor = System.Drawing.Color.LightGray;
-            this.btnConfiguraciones.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguraciones.Image")));
-            this.btnConfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguraciones.Location = new System.Drawing.Point(0, 100);
-            this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(220, 57);
-            this.btnConfiguraciones.TabIndex = 1;
-            this.btnConfiguraciones.Text = "Configuraciones";
-            this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguraciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfiguraciones.UseVisualStyleBackColor = true;
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(361, 70);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(8, 8);
-            this.bunifuFlatButton1.TabIndex = 4;
-            this.bunifuFlatButton1.Text = "bunifuFlatButton1";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 57);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Inventario";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 57);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Procesos y operaciones";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.LightGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 271);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 57);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Combos";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.LightGray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 328);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 57);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Pedidos";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.LightGray;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 385);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(220, 57);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Reportes";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.LightGray;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 442);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(220, 57);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Productos mas Vendidos";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.LightGray;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 499);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(220, 57);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Combos mas vendidos";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.LightGray;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 556);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(220, 57);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Proximos Pedidos";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.LightGray;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 613);
+            this.button9.Location = new System.Drawing.Point(0, 710);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(220, 57);
+            this.button9.Size = new System.Drawing.Size(256, 70);
             this.button9.TabIndex = 10;
             this.button9.Text = "Ayuda";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.LightGray;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(0, 640);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(256, 70);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Proximos Pedidos";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // btnCombosVendidos
+            // 
+            this.btnCombosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCombosVendidos.FlatAppearance.BorderSize = 0;
+            this.btnCombosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCombosVendidos.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCombosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombosVendidos.Image")));
+            this.btnCombosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombosVendidos.Location = new System.Drawing.Point(0, 570);
+            this.btnCombosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCombosVendidos.Name = "btnCombosVendidos";
+            this.btnCombosVendidos.Size = new System.Drawing.Size(256, 70);
+            this.btnCombosVendidos.TabIndex = 8;
+            this.btnCombosVendidos.Text = "Combos mas vendidos";
+            this.btnCombosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCombosVendidos.UseVisualStyleBackColor = true;
+            // 
+            // btnProductosVendidos
+            // 
+            this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
+            this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductosVendidos.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Image")));
+            this.btnProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.Location = new System.Drawing.Point(0, 500);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductosVendidos.Name = "btnProductosVendidos";
+            this.btnProductosVendidos.Size = new System.Drawing.Size(256, 70);
+            this.btnProductosVendidos.TabIndex = 7;
+            this.btnProductosVendidos.Text = "Productos mas Vendidos";
+            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductosVendidos.UseVisualStyleBackColor = true;
+            // 
+            // btnAuditoria
+            // 
+            this.btnAuditoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAuditoria.FlatAppearance.BorderSize = 0;
+            this.btnAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuditoria.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditoria.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAuditoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAuditoria.Image")));
+            this.btnAuditoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAuditoria.Location = new System.Drawing.Point(0, 430);
+            this.btnAuditoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAuditoria.Name = "btnAuditoria";
+            this.btnAuditoria.Size = new System.Drawing.Size(256, 70);
+            this.btnAuditoria.TabIndex = 6;
+            this.btnAuditoria.Text = "Reportes";
+            this.btnAuditoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAuditoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAuditoria.UseVisualStyleBackColor = true;
+            // 
+            // btnPedidos
+            // 
+            this.btnPedidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPedidos.FlatAppearance.BorderSize = 0;
+            this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedidos.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
+            this.btnPedidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPedidos.Location = new System.Drawing.Point(0, 360);
+            this.btnPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(256, 70);
+            this.btnPedidos.TabIndex = 5;
+            this.btnPedidos.Text = "Pedidos";
+            this.btnPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPedidos.UseVisualStyleBackColor = true;
+            // 
+            // btnCombos
+            // 
+            this.btnCombos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCombos.FlatAppearance.BorderSize = 0;
+            this.btnCombos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCombos.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCombos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombos.Image")));
+            this.btnCombos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombos.Location = new System.Drawing.Point(0, 290);
+            this.btnCombos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCombos.Name = "btnCombos";
+            this.btnCombos.Size = new System.Drawing.Size(256, 70);
+            this.btnCombos.TabIndex = 4;
+            this.btnCombos.Text = "Combos";
+            this.btnCombos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCombos.UseVisualStyleBackColor = true;
+            // 
+            // btnProcesosOperaciones
+            // 
+            this.btnProcesosOperaciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProcesosOperaciones.FlatAppearance.BorderSize = 0;
+            this.btnProcesosOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcesosOperaciones.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcesosOperaciones.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProcesosOperaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnProcesosOperaciones.Image")));
+            this.btnProcesosOperaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcesosOperaciones.Location = new System.Drawing.Point(0, 220);
+            this.btnProcesosOperaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProcesosOperaciones.Name = "btnProcesosOperaciones";
+            this.btnProcesosOperaciones.Size = new System.Drawing.Size(256, 70);
+            this.btnProcesosOperaciones.TabIndex = 3;
+            this.btnProcesosOperaciones.Text = "Procesos y operaciones";
+            this.btnProcesosOperaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcesosOperaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProcesosOperaciones.UseVisualStyleBackColor = true;
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.Color.LightGray;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(0, 150);
+            this.btnInventario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(256, 70);
+            this.btnInventario.TabIndex = 2;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // btnConfiguraciones
+            // 
+            this.btnConfiguraciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfiguraciones.FlatAppearance.BorderSize = 0;
+            this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguraciones.Font = new System.Drawing.Font("Futura Md BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguraciones.ForeColor = System.Drawing.Color.LightGray;
+            this.btnConfiguraciones.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguraciones.Image")));
+            this.btnConfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguraciones.Location = new System.Drawing.Point(0, 80);
+            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfiguraciones.Name = "btnConfiguraciones";
+            this.btnConfiguraciones.Size = new System.Drawing.Size(256, 70);
+            this.btnConfiguraciones.TabIndex = 1;
+            this.btnConfiguraciones.Text = "Configuraciones";
+            this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguraciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfiguraciones.UseVisualStyleBackColor = true;
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.pnlLogo.Controls.Add(this.lblLogo);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(256, 80);
+            this.pnlLogo.TabIndex = 0;
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.Font = new System.Drawing.Font("Futura Md BT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.Color.LightGray;
+            this.lblLogo.Location = new System.Drawing.Point(69, 23);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(78, 39);
+            this.lblLogo.TabIndex = 1;
+            this.lblLogo.Text = "SITS";
+            // 
+            // pnlBarra
+            // 
+            this.pnlBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(139)))), ((int)(((byte)(181)))));
+            this.pnlBarra.Controls.Add(this.lbltitulo);
+            this.pnlBarra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBarra.ForeColor = System.Drawing.Color.LightGray;
+            this.pnlBarra.Location = new System.Drawing.Point(256, 0);
+            this.pnlBarra.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlBarra.Name = "pnlBarra";
+            this.pnlBarra.Size = new System.Drawing.Size(1084, 80);
+            this.pnlBarra.TabIndex = 4;
+            // 
+            // lbltitulo
+            // 
+            this.lbltitulo.AutoSize = true;
+            this.lbltitulo.Font = new System.Drawing.Font("Futura Md BT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitulo.Location = new System.Drawing.Point(211, 23);
+            this.lbltitulo.Name = "lbltitulo";
+            this.lbltitulo.Size = new System.Drawing.Size(707, 39);
+            this.lbltitulo.TabIndex = 0;
+            this.lbltitulo.Text = "Software de Inventario Tienda de Sentimientos";
+            // 
+            // pnlEscritorio
+            // 
+            this.pnlEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlEscritorio.Location = new System.Drawing.Point(256, 80);
+            this.pnlEscritorio.Name = "pnlEscritorio";
+            this.pnlEscritorio.Size = new System.Drawing.Size(1084, 734);
+            this.pnlEscritorio.TabIndex = 5;
+            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 661);
-            this.Controls.Add(this.bunifuFlatButton1);
+            this.ClientSize = new System.Drawing.Size(1340, 814);
+            this.Controls.Add(this.pnlEscritorio);
+            this.Controls.Add(this.pnlBarra);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.toolStrip1);
+            this.Font = new System.Drawing.Font("Futura Md BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenu";
             this.Text = "Menu";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
+            this.pnlLogo.PerformLayout();
+            this.pnlBarra.ResumeLayout(false);
+            this.pnlBarra.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbtnInventario;
-        private System.Windows.Forms.ToolStripButton tsbtnCombos;
-        private System.Windows.Forms.ToolStripButton tsbtnPedidos;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton tsbtnSalir;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnConfiguraciones;
         private System.Windows.Forms.Panel pnlLogo;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnCombosVendidos;
+        private System.Windows.Forms.Button btnProductosVendidos;
+        private System.Windows.Forms.Button btnAuditoria;
+        private System.Windows.Forms.Button btnPedidos;
+        private System.Windows.Forms.Button btnCombos;
+        private System.Windows.Forms.Button btnProcesosOperaciones;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnConfiguraciones;
+        private System.Windows.Forms.Panel pnlBarra;
+        private System.Windows.Forms.Label lbltitulo;
+        private System.Windows.Forms.Label lblLogo;
+        private System.Windows.Forms.Panel pnlEscritorio;
     }
 }

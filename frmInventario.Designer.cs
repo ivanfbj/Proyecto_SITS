@@ -31,6 +31,8 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.btnEditarPrecio = new System.Windows.Forms.Button();
+            this.btnEditarProd = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNovedad = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditarProd = new System.Windows.Forms.Button();
-            this.btnEditarPrecio = new System.Windows.Forms.Button();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -80,6 +80,24 @@ namespace SITS
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(889, 190);
             this.pnlProducto.TabIndex = 0;
+            // 
+            // btnEditarPrecio
+            // 
+            this.btnEditarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPrecio.Image")));
+            this.btnEditarPrecio.Location = new System.Drawing.Point(498, 149);
+            this.btnEditarPrecio.Name = "btnEditarPrecio";
+            this.btnEditarPrecio.Size = new System.Drawing.Size(25, 25);
+            this.btnEditarPrecio.TabIndex = 8;
+            this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarProd
+            // 
+            this.btnEditarProd.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProd.Image")));
+            this.btnEditarProd.Location = new System.Drawing.Point(498, 58);
+            this.btnEditarProd.Name = "btnEditarProd";
+            this.btnEditarProd.Size = new System.Drawing.Size(25, 25);
+            this.btnEditarProd.TabIndex = 7;
+            this.btnEditarProd.UseVisualStyleBackColor = true;
             // 
             // btnIngresar
             // 
@@ -279,24 +297,6 @@ namespace SITS
             this.clTotal.MinimumWidth = 6;
             this.clTotal.Name = "clTotal";
             this.clTotal.Width = 90;
-            // 
-            // btnEditarProd
-            // 
-            this.btnEditarProd.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProd.Image")));
-            this.btnEditarProd.Location = new System.Drawing.Point(498, 58);
-            this.btnEditarProd.Name = "btnEditarProd";
-            this.btnEditarProd.Size = new System.Drawing.Size(25, 25);
-            this.btnEditarProd.TabIndex = 7;
-            this.btnEditarProd.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarPrecio
-            // 
-            this.btnEditarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPrecio.Image")));
-            this.btnEditarPrecio.Location = new System.Drawing.Point(498, 149);
-            this.btnEditarPrecio.Name = "btnEditarPrecio";
-            this.btnEditarPrecio.Size = new System.Drawing.Size(25, 25);
-            this.btnEditarPrecio.TabIndex = 8;
-            this.btnEditarPrecio.UseVisualStyleBackColor = true;
             // 
             // frmInventario
             // 

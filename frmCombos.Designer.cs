@@ -31,6 +31,7 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblNroCombo = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace SITS
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -68,6 +68,15 @@ namespace SITS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 118);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "____";
             // 
             // btnIngresar
             // 
@@ -218,15 +227,6 @@ namespace SITS
             this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "____";
             // 
             // frmCombos
             // 
