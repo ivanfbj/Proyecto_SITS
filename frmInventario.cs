@@ -45,31 +45,34 @@ namespace SITS
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "")
             {
-                cn = new clsConexionSql();
-                cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
-                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
+                    cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
+                    cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
+                    cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("El producto se a guardado exitosamente");
+                    reiniciarCamposYDataGridView();
 
-
-                cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
-                cmd.Parameters.Add(new SqlParameter("@nombre", txtNombreDelProducto.Text));
-                cmd.Parameters.Add(new SqlParameter("@cantidad", txtCantidad.Text));
-                cmd.Parameters.Add(new SqlParameter("@precio", txtPrecio.Text));
-                cmd.Parameters.Add(new SqlParameter("@tipoMovimiento_Descripcion", "Entrada"));
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("El producto se a guardado exitosamente");
-                limpiar();
-                llenarProducto(dt, i);
-
-
-
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
             }
-            catch (Exception error)
+            else
             {
-                MessageBox.Show("Ha ocurrido un error" + error.Message);
+                MessageBox.Show("Por favor diligenciar los campos Código de Barras y Nombre del Producto como minimo", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void btnNovedad_Click(object sender, EventArgs e)
@@ -77,7 +80,7 @@ namespace SITS
             Form frmNovedad = new frmNovedad();
             frmNovedad.Show();
         }
-        void llenarProducto(DataTable dt, int i)
+        void llenarProducto()
         {
             int n = 0, cantidad=0;
             Double total = 0, precio=0;
@@ -119,7 +122,7 @@ namespace SITS
 
         private void frmInventario_Load(object sender, EventArgs e)
         {
-            llenarProducto(dt, i);
+            llenarProducto();
         }
 
 
@@ -135,5 +138,143 @@ namespace SITS
 
             txtNombreDelProducto.AutoCompleteCustomSource = lista;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void reiniciarCamposYDataGridView()
+        {
+            txtCodigoDeBarras.Enabled = true;
+            txtNombreDelProducto.Enabled = true;
+            txtPrecio.Enabled = true;
+            btnCancelarBuscar.Visible = false;
+            btnEditarNombreProducto.Visible = false;
+            btnEditarPrecio.Visible = false;
+            limpiar();
+            llenarProducto();
+        }
+
     }
 }
