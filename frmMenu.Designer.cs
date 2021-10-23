@@ -44,10 +44,10 @@ namespace SITS
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlBarra = new System.Windows.Forms.Panel();
+            this.btnMiminice = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.pnlEscritorio = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMiminice = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlBarra.SuspendLayout();
@@ -236,6 +236,7 @@ namespace SITS
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.LightGray;
+            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(0, 130);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(4);
@@ -262,7 +263,7 @@ namespace SITS
             this.btnConfiguraciones.Name = "btnConfiguraciones";
             this.btnConfiguraciones.Size = new System.Drawing.Size(256, 50);
             this.btnConfiguraciones.TabIndex = 1;
-            this.btnConfiguraciones.Text = "Configuraciones";
+            this.btnConfiguraciones.Text = "  Configuraciones";
             this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguraciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
@@ -303,6 +304,30 @@ namespace SITS
             this.pnlBarra.Size = new System.Drawing.Size(958, 80);
             this.pnlBarra.TabIndex = 4;
             // 
+            // btnMiminice
+            // 
+            this.btnMiminice.FlatAppearance.BorderSize = 0;
+            this.btnMiminice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMiminice.Image = ((System.Drawing.Image)(resources.GetObject("btnMiminice.Image")));
+            this.btnMiminice.Location = new System.Drawing.Point(842, 18);
+            this.btnMiminice.Name = "btnMiminice";
+            this.btnMiminice.Size = new System.Drawing.Size(40, 37);
+            this.btnMiminice.TabIndex = 2;
+            this.btnMiminice.UseVisualStyleBackColor = true;
+            this.btnMiminice.Click += new System.EventHandler(this.btnMiminice_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(888, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(42, 48);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // lbltitulo
             // 
             this.lbltitulo.AutoSize = true;
@@ -321,35 +346,11 @@ namespace SITS
             this.pnlEscritorio.Size = new System.Drawing.Size(958, 620);
             this.pnlEscritorio.TabIndex = 5;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(888, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(42, 48);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnMiminice
-            // 
-            this.btnMiminice.FlatAppearance.BorderSize = 0;
-            this.btnMiminice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMiminice.Image = ((System.Drawing.Image)(resources.GetObject("btnMiminice.Image")));
-            this.btnMiminice.Location = new System.Drawing.Point(842, 18);
-            this.btnMiminice.Name = "btnMiminice";
-            this.btnMiminice.Size = new System.Drawing.Size(40, 37);
-            this.btnMiminice.TabIndex = 2;
-            this.btnMiminice.UseVisualStyleBackColor = true;
-            this.btnMiminice.Click += new System.EventHandler(this.btnMiminice_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 661);
+            this.ClientSize = new System.Drawing.Size(1214, 700);
             this.Controls.Add(this.pnlEscritorio);
             this.Controls.Add(this.pnlBarra);
             this.Controls.Add(this.pnlMenu);
