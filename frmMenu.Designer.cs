@@ -278,6 +278,7 @@ namespace SITS
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(256, 80);
             this.pnlLogo.TabIndex = 0;
+            this.pnlLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLogo_MouseDown);
             // 
             // lblLogo
             // 
@@ -289,6 +290,7 @@ namespace SITS
             this.lblLogo.Size = new System.Drawing.Size(87, 37);
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "SITS";
+            this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
             // 
             // pnlBarra
             // 
@@ -303,6 +305,7 @@ namespace SITS
             this.pnlBarra.Name = "pnlBarra";
             this.pnlBarra.Size = new System.Drawing.Size(958, 80);
             this.pnlBarra.TabIndex = 4;
+            this.pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
             // 
             // btnMiminice
             // 
@@ -337,6 +340,7 @@ namespace SITS
             this.lbltitulo.Size = new System.Drawing.Size(679, 37);
             this.lbltitulo.TabIndex = 0;
             this.lbltitulo.Text = "Software de Inventario Tienda de Sentimientos";
+            this.lbltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbltitulo_MouseDown);
             // 
             // pnlEscritorio
             // 
