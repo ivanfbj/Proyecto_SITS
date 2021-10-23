@@ -173,93 +173,91 @@ namespace SITS
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscarMostrarProducto();
+        }
+
+
+
+
+
+
+
+
+
+
+
+        private void filtrarDgvInventario(bool existeProducto, int idDataTable)
+        {
+            if (existeProducto && idDataTable >= 0)
+            {
+                txtCodigoDeBarras.Enabled = false;
+                txtNombreDelProducto.Enabled = false;
+                txtPrecio.Enabled = false;
+                btnCancelarBuscar.Visible = true;
+                btnEditarNombreProducto.Visible = true;
+                btnEditarPrecio.Visible = true;
+                txtCodigoDeBarras.Text = dt.Rows[idDataTable]["codigoBarras"].ToString();
+                txtNombreDelProducto.Text = dt.Rows[idDataTable]["nombre"].ToString();
+                txtPrecio.Text = dt.Rows[idDataTable]["precio"].ToString();
+
+                dgvInventario.Rows.Clear();
+
+                int cantidad = 0;
+                Double total = 0, precio = 0;
+                dgvInventario.Rows[0].Cells["cCodigoBarras"].Value = dt.Rows[idDataTable]["codigoBarras"].ToString();
+                dgvInventario.Rows[0].Cells["cNombreProducto"].Value = dt.Rows[idDataTable]["nombre"].ToString();
+                dgvInventario.Rows[0].Cells["clEntradas"].Value = dt.Rows[idDataTable]["Entradas"].ToString();
+                dgvInventario.Rows[0].Cells["clSalidas"].Value = dt.Rows[idDataTable]["Salidas"].ToString();
+                dgvInventario.Rows[0].Cells["clCantidad"].Value = dt.Rows[idDataTable]["stock"].ToString();
+                dgvInventario.Rows[0].Cells["clPrecio"].Value = dt.Rows[idDataTable]["precio"].ToString();
+                cantidad = Convert.ToInt32(dt.Rows[idDataTable]["stock"].ToString());
+                precio = Convert.ToDouble(dt.Rows[idDataTable]["precio"].ToString());
+                total = cantidad * precio;
+                dgvInventario.Rows[0].Cells["clTotal"].Value = total.ToString();
+            }
+            else if (existeProducto == false)
+            {
+                MessageBox.Show("El producto no existe");
+            }
+        }
+        
+        private void buscarMostrarProducto()
+        {
+            bool existeProducto = false;
+            int idDataTable = -1;
+
+            if (txtCodigoDeBarras.Text != "")
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    if (dt.Rows[i]["codigoBarras"].ToString().Equals(txtCodigoDeBarras.Text))
+                    {
+                        existeProducto = true;
+                        idDataTable = i;
+                    }
+                }
+
+                filtrarDgvInventario(existeProducto, idDataTable);
+
+            }
+            else if (txtNombreDelProducto.Text != "")
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    if (dt.Rows[i]["nombre"].ToString().Equals(txtNombreDelProducto.Text))
+                    {
+                        existeProducto = true;
+                        idDataTable = i;
+                    }
+                }
+
+                filtrarDgvInventario(existeProducto, idDataTable);
+            }
+        }
 
 
 
@@ -303,23 +301,6 @@ namespace SITS
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
