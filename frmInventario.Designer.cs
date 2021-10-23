@@ -91,6 +91,7 @@ namespace SITS
             this.btnEditarPrecio.Size = new System.Drawing.Size(25, 25);
             this.btnEditarPrecio.TabIndex = 8;
             this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            this.btnEditarPrecio.Visible = false;
             this.btnEditarPrecio.Click += new System.EventHandler(this.btnEditarPrecio_Click);
             // 
             // btnEditarNombreProducto
@@ -101,6 +102,7 @@ namespace SITS
             this.btnEditarNombreProducto.Size = new System.Drawing.Size(25, 25);
             this.btnEditarNombreProducto.TabIndex = 7;
             this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
+            this.btnEditarNombreProducto.Visible = false;
             this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
             // 
             // btnIngresar
@@ -156,6 +158,7 @@ namespace SITS
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
             this.txtCodigoDeBarras.Size = new System.Drawing.Size(220, 26);
             this.txtCodigoDeBarras.TabIndex = 0;
+            this.txtCodigoDeBarras.Leave += new System.EventHandler(this.txtCodigoDeBarras_Leave);
             // 
             // lblNombreDelProducto
             // 
@@ -193,6 +196,7 @@ namespace SITS
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
             this.txtNombreDelProducto.Size = new System.Drawing.Size(220, 26);
             this.txtNombreDelProducto.TabIndex = 1;
+            this.txtNombreDelProducto.Leave += new System.EventHandler(this.txtNombreDelProducto_Leave);
             // 
             // txtPrecio
             // 
@@ -315,6 +319,8 @@ namespace SITS
             this.btnCancelarBuscar.TabIndex = 9;
             this.btnCancelarBuscar.Text = "X";
             this.btnCancelarBuscar.UseVisualStyleBackColor = true;
+            this.btnCancelarBuscar.Visible = false;
+            this.btnCancelarBuscar.Click += new System.EventHandler(this.btnCancelarBuscar_Click);
             // 
             // frmInventario
             // 

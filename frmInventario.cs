@@ -178,9 +178,15 @@ namespace SITS
             buscarMostrarProducto();
         }
 
+        private void txtCodigoDeBarras_Leave(object sender, EventArgs e)
+        {
+            buscarMostrarProducto();
+        }
 
-
-
+        private void txtNombreDelProducto_Leave(object sender, EventArgs e)
+        {
+            buscarMostrarProducto();
+        }
 
 
 
@@ -259,7 +265,10 @@ namespace SITS
             }
         }
 
-
+        private void btnCancelarBuscar_Click(object sender, EventArgs e)
+        {
+            reiniciarCamposYDataGridView();
+        }
 
 
         private void reiniciarCamposYDataGridView()
