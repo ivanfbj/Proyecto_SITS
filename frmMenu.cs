@@ -36,7 +36,32 @@ namespace SITS
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmInventario(), sender);
+            OpenChildForm(new frmInventario(), sender);
+        }
+
+        private void btnCombos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCombos(), sender);
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmPedido(), sender);
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMiminice_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
     
