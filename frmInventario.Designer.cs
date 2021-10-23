@@ -146,6 +146,8 @@ namespace SITS
             // 
             // txtCodigoDeBarras
             // 
+            this.txtCodigoDeBarras.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtCodigoDeBarras.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCodigoDeBarras.Location = new System.Drawing.Point(272, 10);
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";

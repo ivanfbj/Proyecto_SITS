@@ -129,14 +129,16 @@ namespace SITS
         void autoCompletar()
         {
 
-            AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection listaCodigoProducto = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection listaNombreProducto = new AutoCompleteStringCollection();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                lista.Add(dt.Rows[i]["nombre"].ToString());
-
+                listaNombreProducto.Add(dt.Rows[i]["nombre"].ToString());
+                listaCodigoProducto.Add(dt.Rows[i]["codigoBarras"].ToString());
             }
 
-            txtNombreDelProducto.AutoCompleteCustomSource = lista;
+            txtNombreDelProducto.AutoCompleteCustomSource = listaNombreProducto;
+            txtCodigoDeBarras.AutoCompleteCustomSource = listaCodigoProducto;
         }
 
 
