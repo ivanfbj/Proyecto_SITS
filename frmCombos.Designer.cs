@@ -31,6 +31,7 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNovedad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@ namespace SITS
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelProducto = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.dgvInventarioCombos = new System.Windows.Forms.DataGridView();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +49,9 @@ namespace SITS
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.btnNovedad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,19 @@ namespace SITS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 128);
             this.panel1.TabIndex = 0;
+            // 
+            // btnNovedad
+            // 
+            this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
+            this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovedad.Location = new System.Drawing.Point(479, 86);
+            this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNovedad.Name = "btnNovedad";
+            this.btnNovedad.Size = new System.Drawing.Size(121, 36);
+            this.btnNovedad.TabIndex = 19;
+            this.btnNovedad.Text = "Novedad";
+            this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovedad.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -137,32 +150,31 @@ namespace SITS
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dgvInventario);
+            this.panel2.Controls.Add(this.dgvInventarioCombos);
             this.panel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(17, 146);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(799, 320);
             this.panel2.TabIndex = 1;
             // 
-            // dgvInventario
+            // dgvInventarioCombos
             // 
-            this.dgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvInventarioCombos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInventarioCombos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventarioCombos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clAgregar,
             this.cCodigoBarras,
             this.cNombreProducto,
             this.clCantidad,
             this.clPrecio,
             this.clCantidadAgregar});
-            this.dgvInventario.Location = new System.Drawing.Point(12, 16);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.RowTemplate.Height = 25;
-            this.dgvInventario.Size = new System.Drawing.Size(766, 273);
-            this.dgvInventario.TabIndex = 1;
-            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
+            this.dgvInventarioCombos.Location = new System.Drawing.Point(12, 16);
+            this.dgvInventarioCombos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvInventarioCombos.Name = "dgvInventarioCombos";
+            this.dgvInventarioCombos.RowTemplate.Height = 25;
+            this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
+            this.dgvInventarioCombos.TabIndex = 1;
             // 
             // clAgregar
             // 
@@ -235,19 +247,6 @@ namespace SITS
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
             // 
-            // btnNovedad
-            // 
-            this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
-            this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovedad.Location = new System.Drawing.Point(479, 86);
-            this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNovedad.Name = "btnNovedad";
-            this.btnNovedad.Size = new System.Drawing.Size(121, 36);
-            this.btnNovedad.TabIndex = 19;
-            this.btnNovedad.Text = "Novedad";
-            this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovedad.UseVisualStyleBackColor = true;
-            // 
             // frmCombos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,10 +260,11 @@ namespace SITS
             this.MinimumSize = new System.Drawing.Size(958, 640);
             this.Name = "frmCombos";
             this.Text = "Combos";
+            this.Load += new System.EventHandler(this.frmCombos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -283,7 +283,7 @@ namespace SITS
         private System.Windows.Forms.Label lblResultadoSubtotal;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvInventario;
+        private System.Windows.Forms.DataGridView dgvInventarioCombos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombreProducto;

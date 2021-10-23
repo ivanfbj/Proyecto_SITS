@@ -20,30 +20,42 @@ namespace SITS
         int i = 0;
         public frmCombos()
         {
+
             InitializeComponent();
         }
 
-        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmCombos_Load(object sender, EventArgs e)
+        {
+            llenarProductoCombos();
+        }
+
+
+        void llenarProductoCombos()
         {
             int n = 0;
-            Double total = 0;
-            cmd = new SqlCommand("select * from tblProducto", cn.abrirConexion());
+            cn = new clsConexionSql();
+            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
+
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
-                dgvInventario.Rows.Add(n - 1);
+                dgvInventarioCombos.Rows.Add(n - 1);
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
-                    dgvInventario.Rows[i].Cells[2].Value = dt.Rows[i][1].ToString();
-                    dgvInventario.Rows[i].Cells[3].Value = dt.Rows[i][2].ToString();
-                    dgvInventario.Rows[i].Cells[4].Value = dt.Rows[i][3].ToString();
-                    dgvInventario.Rows[i].Cells[5].Value = dt.Rows[i][4].ToString();
+                    dgvInventarioCombos.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
+                    dgvInventarioCombos.Rows[i].Cells["cNombreProducto"].Value = dt.Rows[i]["nombre"].ToString();
+                    dgvInventarioCombos.Rows[i].Cells["clCantidad"].Value = dt.Rows[i]["stock"].ToString();
+                    dgvInventarioCombos.Rows[i].Cells["clPrecio"].Value = dt.Rows[i]["precio"].ToString();
+
                 }
             }
-            
+
+
         }
+
     }
 }
