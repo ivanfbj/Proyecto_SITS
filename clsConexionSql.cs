@@ -13,7 +13,7 @@ namespace SITS
         //static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\ivan.bedoya\\Documents\\Proyecto_SITS\\dbSistemaInventarioTiendaSentimientos.mdf;Integrated Security=True;Connect Timeout=30";
 
         ////Conexión a Base de datos Computador de Luisa
-        static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=d:\\Luisa\\Documents\\GitHub\\Proyecto_SITS\\dbSistemaInventarioTiendaSentimientos.mdf;Integrated Security=True;Connect Timeout=30";
+        static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=d:\\Luisa\\Documents\\GitHub\\Proyecto_SITS\\Image\\dbSistemaInventarioTiendaSentimientos.mdf;Integrated Security=True;Connect Timeout=30";
 
         ////Conexión a Base de datos Computador Personal Ivan
         //static private string cadenaConexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='D:\\Nubes\\OneDrive - Institución Universitaria de Envigado - IUE\\Ing_Sistemas_IUE\\2021-2\\Dllo Software Orientado a Objetos\\Proyecto_SITS\\dbSistemaInventarioTiendaSentimientos.mdf';Integrated Security=True;Connect Timeout=30";
