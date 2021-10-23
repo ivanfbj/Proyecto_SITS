@@ -48,6 +48,7 @@ namespace SITS
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.btnNovedad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -56,7 +57,11 @@ namespace SITS
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnNovedad);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnIngresar);
             this.panel1.Controls.Add(this.btnBuscar);
@@ -64,9 +69,9 @@ namespace SITS
             this.panel1.Controls.Add(this.lblNombreDelCombo);
             this.panel1.Controls.Add(this.txtNombreDelProducto);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(17, 22);
+            this.panel1.Location = new System.Drawing.Point(17, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 118);
+            this.panel1.Size = new System.Drawing.Size(799, 128);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -82,7 +87,7 @@ namespace SITS
             // 
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(479, 14);
+            this.btnIngresar.Location = new System.Drawing.Point(479, 6);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(121, 36);
@@ -95,7 +100,7 @@ namespace SITS
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(479, 60);
+            this.btnBuscar.Location = new System.Drawing.Point(479, 46);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(121, 36);
@@ -141,6 +146,8 @@ namespace SITS
             // 
             // dgvInventario
             // 
+            this.dgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clAgregar,
@@ -153,7 +160,7 @@ namespace SITS
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowTemplate.Height = 25;
-            this.dgvInventario.Size = new System.Drawing.Size(770, 273);
+            this.dgvInventario.Size = new System.Drawing.Size(766, 273);
             this.dgvInventario.TabIndex = 1;
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
             // 
@@ -228,17 +235,30 @@ namespace SITS
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
             // 
+            // btnNovedad
+            // 
+            this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
+            this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovedad.Location = new System.Drawing.Point(479, 86);
+            this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNovedad.Name = "btnNovedad";
+            this.btnNovedad.Size = new System.Drawing.Size(121, 36);
+            this.btnNovedad.TabIndex = 19;
+            this.btnNovedad.Text = "Novedad";
+            this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovedad.UseVisualStyleBackColor = true;
+            // 
             // frmCombos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 558);
+            this.ClientSize = new System.Drawing.Size(942, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(853, 597);
-            this.MinimumSize = new System.Drawing.Size(853, 597);
+            this.MaximumSize = new System.Drawing.Size(958, 640);
+            this.MinimumSize = new System.Drawing.Size(958, 640);
             this.Name = "frmCombos";
             this.Text = "Combos";
             this.panel1.ResumeLayout(false);
@@ -271,5 +291,6 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNovedad;
     }
 }

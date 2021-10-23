@@ -31,6 +31,7 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.btnCancelarBuscar = new System.Windows.Forms.Button();
             this.btnEditarPrecio = new System.Windows.Forms.Button();
             this.btnEditarNombreProducto = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelarBuscar = new System.Windows.Forms.Button();
             this.pnlProducto.SuspendLayout();
             this.pnlDgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -61,6 +61,8 @@ namespace SITS
             // 
             // pnlProducto
             // 
+            this.pnlProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlProducto.Controls.Add(this.btnCancelarBuscar);
             this.pnlProducto.Controls.Add(this.btnEditarPrecio);
@@ -77,11 +79,23 @@ namespace SITS
             this.pnlProducto.Controls.Add(this.txtCantidad);
             this.pnlProducto.Controls.Add(this.lblCodigoDeBarras);
             this.pnlProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlProducto.Location = new System.Drawing.Point(27, 22);
+            this.pnlProducto.Location = new System.Drawing.Point(31, 22);
             this.pnlProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlProducto.Name = "pnlProducto";
-            this.pnlProducto.Size = new System.Drawing.Size(889, 190);
+            this.pnlProducto.Padding = new System.Windows.Forms.Padding(50);
+            this.pnlProducto.Size = new System.Drawing.Size(891, 190);
             this.pnlProducto.TabIndex = 0;
+            // 
+            // btnCancelarBuscar
+            // 
+            this.btnCancelarBuscar.Location = new System.Drawing.Point(794, 82);
+            this.btnCancelarBuscar.Name = "btnCancelarBuscar";
+            this.btnCancelarBuscar.Size = new System.Drawing.Size(42, 36);
+            this.btnCancelarBuscar.TabIndex = 9;
+            this.btnCancelarBuscar.Text = "X";
+            this.btnCancelarBuscar.UseVisualStyleBackColor = true;
+            this.btnCancelarBuscar.Visible = false;
+            this.btnCancelarBuscar.Click += new System.EventHandler(this.btnCancelarBuscar_Click);
             // 
             // btnEditarPrecio
             // 
@@ -107,6 +121,7 @@ namespace SITS
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnIngresar.Location = new System.Drawing.Point(666, 25);
@@ -123,6 +138,7 @@ namespace SITS
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(666, 82);
@@ -137,6 +153,7 @@ namespace SITS
             // 
             // btnNovedad
             // 
+            this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
             this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovedad.Location = new System.Drawing.Point(666, 140);
@@ -163,7 +180,7 @@ namespace SITS
             // lblNombreDelProducto
             // 
             this.lblNombreDelProducto.AutoSize = true;
-            this.lblNombreDelProducto.Location = new System.Drawing.Point(69, 59);
+            this.lblNombreDelProducto.Location = new System.Drawing.Point(99, 60);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
             this.lblNombreDelProducto.Size = new System.Drawing.Size(167, 20);
             this.lblNombreDelProducto.TabIndex = 0;
@@ -172,7 +189,7 @@ namespace SITS
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(69, 149);
+            this.lblPrecio.Location = new System.Drawing.Point(99, 149);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(56, 20);
             this.lblPrecio.TabIndex = 1;
@@ -181,7 +198,7 @@ namespace SITS
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(69, 106);
+            this.lblCantidad.Location = new System.Drawing.Point(99, 109);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(78, 20);
             this.lblCantidad.TabIndex = 4;
@@ -217,7 +234,7 @@ namespace SITS
             // lblCodigoDeBarras
             // 
             this.lblCodigoDeBarras.AutoSize = true;
-            this.lblCodigoDeBarras.Location = new System.Drawing.Point(69, 12);
+            this.lblCodigoDeBarras.Location = new System.Drawing.Point(99, 16);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
             this.lblCodigoDeBarras.Size = new System.Drawing.Size(137, 20);
             this.lblCodigoDeBarras.TabIndex = 0;
@@ -225,14 +242,15 @@ namespace SITS
             // 
             // pnlDgvInventario
             // 
+            this.pnlDgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDgvInventario.Controls.Add(this.dgvInventario);
             this.pnlDgvInventario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlDgvInventario.Location = new System.Drawing.Point(27, 219);
+            this.pnlDgvInventario.Location = new System.Drawing.Point(33, 226);
             this.pnlDgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlDgvInventario.MaximumSize = new System.Drawing.Size(889, 308);
-            this.pnlDgvInventario.MinimumSize = new System.Drawing.Size(889, 308);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
+            this.pnlDgvInventario.Padding = new System.Windows.Forms.Padding(50);
             this.pnlDgvInventario.Size = new System.Drawing.Size(889, 308);
             this.pnlDgvInventario.TabIndex = 1;
             // 
@@ -310,17 +328,6 @@ namespace SITS
             this.clTotal.MinimumWidth = 6;
             this.clTotal.Name = "clTotal";
             this.clTotal.Width = 90;
-            // 
-            // btnCancelarBuscar
-            // 
-            this.btnCancelarBuscar.Location = new System.Drawing.Point(794, 82);
-            this.btnCancelarBuscar.Name = "btnCancelarBuscar";
-            this.btnCancelarBuscar.Size = new System.Drawing.Size(42, 36);
-            this.btnCancelarBuscar.TabIndex = 9;
-            this.btnCancelarBuscar.Text = "X";
-            this.btnCancelarBuscar.UseVisualStyleBackColor = true;
-            this.btnCancelarBuscar.Visible = false;
-            this.btnCancelarBuscar.Click += new System.EventHandler(this.btnCancelarBuscar_Click);
             // 
             // frmInventario
             // 

@@ -32,7 +32,7 @@ namespace SITS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnProxPedidos = new System.Windows.Forms.Button();
             this.btnCombosVendidos = new System.Windows.Forms.Button();
             this.btnProductosVendidos = new System.Windows.Forms.Button();
             this.btnAuditoria = new System.Windows.Forms.Button();
@@ -44,13 +44,13 @@ namespace SITS
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlBarra = new System.Windows.Forms.Panel();
-            this.btnMiminice = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.lbltitulo = new System.Windows.Forms.Label();
-            this.pnlEscritorio = new System.Windows.Forms.Panel();
-            this.btnMaximized = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRedimensionar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnMiminice = new System.Windows.Forms.Button();
+            this.btnMaximized = new System.Windows.Forms.Button();
+            this.lbltitulo = new System.Windows.Forms.Label();
+            this.pnlEscritorio = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlBarra.SuspendLayout();
@@ -61,7 +61,7 @@ namespace SITS
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
             this.pnlMenu.Controls.Add(this.button9);
-            this.pnlMenu.Controls.Add(this.button8);
+            this.pnlMenu.Controls.Add(this.btnProxPedidos);
             this.pnlMenu.Controls.Add(this.btnCombosVendidos);
             this.pnlMenu.Controls.Add(this.btnProductosVendidos);
             this.pnlMenu.Controls.Add(this.btnAuditoria);
@@ -97,26 +97,26 @@ namespace SITS
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnProxPedidos
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.LightGray;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 460);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(256, 50);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Proximos Pedidos";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Visible = false;
+            this.btnProxPedidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProxPedidos.FlatAppearance.BorderSize = 0;
+            this.btnProxPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProxPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProxPedidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProxPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProxPedidos.Image")));
+            this.btnProxPedidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProxPedidos.Location = new System.Drawing.Point(0, 460);
+            this.btnProxPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProxPedidos.Name = "btnProxPedidos";
+            this.btnProxPedidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnProxPedidos.Size = new System.Drawing.Size(256, 50);
+            this.btnProxPedidos.TabIndex = 9;
+            this.btnProxPedidos.Text = "Proximos Pedidos";
+            this.btnProxPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProxPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProxPedidos.UseVisualStyleBackColor = true;
+            this.btnProxPedidos.Visible = false;
             // 
             // btnCombosVendidos
             // 
@@ -178,6 +178,7 @@ namespace SITS
             this.btnAuditoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAuditoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAuditoria.UseVisualStyleBackColor = true;
+            this.btnAuditoria.Click += new System.EventHandler(this.btnAuditoria_Click);
             // 
             // btnPedidos
             // 
@@ -241,6 +242,7 @@ namespace SITS
             this.btnProcesosOperaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcesosOperaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcesosOperaciones.UseVisualStyleBackColor = true;
+            this.btnProcesosOperaciones.Click += new System.EventHandler(this.btnProcesosOperaciones_Click);
             // 
             // btnInventario
             // 
@@ -283,6 +285,7 @@ namespace SITS
             this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguraciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
+            this.btnConfiguraciones.Click += new System.EventHandler(this.btnConfiguraciones_Click);
             // 
             // pnlLogo
             // 
@@ -325,70 +328,6 @@ namespace SITS
             this.pnlBarra.TabIndex = 4;
             this.pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
             // 
-            // btnMiminice
-            // 
-            this.btnMiminice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMiminice.FlatAppearance.BorderSize = 0;
-            this.btnMiminice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMiminice.Image = ((System.Drawing.Image)(resources.GetObject("btnMiminice.Image")));
-            this.btnMiminice.Location = new System.Drawing.Point(0, 0);
-            this.btnMiminice.Name = "btnMiminice";
-            this.btnMiminice.Size = new System.Drawing.Size(40, 60);
-            this.btnMiminice.TabIndex = 2;
-            this.btnMiminice.UseVisualStyleBackColor = true;
-            this.btnMiminice.Click += new System.EventHandler(this.btnMiminice_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(73, 0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(40, 60);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // lbltitulo
-            // 
-            this.lbltitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbltitulo.AutoSize = true;
-            this.lbltitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitulo.Location = new System.Drawing.Point(79, 12);
-            this.lbltitulo.Name = "lbltitulo";
-            this.lbltitulo.Size = new System.Drawing.Size(679, 37);
-            this.lbltitulo.TabIndex = 0;
-            this.lbltitulo.Text = "Software de Inventario Tienda de Sentimientos";
-            this.lbltitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbltitulo_MouseDown);
-            // 
-            // pnlEscritorio
-            // 
-            this.pnlEscritorio.AutoScroll = true;
-            this.pnlEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEscritorio.Location = new System.Drawing.Point(256, 60);
-            this.pnlEscritorio.Name = "pnlEscritorio";
-            this.pnlEscritorio.Size = new System.Drawing.Size(958, 640);
-            this.pnlEscritorio.TabIndex = 5;
-            // 
-            // btnMaximized
-            // 
-            this.btnMaximized.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaximized.FlatAppearance.BorderSize = 0;
-            this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximized.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximized.Image")));
-            this.btnMaximized.Location = new System.Drawing.Point(0, 0);
-            this.btnMaximized.Name = "btnMaximized";
-            this.btnMaximized.Size = new System.Drawing.Size(113, 60);
-            this.btnMaximized.TabIndex = 3;
-            this.btnMaximized.UseVisualStyleBackColor = true;
-            this.btnMaximized.Click += new System.EventHandler(this.btnMaximized_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnRedimensionar);
@@ -414,6 +353,70 @@ namespace SITS
             this.btnRedimensionar.UseVisualStyleBackColor = true;
             this.btnRedimensionar.Visible = false;
             this.btnRedimensionar.Click += new System.EventHandler(this.btnRedimensionar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(73, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(40, 60);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMiminice
+            // 
+            this.btnMiminice.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMiminice.FlatAppearance.BorderSize = 0;
+            this.btnMiminice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMiminice.Image = ((System.Drawing.Image)(resources.GetObject("btnMiminice.Image")));
+            this.btnMiminice.Location = new System.Drawing.Point(0, 0);
+            this.btnMiminice.Name = "btnMiminice";
+            this.btnMiminice.Size = new System.Drawing.Size(40, 60);
+            this.btnMiminice.TabIndex = 2;
+            this.btnMiminice.UseVisualStyleBackColor = true;
+            this.btnMiminice.Click += new System.EventHandler(this.btnMiminice_Click);
+            // 
+            // btnMaximized
+            // 
+            this.btnMaximized.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMaximized.FlatAppearance.BorderSize = 0;
+            this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximized.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximized.Image")));
+            this.btnMaximized.Location = new System.Drawing.Point(0, 0);
+            this.btnMaximized.Name = "btnMaximized";
+            this.btnMaximized.Size = new System.Drawing.Size(113, 60);
+            this.btnMaximized.TabIndex = 3;
+            this.btnMaximized.UseVisualStyleBackColor = true;
+            this.btnMaximized.Click += new System.EventHandler(this.btnMaximized_Click);
+            // 
+            // lbltitulo
+            // 
+            this.lbltitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbltitulo.AutoSize = true;
+            this.lbltitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitulo.Location = new System.Drawing.Point(79, 12);
+            this.lbltitulo.Name = "lbltitulo";
+            this.lbltitulo.Size = new System.Drawing.Size(679, 37);
+            this.lbltitulo.TabIndex = 0;
+            this.lbltitulo.Text = "Software de Inventario Tienda de Sentimientos";
+            this.lbltitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbltitulo_MouseDown);
+            // 
+            // pnlEscritorio
+            // 
+            this.pnlEscritorio.AutoScroll = true;
+            this.pnlEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlEscritorio.Location = new System.Drawing.Point(256, 60);
+            this.pnlEscritorio.Name = "pnlEscritorio";
+            this.pnlEscritorio.Size = new System.Drawing.Size(958, 640);
+            this.pnlEscritorio.TabIndex = 5;
             // 
             // frmMenu
             // 
@@ -445,7 +448,7 @@ namespace SITS
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel pnlLogo;
       //  private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnProxPedidos;
         private System.Windows.Forms.Button btnCombosVendidos;
         private System.Windows.Forms.Button btnProductosVendidos;
         private System.Windows.Forms.Button btnAuditoria;

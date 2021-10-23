@@ -14,12 +14,19 @@ namespace SITS
         private Form activeForm;
         public frmMenu()
         {
+            
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        
+
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -97,11 +104,59 @@ namespace SITS
         private void btnMaximized_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            
+            btnMaximized.Visible = false;
+            btnRedimensionar.Visible = true;
         }
 
         private void btnRedimensionar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+            btnMaximized.Visible = true;
+            btnRedimensionar.Visible = false;
+        }
+
+        private void btnConfiguraciones_Click(object sender, EventArgs e)
+        {
+            if (btnInventario.Visible == false)
+            {
+                btnInventario.Visible = true;
+            }
+            else
+            {
+                btnInventario.Visible = false;
+            }
+        }
+
+        private void btnProcesosOperaciones_Click(object sender, EventArgs e)
+        {
+            if (btnCombos.Visible == false)
+            {
+                btnCombos.Visible = true;
+                btnPedidos.Visible = true;
+            }
+            else
+            {
+                btnCombos.Visible = false;
+                btnPedidos.Visible = false;
+            }
+        }
+
+        private void btnAuditoria_Click(object sender, EventArgs e)
+        {
+            if (btnProductosVendidos.Visible == false)
+            {
+                btnProductosVendidos.Visible = true;
+                btnCombosVendidos.Visible = true;
+                btnProxPedidos.Visible = true;
+            }
+            else
+            {
+                btnProductosVendidos.Visible = false;
+                btnCombosVendidos.Visible = false;
+                btnProxPedidos.Visible = false;
+            }
+
         }
     }
     
