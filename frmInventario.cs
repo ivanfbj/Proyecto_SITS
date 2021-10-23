@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic;
 
 namespace SITS
 {
@@ -144,37 +145,34 @@ namespace SITS
 
 
 
+        private void btnEditarNombreProducto_Click(object sender, EventArgs e)
+        {
 
+            string nuevoNombreProducto;
+            nuevoNombreProducto = Interaction.InputBox($"Ingrese el nuevo nombre para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
 
+            if (nuevoNombreProducto != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombreOprecio", nuevoNombreProducto));
+                    cmd.Parameters.Add(new SqlParameter("@columnaActualizar", "nombre"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se actualizó el nombre del producto correctamente");
+                    reiniciarCamposYDataGridView();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
+            }
+        }
 
 
 
@@ -277,6 +275,52 @@ namespace SITS
             limpiar();
             llenarProducto();
         }
+
+        private void btnEditarPrecio_Click(object sender, EventArgs e)
+        {
+            string nuevoPrecioProducto;
+            nuevoPrecioProducto = Interaction.InputBox($"Ingrese el nuevo precio para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
+
+            if (nuevoPrecioProducto != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@codigoBarras", txtCodigoDeBarras.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nombreOprecio", nuevoPrecioProducto));
+                    cmd.Parameters.Add(new SqlParameter("@columnaActualizar", "precio"));
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se actualizó el precio del producto correctamente");
+                    reiniciarCamposYDataGridView();
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -91,6 +91,7 @@ namespace SITS
             this.btnEditarPrecio.Size = new System.Drawing.Size(25, 25);
             this.btnEditarPrecio.TabIndex = 8;
             this.btnEditarPrecio.UseVisualStyleBackColor = true;
+            this.btnEditarPrecio.Click += new System.EventHandler(this.btnEditarPrecio_Click);
             // 
             // btnEditarNombreProducto
             // 
@@ -100,6 +101,7 @@ namespace SITS
             this.btnEditarNombreProducto.Size = new System.Drawing.Size(25, 25);
             this.btnEditarNombreProducto.TabIndex = 7;
             this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
+            this.btnEditarNombreProducto.Click += new System.EventHandler(this.btnEditarNombreProducto_Click);
             // 
             // btnIngresar
             // 
