@@ -21,7 +21,13 @@ namespace SITS
         public frmInventario()
         {
             cn = new clsConexionSql();
+            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
             InitializeComponent();
+            autoCompletar();
         }
 
 
@@ -75,11 +81,7 @@ namespace SITS
         {
             int n = 0, cantidad=0;
             Double total = 0, precio=0;
-            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
-            cmd.CommandType = CommandType.StoredProcedure;
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
+
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
@@ -116,5 +118,17 @@ namespace SITS
         }
 
 
+        void autoCompletar()
+        {
+
+            AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lista.Add(dt.Rows[i]["nombre"].ToString());
+
+            }
+
+            txtNombreDelProducto.AutoCompleteCustomSource = lista;
+        }
     }
 }
