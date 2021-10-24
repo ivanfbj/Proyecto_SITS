@@ -32,7 +32,7 @@ namespace SITS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNovedad = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNroComboSiguiente = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblNroCombo = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@ namespace SITS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnNovedad);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblNroComboSiguiente);
             this.panel1.Controls.Add(this.btnIngresar);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.lblNroCombo);
@@ -87,14 +87,14 @@ namespace SITS
             this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovedad.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblNroComboSiguiente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "____";
+            this.lblNroComboSiguiente.AutoSize = true;
+            this.lblNroComboSiguiente.Location = new System.Drawing.Point(213, 22);
+            this.lblNroComboSiguiente.Name = "lblNroComboSiguiente";
+            this.lblNroComboSiguiente.Size = new System.Drawing.Size(41, 20);
+            this.lblNroComboSiguiente.TabIndex = 18;
+            this.lblNroComboSiguiente.Text = "____";
             // 
             // btnIngresar
             // 
@@ -129,7 +129,7 @@ namespace SITS
             this.lblNroCombo.Name = "lblNroCombo";
             this.lblNroCombo.Size = new System.Drawing.Size(126, 20);
             this.lblNroCombo.TabIndex = 13;
-            this.lblNroCombo.Text = "Numero Combo";
+            this.lblNroCombo.Text = "Número Combo";
             // 
             // lblNombreDelCombo
             // 
@@ -290,7 +290,7 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNroComboSiguiente;
         private System.Windows.Forms.Button btnNovedad;
     }
 }

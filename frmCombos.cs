@@ -20,20 +20,20 @@ namespace SITS
         int i = 0;
         public frmCombos()
         {
-
+            cn = new clsConexionSql();
             InitializeComponent();
         }
 
         private void frmCombos_Load(object sender, EventArgs e)
         {
+            actualizarlblNroComboSiguiente();
             llenarProductoCombos();
         }
 
 
-        void llenarProductoCombos()
+        private void llenarProductoCombos()
         {
             int n = 0;
-            cn = new clsConexionSql();
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -55,6 +55,20 @@ namespace SITS
             }
 
 
+        }
+
+        private void actualizarlblNroComboSiguiente()
+        {
+            cmd = new SqlCommand("select ISNULL(max(nroCombo),0) + 1 from tblCombo", cn.abrirConexion());
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count != 0)
+            {
+                
+                lblNroComboSiguiente.Text = dt.Rows[0][0].ToString();
+            }
         }
 
     }
