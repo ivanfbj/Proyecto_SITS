@@ -42,11 +42,11 @@ ALTER TABLE [dbo].[tblMovimientoProducto] ADD CONSTRAINT [CK_tblMovimientoProduc
 CREATE TABLE [dbo].[tblCombo]
 (
   [id]       INT NOT NULL IDENTITY, 
-  [nroCombo] NVARCHAR(50) NOT NULL, 
+  [nroCombo] int NOT NULL, 
   [nombre]   NVARCHAR(255) NOT NULL, 
   [subtotal] MONEY NOT NULL,
   CONSTRAINT [PK_tblCombo_id] PRIMARY KEY([id]),
-  CONSTRAINT [UQ_tblCombo_nroCombo] UNIQUE([nroCombo])
+  CONSTRAINT [UQ_tblCombo_nombre] UNIQUE([nombre])
 );
 
 CREATE TABLE [dbo].[tblProductoxCombo]
