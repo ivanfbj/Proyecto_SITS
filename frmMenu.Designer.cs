@@ -32,9 +32,9 @@ namespace SITS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.btnProductosVendidos = new System.Windows.Forms.Button();
             this.btnProxPedidos = new System.Windows.Forms.Button();
             this.btnCombosVendidos = new System.Windows.Forms.Button();
-            this.btnProductosVendidos = new System.Windows.Forms.Button();
             this.btnAuditoria = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnCombos = new System.Windows.Forms.Button();
@@ -60,9 +60,11 @@ namespace SITS
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+
+
             this.pnlMenu.Controls.Add(this.button9);
-            this.pnlMenu.Controls.Add(this.btnProxPedidos);
             this.pnlMenu.Controls.Add(this.btnCombosVendidos);
+            this.pnlMenu.Controls.Add(this.btnProxPedidos);
             this.pnlMenu.Controls.Add(this.btnProductosVendidos);
             this.pnlMenu.Controls.Add(this.btnAuditoria);
             this.pnlMenu.Controls.Add(this.btnPedidos);
@@ -75,7 +77,7 @@ namespace SITS
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(256, 700);
+            this.pnlMenu.Size = new System.Drawing.Size(269, 700);
             this.pnlMenu.TabIndex = 3;
             // 
             // button9
@@ -83,35 +85,56 @@ namespace SITS
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.LightGray;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.Location = new System.Drawing.Point(0, 510);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(256, 50);
+            this.button9.Size = new System.Drawing.Size(269, 50);
             this.button9.TabIndex = 10;
             this.button9.Text = "Ayuda";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // btnProductosVendidos
+            // 
+            this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
+            this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Image")));
+            this.btnProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.Location = new System.Drawing.Point(0, 460);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductosVendidos.Name = "btnProductosVendidos";
+            this.btnProductosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnProductosVendidos.Size = new System.Drawing.Size(269, 50);
+            this.btnProductosVendidos.TabIndex = 9;
+            this.btnProductosVendidos.Text = "Productos mas Vendidos";
+            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductosVendidos.UseVisualStyleBackColor = true;
+            this.btnProductosVendidos.Visible = false;
+            // 
             // btnProxPedidos
             // 
             this.btnProxPedidos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProxPedidos.FlatAppearance.BorderSize = 0;
             this.btnProxPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProxPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProxPedidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProxPedidos.ForeColor = System.Drawing.Color.LightGray;
             this.btnProxPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProxPedidos.Image")));
             this.btnProxPedidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProxPedidos.Location = new System.Drawing.Point(0, 460);
+            this.btnProxPedidos.Location = new System.Drawing.Point(0, 410);
             this.btnProxPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProxPedidos.Name = "btnProxPedidos";
-            this.btnProxPedidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProxPedidos.Size = new System.Drawing.Size(256, 50);
-            this.btnProxPedidos.TabIndex = 9;
+            this.btnProxPedidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnProxPedidos.Size = new System.Drawing.Size(269, 50);
+            this.btnProxPedidos.TabIndex = 8;
             this.btnProxPedidos.Text = "Proximos Pedidos";
             this.btnProxPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProxPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -123,56 +146,35 @@ namespace SITS
             this.btnCombosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCombosVendidos.FlatAppearance.BorderSize = 0;
             this.btnCombosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCombosVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCombosVendidos.ForeColor = System.Drawing.Color.LightGray;
             this.btnCombosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombosVendidos.Image")));
             this.btnCombosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCombosVendidos.Location = new System.Drawing.Point(0, 410);
+            this.btnCombosVendidos.Location = new System.Drawing.Point(0, 360);
             this.btnCombosVendidos.Margin = new System.Windows.Forms.Padding(4);
             this.btnCombosVendidos.Name = "btnCombosVendidos";
-            this.btnCombosVendidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCombosVendidos.Size = new System.Drawing.Size(256, 50);
-            this.btnCombosVendidos.TabIndex = 8;
+            this.btnCombosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCombosVendidos.Size = new System.Drawing.Size(269, 50);
+            this.btnCombosVendidos.TabIndex = 7;
             this.btnCombosVendidos.Text = "Combos mas vendidos";
             this.btnCombosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCombosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCombosVendidos.UseVisualStyleBackColor = true;
             this.btnCombosVendidos.Visible = false;
             // 
-            // btnProductosVendidos
-            // 
-            this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
-            this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductosVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Image")));
-            this.btnProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductosVendidos.Location = new System.Drawing.Point(0, 360);
-            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProductosVendidos.Name = "btnProductosVendidos";
-            this.btnProductosVendidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProductosVendidos.Size = new System.Drawing.Size(256, 50);
-            this.btnProductosVendidos.TabIndex = 7;
-            this.btnProductosVendidos.Text = "Productos mas Vendidos";
-            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProductosVendidos.UseVisualStyleBackColor = true;
-            this.btnProductosVendidos.Visible = false;
-            // 
             // btnAuditoria
             // 
             this.btnAuditoria.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAuditoria.FlatAppearance.BorderSize = 0;
             this.btnAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuditoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditoria.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuditoria.ForeColor = System.Drawing.Color.LightGray;
             this.btnAuditoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAuditoria.Image")));
             this.btnAuditoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAuditoria.Location = new System.Drawing.Point(0, 310);
             this.btnAuditoria.Margin = new System.Windows.Forms.Padding(4);
             this.btnAuditoria.Name = "btnAuditoria";
-            this.btnAuditoria.Size = new System.Drawing.Size(256, 50);
+            this.btnAuditoria.Size = new System.Drawing.Size(269, 50);
             this.btnAuditoria.TabIndex = 6;
             this.btnAuditoria.Text = "Reportes";
             this.btnAuditoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,15 +187,15 @@ namespace SITS
             this.btnPedidos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPedidos.FlatAppearance.BorderSize = 0;
             this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedidos.ForeColor = System.Drawing.Color.LightGray;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
             this.btnPedidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPedidos.Location = new System.Drawing.Point(0, 260);
             this.btnPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnPedidos.Size = new System.Drawing.Size(256, 50);
+            this.btnPedidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnPedidos.Size = new System.Drawing.Size(269, 50);
             this.btnPedidos.TabIndex = 5;
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,15 +209,15 @@ namespace SITS
             this.btnCombos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCombos.FlatAppearance.BorderSize = 0;
             this.btnCombos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCombos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCombos.ForeColor = System.Drawing.Color.LightGray;
             this.btnCombos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombos.Image")));
             this.btnCombos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCombos.Location = new System.Drawing.Point(0, 210);
             this.btnCombos.Margin = new System.Windows.Forms.Padding(4);
             this.btnCombos.Name = "btnCombos";
-            this.btnCombos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCombos.Size = new System.Drawing.Size(256, 50);
+            this.btnCombos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCombos.Size = new System.Drawing.Size(269, 50);
             this.btnCombos.TabIndex = 4;
             this.btnCombos.Text = "Combos";
             this.btnCombos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,14 +231,14 @@ namespace SITS
             this.btnProcesosOperaciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcesosOperaciones.FlatAppearance.BorderSize = 0;
             this.btnProcesosOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcesosOperaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcesosOperaciones.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesosOperaciones.ForeColor = System.Drawing.Color.LightGray;
             this.btnProcesosOperaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnProcesosOperaciones.Image")));
             this.btnProcesosOperaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcesosOperaciones.Location = new System.Drawing.Point(0, 160);
             this.btnProcesosOperaciones.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcesosOperaciones.Name = "btnProcesosOperaciones";
-            this.btnProcesosOperaciones.Size = new System.Drawing.Size(256, 50);
+            this.btnProcesosOperaciones.Size = new System.Drawing.Size(269, 50);
             this.btnProcesosOperaciones.TabIndex = 3;
             this.btnProcesosOperaciones.Text = "Procesos y operaciones";
             this.btnProcesosOperaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,15 +252,15 @@ namespace SITS
             this.btnInventario.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventario.FlatAppearance.BorderSize = 0;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.LightGray;
             this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(0, 110);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(4);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnInventario.Size = new System.Drawing.Size(256, 50);
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnInventario.Size = new System.Drawing.Size(269, 50);
             this.btnInventario.TabIndex = 2;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,14 +274,14 @@ namespace SITS
             this.btnConfiguraciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConfiguraciones.FlatAppearance.BorderSize = 0;
             this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguraciones.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguraciones.ForeColor = System.Drawing.Color.LightGray;
             this.btnConfiguraciones.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguraciones.Image")));
             this.btnConfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguraciones.Location = new System.Drawing.Point(0, 60);
             this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(256, 50);
+            this.btnConfiguraciones.Size = new System.Drawing.Size(269, 50);
             this.btnConfiguraciones.TabIndex = 1;
             this.btnConfiguraciones.Text = "  Configuraciones";
             this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,7 +297,7 @@ namespace SITS
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(256, 60);
+            this.pnlLogo.Size = new System.Drawing.Size(269, 60);
             this.pnlLogo.TabIndex = 0;
             this.pnlLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLogo_MouseDown);
             // 
@@ -305,11 +307,11 @@ namespace SITS
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.Font = new System.Drawing.Font("Futura Md BT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.LightGray;
             this.lblLogo.Location = new System.Drawing.Point(82, 9);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(87, 37);
+            this.lblLogo.Size = new System.Drawing.Size(95, 45);
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "SITS";
             this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
@@ -321,10 +323,10 @@ namespace SITS
             this.pnlBarra.Controls.Add(this.lbltitulo);
             this.pnlBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarra.ForeColor = System.Drawing.Color.LightGray;
-            this.pnlBarra.Location = new System.Drawing.Point(256, 0);
+            this.pnlBarra.Location = new System.Drawing.Point(269, 0);
             this.pnlBarra.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBarra.Name = "pnlBarra";
-            this.pnlBarra.Size = new System.Drawing.Size(958, 60);
+            this.pnlBarra.Size = new System.Drawing.Size(979, 60);
             this.pnlBarra.TabIndex = 4;
             this.pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
             // 
@@ -335,7 +337,7 @@ namespace SITS
             this.panel1.Controls.Add(this.btnMiminice);
             this.panel1.Controls.Add(this.btnMaximized);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(845, 0);
+            this.panel1.Location = new System.Drawing.Point(866, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(113, 60);
             this.panel1.TabIndex = 4;
@@ -400,10 +402,10 @@ namespace SITS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltitulo.AutoSize = true;
             this.lbltitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitulo.Font = new System.Drawing.Font("Futura Bk BT", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitulo.Location = new System.Drawing.Point(79, 12);
             this.lbltitulo.Name = "lbltitulo";
-            this.lbltitulo.Size = new System.Drawing.Size(679, 37);
+            this.lbltitulo.Size = new System.Drawing.Size(771, 45);
             this.lbltitulo.TabIndex = 0;
             this.lbltitulo.Text = "Software de Inventario Tienda de Sentimientos";
             this.lbltitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,17 +414,18 @@ namespace SITS
             // pnlEscritorio
             // 
             this.pnlEscritorio.AutoScroll = true;
+            this.pnlEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.pnlEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEscritorio.Location = new System.Drawing.Point(256, 60);
+            this.pnlEscritorio.Location = new System.Drawing.Point(269, 60);
             this.pnlEscritorio.Name = "pnlEscritorio";
-            this.pnlEscritorio.Size = new System.Drawing.Size(958, 640);
+            this.pnlEscritorio.Size = new System.Drawing.Size(979, 640);
             this.pnlEscritorio.TabIndex = 5;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 700);
+            this.ClientSize = new System.Drawing.Size(1248, 700);
             this.Controls.Add(this.pnlEscritorio);
             this.Controls.Add(this.pnlBarra);
             this.Controls.Add(this.pnlMenu);

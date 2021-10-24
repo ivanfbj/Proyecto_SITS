@@ -126,5 +126,9 @@ namespace SITS
 
         }
 
+        private void lblSubtotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -158,6 +158,11 @@ namespace SITS
             }
 
         }
+
+        private void pnlProcesosOperaciones_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

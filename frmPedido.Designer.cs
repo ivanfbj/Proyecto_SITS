@@ -31,13 +31,13 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -47,12 +47,12 @@ namespace SITS
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelProducto = new System.Windows.Forms.TextBox();
             this.pnlDgvInventario = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -72,6 +72,15 @@ namespace SITS
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(695, 219);
             this.panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(183, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "__";
             // 
             // dgvInventario
             // 
@@ -122,15 +131,6 @@ namespace SITS
             this.clPrecio.HeaderText = "Precio";
             this.clPrecio.Name = "clPrecio";
             this.clPrecio.Width = 90;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 192);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "__";
             // 
             // label2
             // 
@@ -227,6 +227,15 @@ namespace SITS
             this.pnlDgvInventario.Size = new System.Drawing.Size(695, 169);
             this.pnlDgvInventario.TabIndex = 5;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "__";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -271,15 +280,6 @@ namespace SITS
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 90;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(135, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "__";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -294,6 +294,7 @@ namespace SITS
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(942, 547);
             this.Controls.Add(this.pnlDgvInventario);
             this.Controls.Add(this.panel2);

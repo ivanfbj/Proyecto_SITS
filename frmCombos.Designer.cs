@@ -46,20 +46,15 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidadAgregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnNovedad);
             this.panel1.Controls.Add(this.lblNroComboSiguiente);
@@ -90,9 +85,10 @@ namespace SITS
             // lblNroComboSiguiente
             // 
             this.lblNroComboSiguiente.AutoSize = true;
-            this.lblNroComboSiguiente.Location = new System.Drawing.Point(213, 22);
+            this.lblNroComboSiguiente.Font = new System.Drawing.Font("Valentine Cute", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroComboSiguiente.Location = new System.Drawing.Point(217, 6);
             this.lblNroComboSiguiente.Name = "lblNroComboSiguiente";
-            this.lblNroComboSiguiente.Size = new System.Drawing.Size(41, 20);
+            this.lblNroComboSiguiente.Size = new System.Drawing.Size(67, 52);
             this.lblNroComboSiguiente.TabIndex = 18;
             this.lblNroComboSiguiente.Text = "____";
             // 
@@ -150,12 +146,16 @@ namespace SITS
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblResultadoSubtotal);
             this.panel2.Controls.Add(this.dgvInventarioCombos);
+            this.panel2.Controls.Add(this.lblSubtotal);
             this.panel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(17, 146);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(799, 320);
+            this.panel2.Size = new System.Drawing.Size(799, 343);
             this.panel2.TabIndex = 1;
             // 
             // dgvInventarioCombos
@@ -176,7 +176,6 @@ namespace SITS
             this.dgvInventarioCombos.RowTemplate.Height = 25;
             this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
             this.dgvInventarioCombos.TabIndex = 1;
-            
             // 
             // clAgregar
             // 
@@ -220,21 +219,10 @@ namespace SITS
             this.clCantidadAgregar.HeaderText = "Cantidad";
             this.clCantidadAgregar.Name = "clCantidadAgregar";
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblResultadoSubtotal);
-            this.panel3.Controls.Add(this.lblSubtotal);
-            this.panel3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(17, 472);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(799, 69);
-            this.panel3.TabIndex = 1;
-            // 
             // lblResultadoSubtotal
             // 
             this.lblResultadoSubtotal.AutoSize = true;
-            this.lblResultadoSubtotal.Location = new System.Drawing.Point(88, 27);
+            this.lblResultadoSubtotal.Location = new System.Drawing.Point(285, 304);
             this.lblResultadoSubtotal.Name = "lblResultadoSubtotal";
             this.lblResultadoSubtotal.Size = new System.Drawing.Size(25, 20);
             this.lblResultadoSubtotal.TabIndex = 17;
@@ -243,19 +231,20 @@ namespace SITS
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(8, 27);
+            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
+            this.lblSubtotal.Click += new System.EventHandler(this.lblSubtotal_Click);
             // 
             // frmCombos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(942, 601);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(958, 640);
@@ -266,9 +255,8 @@ namespace SITS
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,7 +265,6 @@ namespace SITS
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblNroCombo;
         private System.Windows.Forms.Label lblNombreDelCombo;
         private System.Windows.Forms.TextBox txtNombreDelCombo;
