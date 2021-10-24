@@ -20,6 +20,7 @@ namespace SITS
         int i = 0;
         public frmPedido()
         {
+            cn = new clsConexionSql();
             InitializeComponent();
         }
 

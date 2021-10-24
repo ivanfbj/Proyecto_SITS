@@ -66,9 +66,64 @@ namespace SITS
 
             if (dt.Rows.Count != 0)
             {
-                
+
                 lblNroComboSiguiente.Text = dt.Rows[0][0].ToString();
             }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
+
+            if (!string.IsNullOrEmpty(txtNombreDelCombo.Text))
+            {
+                bool minimoUnProductoSeleccionado = false;
+                foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
+                {
+                    bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                    if (isSelected)
+                    {
+                        minimoUnProductoSeleccionado = true;
+                    }
+
+                }
+
+                if (minimoUnProductoSeleccionado)
+                {
+                    foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
+                    {
+                        bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                        if (isSelected)
+                        {
+
+                            if (row.Cells["clCantidadAgregar"].Value == null)
+                            {
+                                MessageBox.Show($"La cantidad del producto {row.Cells["cCodigoBarras"].Value} - {row.Cells["cNombreProducto"].Value} está vacía", "Producto Sin Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                return;
+                            } 
+                        }
+                    }
+
+                    MessageBox.Show("Aqui se guardará en la base de datos","INFORMACION GUARDADA EN BASE DE DATOS" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                }
+                else if (minimoUnProductoSeleccionado == false)
+                {
+                    MessageBox.Show("POR FAVOR SELECCIONA ALGÚN PRODUCTO", "Producto NO seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("El nombre del Combo se encuentra vacío, por favor ingresar un nombre para el combo", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
 
     }

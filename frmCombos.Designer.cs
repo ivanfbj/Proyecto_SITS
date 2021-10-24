@@ -37,7 +37,7 @@ namespace SITS
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblNroCombo = new System.Windows.Forms.Label();
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
-            this.txtNombreDelProducto = new System.Windows.Forms.TextBox();
+            this.txtNombreDelCombo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvInventarioCombos = new System.Windows.Forms.DataGridView();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -67,7 +67,7 @@ namespace SITS
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.lblNroCombo);
             this.panel1.Controls.Add(this.lblNombreDelCombo);
-            this.panel1.Controls.Add(this.txtNombreDelProducto);
+            this.panel1.Controls.Add(this.txtNombreDelCombo);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(17, 12);
             this.panel1.Name = "panel1";
@@ -108,6 +108,7 @@ namespace SITS
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnBuscar
             // 
@@ -140,12 +141,12 @@ namespace SITS
             this.lblNombreDelCombo.TabIndex = 12;
             this.lblNombreDelCombo.Text = "Nombre del  Combo";
             // 
-            // txtNombreDelProducto
+            // txtNombreDelCombo
             // 
-            this.txtNombreDelProducto.Location = new System.Drawing.Point(217, 58);
-            this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(195, 26);
-            this.txtNombreDelProducto.TabIndex = 14;
+            this.txtNombreDelCombo.Location = new System.Drawing.Point(217, 58);
+            this.txtNombreDelCombo.Name = "txtNombreDelCombo";
+            this.txtNombreDelCombo.Size = new System.Drawing.Size(195, 26);
+            this.txtNombreDelCombo.TabIndex = 14;
             // 
             // panel2
             // 
@@ -175,6 +176,7 @@ namespace SITS
             this.dgvInventarioCombos.RowTemplate.Height = 25;
             this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
             this.dgvInventarioCombos.TabIndex = 1;
+            
             // 
             // clAgregar
             // 
@@ -278,7 +280,7 @@ namespace SITS
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblNroCombo;
         private System.Windows.Forms.Label lblNombreDelCombo;
-        private System.Windows.Forms.TextBox txtNombreDelProducto;
+        private System.Windows.Forms.TextBox txtNombreDelCombo;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblResultadoSubtotal;
         private System.Windows.Forms.Button btnIngresar;
