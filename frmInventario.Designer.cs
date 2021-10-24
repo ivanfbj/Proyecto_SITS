@@ -58,14 +58,17 @@ namespace SITS
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProducto
             // 
             this.pnlProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlProducto.Controls.Add(this.btnCancelarBuscar);
             this.pnlProducto.Controls.Add(this.btnEditarPrecio);
@@ -85,17 +88,18 @@ namespace SITS
             this.pnlProducto.Location = new System.Drawing.Point(59, 25);
             this.pnlProducto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlProducto.Name = "pnlProducto";
-            this.pnlProducto.Padding = new System.Windows.Forms.Padding(50, 50, 50, 50);
-            this.pnlProducto.Size = new System.Drawing.Size(793, 189);
+            this.pnlProducto.Padding = new System.Windows.Forms.Padding(50);
+            this.pnlProducto.Size = new System.Drawing.Size(793, 199);
             this.pnlProducto.TabIndex = 0;
             // 
             // btnCancelarBuscar
             // 
-            this.btnCancelarBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarBuscar.FlatAppearance.BorderSize = 0;
             this.btnCancelarBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscar.Image")));
-            this.btnCancelarBuscar.Location = new System.Drawing.Point(732, 80);
+            this.btnCancelarBuscar.Location = new System.Drawing.Point(733, 72);
             this.btnCancelarBuscar.Name = "btnCancelarBuscar";
             this.btnCancelarBuscar.Size = new System.Drawing.Size(42, 37);
             this.btnCancelarBuscar.TabIndex = 9;
@@ -105,6 +109,9 @@ namespace SITS
             // 
             // btnEditarPrecio
             // 
+            this.btnEditarPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditarPrecio.FlatAppearance.BorderSize = 0;
             this.btnEditarPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPrecio.Image")));
@@ -118,6 +125,9 @@ namespace SITS
             // 
             // btnEditarNombreProducto
             // 
+            this.btnEditarNombreProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditarNombreProducto.FlatAppearance.BorderSize = 0;
             this.btnEditarNombreProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarNombreProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarNombreProducto.Image")));
@@ -131,14 +141,15 @@ namespace SITS
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnIngresar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(604, 23);
+            this.btnIngresar.Location = new System.Drawing.Point(605, 15);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(121, 37);
@@ -152,14 +163,15 @@ namespace SITS
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnBuscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(604, 80);
+            this.btnBuscar.Location = new System.Drawing.Point(605, 72);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(121, 37);
@@ -171,14 +183,15 @@ namespace SITS
             // 
             // btnNovedad
             // 
-            this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovedad.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnNovedad.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNovedad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
             this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovedad.Location = new System.Drawing.Point(604, 137);
+            this.btnNovedad.Location = new System.Drawing.Point(605, 129);
             this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnNovedad.Name = "btnNovedad";
             this.btnNovedad.Size = new System.Drawing.Size(121, 37);
@@ -190,6 +203,9 @@ namespace SITS
             // 
             // txtCodigoDeBarras
             // 
+            this.txtCodigoDeBarras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigoDeBarras.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtCodigoDeBarras.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCodigoDeBarras.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,35 +219,38 @@ namespace SITS
             // lblNombreDelProducto
             // 
             this.lblNombreDelProducto.AutoSize = true;
-            this.lblNombreDelProducto.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreDelProducto.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreDelProducto.Location = new System.Drawing.Point(33, 58);
             this.lblNombreDelProducto.Name = "lblNombreDelProducto";
-            this.lblNombreDelProducto.Size = new System.Drawing.Size(192, 22);
+            this.lblNombreDelProducto.Size = new System.Drawing.Size(211, 22);
             this.lblNombreDelProducto.TabIndex = 0;
             this.lblNombreDelProducto.Text = "Nombre del Producto";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(33, 148);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(62, 22);
+            this.lblPrecio.Size = new System.Drawing.Size(68, 22);
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "Precio";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.Location = new System.Drawing.Point(33, 108);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(89, 22);
+            this.lblCantidad.Size = new System.Drawing.Size(97, 22);
             this.lblCantidad.TabIndex = 4;
             this.lblCantidad.Text = "Cantidad";
             // 
             // txtNombreDelProducto
             // 
+            this.txtNombreDelProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombreDelProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtNombreDelProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNombreDelProducto.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,6 +263,9 @@ namespace SITS
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(248, 148);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -253,6 +275,9 @@ namespace SITS
             // 
             // txtCantidad
             // 
+            this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(248, 105);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -263,10 +288,10 @@ namespace SITS
             // lblCodigoDeBarras
             // 
             this.lblCodigoDeBarras.AutoSize = true;
-            this.lblCodigoDeBarras.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoDeBarras.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoDeBarras.Location = new System.Drawing.Point(33, 15);
             this.lblCodigoDeBarras.Name = "lblCodigoDeBarras";
-            this.lblCodigoDeBarras.Size = new System.Drawing.Size(161, 22);
+            this.lblCodigoDeBarras.Size = new System.Drawing.Size(177, 22);
             this.lblCodigoDeBarras.TabIndex = 0;
             this.lblCodigoDeBarras.Text = "Código de Barras";
             // 
@@ -277,13 +302,18 @@ namespace SITS
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvInventario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvInventario.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Futura Bk BT", 13F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InfoText;
@@ -300,7 +330,7 @@ namespace SITS
             this.clTotal});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -308,12 +338,12 @@ namespace SITS
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvInventario.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvInventario.Location = new System.Drawing.Point(27, 239);
+            this.dgvInventario.Location = new System.Drawing.Point(14, 19);
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgvInventario.Name = "dgvInventario";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -326,7 +356,7 @@ namespace SITS
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInventario.RowTemplate.Height = 25;
-            this.dgvInventario.Size = new System.Drawing.Size(876, 273);
+            this.dgvInventario.Size = new System.Drawing.Size(876, 242);
             this.dgvInventario.TabIndex = 7;
             // 
             // cCodigoBarras
@@ -335,7 +365,6 @@ namespace SITS
             this.cCodigoBarras.HeaderText = "Código de Barras";
             this.cCodigoBarras.MinimumWidth = 6;
             this.cCodigoBarras.Name = "cCodigoBarras";
-            this.cCodigoBarras.Width = 170;
             // 
             // cNombreProducto
             // 
@@ -343,7 +372,6 @@ namespace SITS
             this.cNombreProducto.HeaderText = "Producto";
             this.cNombreProducto.MinimumWidth = 6;
             this.cNombreProducto.Name = "cNombreProducto";
-            this.cNombreProducto.Width = 200;
             // 
             // clEntradas
             // 
@@ -351,7 +379,6 @@ namespace SITS
             this.clEntradas.HeaderText = "Entradas";
             this.clEntradas.MinimumWidth = 6;
             this.clEntradas.Name = "clEntradas";
-            this.clEntradas.Width = 90;
             // 
             // clSalidas
             // 
@@ -359,7 +386,6 @@ namespace SITS
             this.clSalidas.HeaderText = "Salidas";
             this.clSalidas.MinimumWidth = 6;
             this.clSalidas.Name = "clSalidas";
-            this.clSalidas.Width = 90;
             // 
             // clCantidad
             // 
@@ -367,7 +393,6 @@ namespace SITS
             this.clCantidad.HeaderText = "Stock";
             this.clCantidad.MinimumWidth = 6;
             this.clCantidad.Name = "clCantidad";
-            this.clCantidad.Width = 90;
             // 
             // clPrecio
             // 
@@ -375,7 +400,6 @@ namespace SITS
             this.clPrecio.HeaderText = "Precio";
             this.clPrecio.MinimumWidth = 6;
             this.clPrecio.Name = "clPrecio";
-            this.clPrecio.Width = 90;
             // 
             // clTotal
             // 
@@ -383,28 +407,39 @@ namespace SITS
             this.clTotal.HeaderText = "Total";
             this.clTotal.MinimumWidth = 6;
             this.clTotal.Name = "clTotal";
-            this.clTotal.Width = 90;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dgvInventario);
+            this.panel1.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(12, 235);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(906, 285);
+            this.panel1.TabIndex = 8;
             // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(930, 547);
-            this.Controls.Add(this.dgvInventario);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlProducto);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.MaximumSize = new System.Drawing.Size(950, 590);
-            this.MinimumSize = new System.Drawing.Size(950, 590);
             this.Name = "frmInventario";
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.frmInventario_Load);
             this.pnlProducto.ResumeLayout(false);
             this.pnlProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -434,6 +469,7 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTotal;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
