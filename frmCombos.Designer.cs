@@ -39,15 +39,15 @@ namespace SITS
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelCombo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.dgvInventarioCombos = new System.Windows.Forms.DataGridView();
+            this.lblSubtotal = new System.Windows.Forms.Label();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidadAgregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblResultadoSubtotal = new System.Windows.Forms.Label();
-            this.lblSubtotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
@@ -85,10 +85,10 @@ namespace SITS
             // lblNroComboSiguiente
             // 
             this.lblNroComboSiguiente.AutoSize = true;
-            this.lblNroComboSiguiente.Font = new System.Drawing.Font("Valentine Cute", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroComboSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNroComboSiguiente.Location = new System.Drawing.Point(217, 6);
             this.lblNroComboSiguiente.Name = "lblNroComboSiguiente";
-            this.lblNroComboSiguiente.Size = new System.Drawing.Size(67, 52);
+            this.lblNroComboSiguiente.Size = new System.Drawing.Size(60, 25);
             this.lblNroComboSiguiente.TabIndex = 18;
             this.lblNroComboSiguiente.Text = "____";
             // 
@@ -158,6 +158,15 @@ namespace SITS
             this.panel2.Size = new System.Drawing.Size(799, 343);
             this.panel2.TabIndex = 1;
             // 
+            // lblResultadoSubtotal
+            // 
+            this.lblResultadoSubtotal.AutoSize = true;
+            this.lblResultadoSubtotal.Location = new System.Drawing.Point(285, 304);
+            this.lblResultadoSubtotal.Name = "lblResultadoSubtotal";
+            this.lblResultadoSubtotal.Size = new System.Drawing.Size(25, 20);
+            this.lblResultadoSubtotal.TabIndex = 17;
+            this.lblResultadoSubtotal.Text = "__";
+            // 
             // dgvInventarioCombos
             // 
             this.dgvInventarioCombos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -177,6 +186,16 @@ namespace SITS
             this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
             this.dgvInventarioCombos.TabIndex = 1;
             // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
+            this.lblSubtotal.TabIndex = 16;
+            this.lblSubtotal.Text = "Subtotal";
+            this.lblSubtotal.Click += new System.EventHandler(this.lblSubtotal_Click);
+            // 
             // clAgregar
             // 
             this.clAgregar.HeaderText = "Agregar";
@@ -185,7 +204,7 @@ namespace SITS
             // cCodigoBarras
             // 
             this.cCodigoBarras.FillWeight = 150F;
-            this.cCodigoBarras.HeaderText = "Codigo de Barras";
+            this.cCodigoBarras.HeaderText = "Código de Barras";
             this.cCodigoBarras.Name = "cCodigoBarras";
             this.cCodigoBarras.ReadOnly = true;
             this.cCodigoBarras.Width = 140;
@@ -218,25 +237,6 @@ namespace SITS
             // 
             this.clCantidadAgregar.HeaderText = "Cantidad";
             this.clCantidadAgregar.Name = "clCantidadAgregar";
-            // 
-            // lblResultadoSubtotal
-            // 
-            this.lblResultadoSubtotal.AutoSize = true;
-            this.lblResultadoSubtotal.Location = new System.Drawing.Point(285, 304);
-            this.lblResultadoSubtotal.Name = "lblResultadoSubtotal";
-            this.lblResultadoSubtotal.Size = new System.Drawing.Size(25, 20);
-            this.lblResultadoSubtotal.TabIndex = 17;
-            this.lblResultadoSubtotal.Text = "__";
-            // 
-            // lblSubtotal
-            // 
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
-            this.lblSubtotal.TabIndex = 16;
-            this.lblSubtotal.Text = "Subtotal";
-            this.lblSubtotal.Click += new System.EventHandler(this.lblSubtotal_Click);
             // 
             // frmCombos
             // 
@@ -273,13 +273,13 @@ namespace SITS
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvInventarioCombos;
+        private System.Windows.Forms.Label lblNroComboSiguiente;
+        private System.Windows.Forms.Button btnNovedad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
-        private System.Windows.Forms.Label lblNroComboSiguiente;
-        private System.Windows.Forms.Button btnNovedad;
     }
 }

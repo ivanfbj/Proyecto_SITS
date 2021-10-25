@@ -57,7 +57,7 @@ namespace SITS
 
         }
 
-        private void actualizarlblNroComboSiguiente()
+        private string actualizarlblNroComboSiguiente()
         {
             cmd = new SqlCommand("select ISNULL(max(nroCombo),0) + 1 from tblCombo", cn.abrirConexion());
             da = new SqlDataAdapter(cmd);
@@ -69,6 +69,8 @@ namespace SITS
 
                 lblNroComboSiguiente.Text = dt.Rows[0][0].ToString();
             }
+
+            return lblNroComboSiguiente.Text;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -107,9 +109,12 @@ namespace SITS
 
 
                     int calcularSubtotal = 0;
+                    int contarProductoSeleccionados = 0;
+                    actualizarlblNroComboSiguiente();
                     foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
                     {
                         bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                        
                         if (isSelected)
                         {
                             int precio = Convert.ToInt32(row.Cells["clPrecio"].Value.ToString());
@@ -117,10 +122,36 @@ namespace SITS
 
                             calcularSubtotal += (precio * cantidad);
                             lblResultadoSubtotal.Text = $"$ {calcularSubtotal.ToString()}";
+                            contarProductoSeleccionados++;
+
+
+                            try
+                            {
+                                cn = new clsConexionSql();
+                                cmd = new SqlCommand("stprInsertarProductosPorCombos", cn.abrirConexion());
+                                cmd.CommandType = CommandType.StoredProcedure;
+
+                                cmd.Parameters.Add(new SqlParameter("@tblCombo_nroCombo", lblNroComboSiguiente.Text));
+                                cmd.Parameters.Add(new SqlParameter("@tblCombo_nombre", txtNombreDelCombo.Text));
+                                cmd.Parameters.Add(new SqlParameter("@tblProducto_codigoBarras", row.Cells["cCodigoBarras"].Value.ToString()));
+                                cmd.Parameters.Add(new SqlParameter("@tblProductoxCombo_cantidad", row.Cells["clCantidadAgregar"].Value.ToString()));
+                                cmd.ExecuteNonQuery();
+
+                            }
+                            catch (Exception error)
+                            {
+
+                                MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                            }
+
+
                         }
                     }
 
-                    MessageBox.Show("Aqui se guardará en la base de datos", "INFORMACION GUARDADA EN BASE DE DATOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"El combo se guardó satisfactoriamente:\n " +
+                        $"Nombre del combo: {txtNombreDelCombo.Text}\n" +
+                        $"Cantidad de productos únicos seleccionados: {contarProductoSeleccionados}\n" +
+                        $"Subtotal del Combo creado: {calcularSubtotal}", "Combo Creado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else if (minimoUnProductoSeleccionado == false)
