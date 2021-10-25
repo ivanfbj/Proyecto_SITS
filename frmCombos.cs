@@ -34,12 +34,20 @@ namespace SITS
         private void llenarProductoCombos()
         {
             int n = 0;
-            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+
+            try
+            {
+                cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
+            }
+            catch (Exception error)
+            {
 
+                MessageBox.Show("Ha ocurrido un error:" + error.Message);
+            }
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
@@ -59,18 +67,30 @@ namespace SITS
 
         private string actualizarlblNroComboSiguiente()
         {
-            cmd = new SqlCommand("select ISNULL(max(nroCombo),0) + 1 from tblCombo", cn.abrirConexion());
+
+            try
+            {
+                cmd = new SqlCommand("select ISNULL(max(nroCombo),0) + 1 from tblCombo", cn.abrirConexion());
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count != 0)
+                if (dt.Rows.Count != 0)
+                {
+
+                    lblNroComboSiguiente.Text = dt.Rows[0][0].ToString();
+                }
+
+                return lblNroComboSiguiente.Text;
+            }
+            catch (Exception error)
             {
 
-                lblNroComboSiguiente.Text = dt.Rows[0][0].ToString();
+                MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                return "Error: " + error.Message;
             }
 
-            return lblNroComboSiguiente.Text;
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -111,6 +131,7 @@ namespace SITS
                     int calcularSubtotal = 0;
                     int contarProductoSeleccionados = 0;
                     actualizarlblNroComboSiguiente();
+
                     foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
                     {
                         bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
@@ -153,6 +174,8 @@ namespace SITS
                         $"Cantidad de productos únicos seleccionados: {contarProductoSeleccionados}\n" +
                         $"Subtotal del Combo creado: {calcularSubtotal}", "Combo Creado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    limpiarCamposYDataGridView();
+
                 }
                 else if (minimoUnProductoSeleccionado == false)
                 {
@@ -167,9 +190,16 @@ namespace SITS
 
         }
 
-        private void lblSubtotal_Click(object sender, EventArgs e)
+        private void limpiarCamposYDataGridView()
         {
-
+            actualizarlblNroComboSiguiente();
+            txtNombreDelCombo.Clear();
+            dgvInventarioCombos.Rows.Clear();
+            llenarProductoCombos();
+            lblResultadoSubtotal.Text = "__";
         }
+
+
+
     }
 }

@@ -194,7 +194,7 @@ namespace SITS
             this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
-            this.lblSubtotal.Click += new System.EventHandler(this.lblSubtotal_Click);
+            
             // 
             // clAgregar
             // 
