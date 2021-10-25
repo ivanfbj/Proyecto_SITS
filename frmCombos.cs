@@ -101,22 +101,32 @@ namespace SITS
                                 MessageBox.Show($"La cantidad del producto {row.Cells["cCodigoBarras"].Value} - {row.Cells["cNombreProducto"].Value} está vacía", "Producto Sin Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                 return;
-                            } 
+                            }
                         }
                     }
 
-                    MessageBox.Show("Aqui se guardará en la base de datos","INFORMACION GUARDADA EN BASE DE DATOS" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    int calcularSubtotal = 0;
+                    foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
+                    {
+                        bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                        if (isSelected)
+                        {
+                            int precio = Convert.ToInt32(row.Cells["clPrecio"].Value.ToString());
+                            int cantidad = Convert.ToInt32(row.Cells["clCantidadAgregar"].Value.ToString());
 
+                            calcularSubtotal += (precio * cantidad);
+                            lblResultadoSubtotal.Text = $"$ {calcularSubtotal.ToString()}";
+                        }
+                    }
+
+                    MessageBox.Show("Aqui se guardará en la base de datos", "INFORMACION GUARDADA EN BASE DE DATOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else if (minimoUnProductoSeleccionado == false)
                 {
                     MessageBox.Show("POR FAVOR SELECCIONA ALGÚN PRODUCTO", "Producto NO seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
-
             }
             else
             {
