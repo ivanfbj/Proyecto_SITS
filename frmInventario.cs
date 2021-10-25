@@ -36,7 +36,7 @@ namespace SITS
         private void btnIngresar_MouseHover(object sender, EventArgs e)
         {
             btnIngresar.Size = new Size(121, 41);
-          
+
         }
 
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
@@ -83,8 +83,8 @@ namespace SITS
         }
         void llenarProducto()
         {
-            int n = 0, cantidad=0;
-            Double total = 0, precio=0;
+            int n = 0, cantidad = 0;
+            Double total = 0, precio = 0;
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -94,7 +94,8 @@ namespace SITS
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
-                dgvInventario.Rows.Add(n - 1);
+                if (n > 1) { dgvInventario.Rows.Add(n - 1); }
+
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvInventario.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
@@ -228,7 +229,7 @@ namespace SITS
                 MessageBox.Show("El producto no existe");
             }
         }
-        
+
         private void buscarMostrarProducto()
         {
             bool existeProducto = false;

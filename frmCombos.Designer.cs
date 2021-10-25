@@ -41,13 +41,14 @@ namespace SITS
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.dgvInventarioCombos = new System.Windows.Forms.DataGridView();
-            this.lblSubtotal = new System.Windows.Forms.Label();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidadAgregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.btnCancelarBuscarCombo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
@@ -56,6 +57,7 @@ namespace SITS
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCancelarBuscarCombo);
             this.panel1.Controls.Add(this.btnNovedad);
             this.panel1.Controls.Add(this.lblNroComboSiguiente);
             this.panel1.Controls.Add(this.btnIngresar);
@@ -118,6 +120,7 @@ namespace SITS
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblNroCombo
             // 
@@ -139,6 +142,8 @@ namespace SITS
             // 
             // txtNombreDelCombo
             // 
+            this.txtNombreDelCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNombreDelCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNombreDelCombo.Location = new System.Drawing.Point(217, 58);
             this.txtNombreDelCombo.Name = "txtNombreDelCombo";
             this.txtNombreDelCombo.Size = new System.Drawing.Size(195, 26);
@@ -186,16 +191,6 @@ namespace SITS
             this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
             this.dgvInventarioCombos.TabIndex = 1;
             // 
-            // lblSubtotal
-            // 
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
-            this.lblSubtotal.TabIndex = 16;
-            this.lblSubtotal.Text = "Subtotal";
-            
-            // 
             // clAgregar
             // 
             this.clAgregar.HeaderText = "Agregar";
@@ -237,6 +232,28 @@ namespace SITS
             // 
             this.clCantidadAgregar.HeaderText = "Cantidad";
             this.clCantidadAgregar.Name = "clCantidadAgregar";
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
+            this.lblSubtotal.TabIndex = 16;
+            this.lblSubtotal.Text = "Subtotal";
+            // 
+            // btnCancelarBuscarCombo
+            // 
+            this.btnCancelarBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarBuscarCombo.FlatAppearance.BorderSize = 0;
+            this.btnCancelarBuscarCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscarCombo.Image")));
+            this.btnCancelarBuscarCombo.Location = new System.Drawing.Point(606, 47);
+            this.btnCancelarBuscarCombo.Name = "btnCancelarBuscarCombo";
+            this.btnCancelarBuscarCombo.Size = new System.Drawing.Size(42, 37);
+            this.btnCancelarBuscarCombo.TabIndex = 20;
+            this.btnCancelarBuscarCombo.UseVisualStyleBackColor = true;
+            this.btnCancelarBuscarCombo.Visible = false;
             // 
             // frmCombos
             // 
@@ -281,5 +298,6 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
+        private System.Windows.Forms.Button btnCancelarBuscarCombo;
     }
 }

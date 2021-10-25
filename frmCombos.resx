@@ -118,6 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancelarBuscarCombo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMYSURBVEhLtZTb
+        SxRRHMdFCHro3f+gt9TIhCBs3Yvb3mXdWl2UJN1jRG0Pq2lEurbmbddLiLhrEvUSmEWJiBFhSJcXjfSh
+        CFNJq91wK2+ouW3z6zczZ9YdZhS7+IUvM8yc3+d7zuH8TtJORUhwj4kEHWZndx8+Z9Dr6O/oCfzWYi4L
+        ZNChfy6Ds1uLoEk0bGMGfc9ceiOFlu1MOLsLWBhLAEEeCQAhHVBMOsGC74n/0HN6R3sWLd9exrKADQvY
+        mXHFFeQ6jJFq+EnKAYib8yKphAekDhykixuTU+CHbJM3pstvOUgx8mKXigUrAryHNAJDoXKOYJDbXgMK
+        g4ezylr/iaLkhdA2Ad5E/AjfnLWcl/W5EMrIhAL9pXiINt9fRHFieTyeZASHWbgV9/grzk4OKpiDp6Zy
+        Hs22xAPUeY1jFCmWhQQPCLOvIa0iGHO5HqJT08DUtULs7kNYHX8dh3M+dBiUen6rlJa6NYoUy0yCBiHg
+        NmkQBcC5Koi+fQcbCwuw+m0eFh8NigPQJYaL/CpMVxmKFAubxioE3CH14gB0rH+Ih4dmIVJRLglw6d1c
+        QDaaIsXC43lECGgjPhGc8fh4+MgwLH2YgqWPMyJ4OD0dDIYrfIDZG6VIsU6c7dyHcPYqgCJspsRzv2zK
+        g4jrPA87lgXzJadFAVNHVfz2oFXWhlmKlMpUFhgQVtFPvDw84bTIOi0NanXn4wEae3M7xUllPNOViXCu
+        i9mjOmkplIcmeFDjiMOVFu+Gotizl+Kk+rwGlY03R7gAtv11uK+jylwIp6VL4dhgPcdL43CFEZvM5ndT
+        lFThdagOrQPMrcSg0HWLiReiCw1V0Ks9Bc/UNniisUOHjoBWX70JR2tsTb0UJZUAZ/1qFuD+iw2wOYMi
+        wJY21TI5Np+PoqRityURPjDG+/l7eKrO9zlVude+KIy1EjB7e+K1MKq3t+ynKKm2g9MhnMyl7SlsmNre
+        3JBzsqlGa2+14O2VTH/La6fwv1LoB7i2gA/TIf8mBEd2Dc4K4ZO7Bmf1Jgy2xxMQHRqHXy+noY9+/k9K
+        SvoNZiNjb20KHVwAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnNovedad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -213,6 +233,15 @@
         /64NG/4AMrIpM160kK8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="clAgregar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clCantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clCantidadAgregar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="clAgregar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

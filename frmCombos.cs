@@ -20,8 +20,10 @@ namespace SITS
         int i = 0;
         public frmCombos()
         {
-            cn = new clsConexionSql();
+
+
             InitializeComponent();
+            autoCompletarNombreCombos();
         }
 
         private void frmCombos_Load(object sender, EventArgs e)
@@ -29,6 +31,25 @@ namespace SITS
             actualizarlblNroComboSiguiente();
             llenarProductoCombos();
         }
+
+        void autoCompletarNombreCombos()
+        {
+            AutoCompleteStringCollection listaNombreCombos = new AutoCompleteStringCollection();
+
+            cn = new clsConexionSql();
+            cmd = new SqlCommand("select distinct nombre from tblCombo", cn.abrirConexion());
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listaNombreCombos.Add(dt.Rows[i]["nombre"].ToString());
+            }
+
+            txtNombreDelCombo.AutoCompleteCustomSource = listaNombreCombos;
+        }
+
 
 
         private void llenarProductoCombos()
@@ -38,10 +59,10 @@ namespace SITS
             try
             {
                 cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
-            cmd.CommandType = CommandType.StoredProcedure;
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
             }
             catch (Exception error)
             {
@@ -71,9 +92,9 @@ namespace SITS
             try
             {
                 cmd = new SqlCommand("select ISNULL(max(nroCombo),0) + 1 from tblCombo", cn.abrirConexion());
-            da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
                 if (dt.Rows.Count != 0)
                 {
@@ -135,7 +156,7 @@ namespace SITS
                     foreach (DataGridViewRow row in dgvInventarioCombos.Rows)
                     {
                         bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
-                        
+
                         if (isSelected)
                         {
                             int precio = Convert.ToInt32(row.Cells["clPrecio"].Value.ToString());
@@ -199,7 +220,54 @@ namespace SITS
             lblResultadoSubtotal.Text = "__";
         }
 
+        private void buscarMostrarCombo()
+        {
+            int n = 0;
+            if (txtNombreDelCombo.Text != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprConsultarProductosDelCombo", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@tblCombo_nombre", txtNombreDelCombo.Text));
+                    cmd.ExecuteNonQuery();
+
+                    da = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    dgvInventarioCombos.Rows.Clear();
+                    MessageBox.Show("Cantidad count " + dt.Rows.Count);
+
+                    if (dt.Rows.Count != 0)
+                    {
+
+                        n = dt.Rows.Count;
+                        if (n > 1) { dgvInventarioCombos.Rows.Add(n - 1); }
 
 
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            dgvInventarioCombos.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
+                            dgvInventarioCombos.Rows[i].Cells["cNombreProducto"].Value = dt.Rows[i]["nombreProducto"].ToString();
+                            dgvInventarioCombos.Rows[i].Cells["clCantidad"].Value = dt.Rows[i]["stock"].ToString();
+                            dgvInventarioCombos.Rows[i].Cells["clPrecio"].Value = dt.Rows[i]["precio"].ToString();
+                            dgvInventarioCombos.Rows[i].Cells["clCantidadAgregar"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
+                        }
+
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscarMostrarCombo();
+        }
     }
 }
