@@ -49,17 +49,19 @@ BEGIN
 			ELSE
 				BEGIN
 					INSERT INTO tblCombo (nroCombo, nombre) VALUES (@tblCombo_nroCombo, @tblCombo_nombre);
+					
 					DECLARE @idComboInsertado INT= SCOPE_IDENTITY();
+					
 					INSERT INTO tblProductoxCombo (combo_id,producto_id,cantidad) VALUES (@idComboInsertado, @tblProducto_id, @tblProductoxCombo_cantidad);
 					
 					SELECT @tblCombo_subtotal  = SUM(p.precio * pc.cantidad)
 						FROM tblCombo as c
 						INNER JOIN tblProductoxCombo as pc on c.id = pc.combo_id
 						INNER JOIN tblProducto as p on pc.producto_id = p.id
-						WHERE c.id = @tblcombo_id
+						WHERE c.id = @idComboInsertado
 						GROUP BY c.id,nroCombo,c.subtotal;
 					
-					update tblCombo set subtotal = @tblCombo_subtotal where id = @tblCombo_id;
+					update tblCombo set subtotal = @tblCombo_subtotal where id = @idComboInsertado;
 				END;
 		COMMIT TRANSACTION;
 	END TRY
