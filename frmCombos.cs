@@ -238,7 +238,7 @@ namespace SITS
                     dt = new DataTable();
                     da.Fill(dt);
                     dgvInventarioCombos.Rows.Clear();
-                    MessageBox.Show("Cantidad count " + dt.Rows.Count);
+
 
                     if (dt.Rows.Count != 0)
                     {
@@ -256,7 +256,12 @@ namespace SITS
                             dgvInventarioCombos.Rows[i].Cells["clCantidadAgregar"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
                         }
 
+                        lblResultadoSubtotal.Text = dt.Rows[0]["subtotalCombo"].ToString();
+                        lblNroComboSiguiente.Text = dt.Rows[0]["nroCombo"].ToString();
+
                     }
+                    else
+                        MessageBox.Show("Combo no existe","Combo no existe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 catch (Exception error)
                 {
@@ -265,9 +270,24 @@ namespace SITS
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscarCombo_Click(object sender, EventArgs e)
         {
             buscarMostrarCombo();
+            btnBuscarCombo.Enabled = false;
+            btnCancelarBuscarCombo.Visible = true;
+            
         }
+
+        private void btnCancelarBuscarCombo_Click(object sender, EventArgs e)
+        {
+            btnBuscarCombo.Enabled = true;
+            btnCancelarBuscarCombo.Visible = false;
+            actualizarlblNroComboSiguiente();
+            dgvInventarioCombos.Rows.Clear();
+            llenarProductoCombos();
+            lblResultadoSubtotal.Text = "__";
+        }
+
+
     }
 }

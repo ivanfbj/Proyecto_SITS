@@ -31,10 +31,11 @@ namespace SITS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelarBuscarCombo = new System.Windows.Forms.Button();
             this.btnNovedad = new System.Windows.Forms.Button();
             this.lblNroComboSiguiente = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnBuscarCombo = new System.Windows.Forms.Button();
             this.lblNroCombo = new System.Windows.Forms.Label();
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelCombo = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace SITS
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidadAgregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.btnCancelarBuscarCombo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
@@ -61,7 +61,7 @@ namespace SITS
             this.panel1.Controls.Add(this.btnNovedad);
             this.panel1.Controls.Add(this.lblNroComboSiguiente);
             this.panel1.Controls.Add(this.btnIngresar);
-            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.btnBuscarCombo);
             this.panel1.Controls.Add(this.lblNroCombo);
             this.panel1.Controls.Add(this.lblNombreDelCombo);
             this.panel1.Controls.Add(this.txtNombreDelCombo);
@@ -70,6 +70,20 @@ namespace SITS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 128);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCancelarBuscarCombo
+            // 
+            this.btnCancelarBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarBuscarCombo.FlatAppearance.BorderSize = 0;
+            this.btnCancelarBuscarCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscarCombo.Image")));
+            this.btnCancelarBuscarCombo.Location = new System.Drawing.Point(606, 47);
+            this.btnCancelarBuscarCombo.Name = "btnCancelarBuscarCombo";
+            this.btnCancelarBuscarCombo.Size = new System.Drawing.Size(42, 37);
+            this.btnCancelarBuscarCombo.TabIndex = 20;
+            this.btnCancelarBuscarCombo.UseVisualStyleBackColor = true;
+            this.btnCancelarBuscarCombo.Visible = false;
+            this.btnCancelarBuscarCombo.Click += new System.EventHandler(this.btnCancelarBuscarCombo_Click);
             // 
             // btnNovedad
             // 
@@ -108,19 +122,19 @@ namespace SITS
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // btnBuscar
+            // btnBuscarCombo
             // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(479, 46);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(121, 36);
-            this.btnBuscar.TabIndex = 17;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCombo.Image")));
+            this.btnBuscarCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarCombo.Location = new System.Drawing.Point(479, 46);
+            this.btnBuscarCombo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBuscarCombo.Name = "btnBuscarCombo";
+            this.btnBuscarCombo.Size = new System.Drawing.Size(121, 36);
+            this.btnBuscarCombo.TabIndex = 17;
+            this.btnBuscarCombo.Text = "Buscar";
+            this.btnBuscarCombo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarCombo.UseVisualStyleBackColor = true;
+            this.btnBuscarCombo.Click += new System.EventHandler(this.btnBuscarCombo_Click);
             // 
             // lblNroCombo
             // 
@@ -242,19 +256,6 @@ namespace SITS
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
             // 
-            // btnCancelarBuscarCombo
-            // 
-            this.btnCancelarBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarBuscarCombo.FlatAppearance.BorderSize = 0;
-            this.btnCancelarBuscarCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscarCombo.Image")));
-            this.btnCancelarBuscarCombo.Location = new System.Drawing.Point(606, 47);
-            this.btnCancelarBuscarCombo.Name = "btnCancelarBuscarCombo";
-            this.btnCancelarBuscarCombo.Size = new System.Drawing.Size(42, 37);
-            this.btnCancelarBuscarCombo.TabIndex = 20;
-            this.btnCancelarBuscarCombo.UseVisualStyleBackColor = true;
-            this.btnCancelarBuscarCombo.Visible = false;
-            // 
             // frmCombos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +289,7 @@ namespace SITS
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblResultadoSubtotal;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnBuscarCombo;
         private System.Windows.Forms.DataGridView dgvInventarioCombos;
         private System.Windows.Forms.Label lblNroComboSiguiente;
         private System.Windows.Forms.Button btnNovedad;
