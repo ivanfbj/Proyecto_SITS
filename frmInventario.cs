@@ -44,6 +44,13 @@ namespace SITS
             btnIngresar.Size = new Size(121, 36);
         }
 
+        /**/
+        /*
+         * Evento del botón Ingresar: Valida que los campos código de barras y nombre del productos no estén vacíos.
+         * Control de error por medio de un try Catch
+         * Se capturan los datos ingresados desde la aplicación y se llevan como parametros al procedimiento almacenado.
+         * Procedimiento almacenado encargado de insertar la información a la base de datos y complementar validaciones.
+         */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "")
@@ -81,6 +88,10 @@ namespace SITS
             Form frmNovedad = new frmNovedad();
             frmNovedad.Show();
         }
+        /*
+         * Método que permite llenar el DataGridView con la información de los productos existentes.
+         * La información de los productos es extraida de la base de datos por medio del procedimiento almacenado.
+         */
         void llenarProducto()
         {
             int n = 0, cantidad = 0;
@@ -94,6 +105,7 @@ namespace SITS
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
+                //condicionnal SI: Para controlar el error en caso de que exista 1 o más registros para el DataGridView
                 if (n > 1) { dgvInventario.Rows.Add(n - 1); }
 
                 for (i = 0; i < dt.Rows.Count; i++)
@@ -112,6 +124,7 @@ namespace SITS
             }
         }
 
+        //Método para borrar la información de los campos ingresados en la ventana.
         void limpiar()
         {
             txtCodigoDeBarras.Clear();
@@ -127,7 +140,11 @@ namespace SITS
             llenarProducto();
         }
 
-
+        /*
+         * Método que permite autocompletar los campos del código de barras y el nombre del producto.
+         * Para implementar está funcionalidad se requiere que los textBox a lo que se les vaya implementar tengas estás opciones habilitadas en sus propiedades
+            *AutoCompleteMode esté en Suggest.
+            *AutoCompleteSource esté en CustomSource*/
         void autoCompletar()
         {
 
@@ -145,7 +162,10 @@ namespace SITS
 
 
 
-
+        /*
+         * Evento de botón para Editar el nombre del producto.
+         * Para poder utilizar la venta emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar
+         */
         private void btnEditarNombreProducto_Click(object sender, EventArgs e)
         {
 
