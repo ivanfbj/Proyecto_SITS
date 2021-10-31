@@ -31,7 +31,11 @@ namespace SITS
             actualizarlblNroComboSiguiente();
             llenarProductoCombos();
         }
-
+        /*
+         * Método que permite autocompletar el campo de nombre del combo.
+         * Para implementar está funcionalidad se requiere que los textBox a lo que se les vaya implementar tengas estás opciones habilitadas en sus propiedades
+            *AutoCompleteMode esté en Suggest.
+            *AutoCompleteSource esté en CustomSource*/
         void autoCompletarNombreCombos()
         {
             AutoCompleteStringCollection listaNombreCombos = new AutoCompleteStringCollection();
@@ -51,7 +55,9 @@ namespace SITS
         }
 
 
-
+        /*
+         * Método que permite llenar el DataGridView con todos los productos para existente para seleccionar lo que va a los Combos.
+         */
         private void llenarProductoCombos()
         {
             int n = 0;
@@ -86,6 +92,9 @@ namespace SITS
 
         }
 
+        /*
+         * Para extraer el número del siguiente combo se consulta la base de datos y se muestra en la aplicación
+         */
         private string actualizarlblNroComboSiguiente()
         {
 
@@ -110,10 +119,15 @@ namespace SITS
                 MessageBox.Show("Ha ocurrido un error:" + error.Message);
                 return "Error: " + error.Message;
             }
-
-
         }
 
+        /*
+         * Para crear el Combo el nombre del combo no puede estar vacío.
+         * Se debe seleccionar como minimo un registro del DataGridView.
+         * El o los registros seleccionados deben tener la cantidad digitada.
+         * Una vez se cumplan las condiciones iniciales se procede a capturar la información de cada productos seleccionados y enviarlos como parametros al procedimiento almacenado que guardará la información en la base de datos.
+         * También se calcula el subtotal de los productos y cantidades ingresadas.
+         */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
 
@@ -142,7 +156,7 @@ namespace SITS
                             if (row.Cells["clCantidadAgregar"].Value == null)
                             {
                                 MessageBox.Show($"La cantidad del producto {row.Cells["cCodigoBarras"].Value} - {row.Cells["cNombreProducto"].Value} está vacía", "Producto Sin Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                                //Si se cumplen las condiciones el sistema no permitirá avanzar al la lógica para guarda, para esto se implmenta el return.
                                 return;
                             }
                         }
@@ -220,6 +234,10 @@ namespace SITS
             lblResultadoSubtotal.Text = "__";
         }
 
+        /*
+         * Método que permite cargar en el dataGridView del Combo que se esté buscado.
+         * Se extrae la información de la base de datos por medio de un procedimiento almacenado y se almacena en un DataTable para mostrarlo en el DataGridView
+         */
         private void buscarMostrarCombo()
         {
             int n = 0;
@@ -261,7 +279,7 @@ namespace SITS
 
                     }
                     else
-                        MessageBox.Show("Combo no existe","Combo no existe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Combo no existe", "Combo no existe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 catch (Exception error)
                 {
@@ -275,7 +293,7 @@ namespace SITS
             buscarMostrarCombo();
             btnBuscarCombo.Enabled = false;
             btnCancelarBuscarCombo.Visible = true;
-            
+
         }
 
         private void btnCancelarBuscarCombo_Click(object sender, EventArgs e)

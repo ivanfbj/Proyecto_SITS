@@ -134,7 +134,6 @@ namespace SITS
             this.dgvInventario.Rows.Clear();
         }
 
-
         private void frmInventario_Load(object sender, EventArgs e)
         {
             llenarProducto();
@@ -161,14 +160,18 @@ namespace SITS
         }
 
 
-
         /*
          * Evento de botón para Editar el nombre del producto.
-         * Para poder utilizar la venta emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar
+         * Para poder utilizar la ventana emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar Visual Basic.
+         * Seguir los siguiente pasos:
+            * 1. Explorador de soluciones
+            * 2. Referencias -> Clic derecho
+            * 3. Agregar Referencia
+            * 4. Seleccionar Microsoft.VisualBasic
+            * 5. Aceptar
          */
         private void btnEditarNombreProducto_Click(object sender, EventArgs e)
         {
-
             string nuevoNombreProducto;
             nuevoNombreProducto = Interaction.InputBox($"Ingrese el nuevo nombre para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
 
@@ -209,12 +212,14 @@ namespace SITS
             buscarMostrarProducto();
         }
 
-
-
-
-
-
-
+        /*
+         * Método que permite filtrar un producto puntual y mostrarlo en el dataGridView.
+         * Se validan los parametros de entrada que el producto si exista y tenga un id en el DataTable.
+         * Se dehabilitan y muestran varios botones.
+         * Se limpia todo el DataGridView
+         * Se carga en el DataGridView el producto que se está filtrando.
+         * Si el producto no existe se muestra un mensaje.
+         */
         private void filtrarDgvInventario(bool existeProducto, int idDataTable)
         {
             if (existeProducto && idDataTable >= 0)
@@ -222,6 +227,7 @@ namespace SITS
                 txtCodigoDeBarras.Enabled = false;
                 txtNombreDelProducto.Enabled = false;
                 txtPrecio.Enabled = false;
+                btnBuscar.Enabled = false;
                 btnCancelarBuscar.Visible = true;
                 btnEditarNombreProducto.Visible = true;
                 btnEditarPrecio.Visible = true;
@@ -250,6 +256,10 @@ namespace SITS
             }
         }
 
+        /*
+         * Método para buscar un producto.
+         * Se valida que el producto exista en el DataTable y se captura el ID para pasarlo como parametros al método que permite filtrar un producto puntual y mostrarlo en el dataGridView.
+         */
         private void buscarMostrarProducto()
         {
             bool existeProducto = false;
@@ -266,15 +276,12 @@ namespace SITS
                         idDataTable = i;
                     }
                 }
-
                 filtrarDgvInventario(existeProducto, idDataTable);
-
             }
             else if (txtNombreDelProducto.Text != "")
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-
                     if (dt.Rows[i]["nombre"].ToString().Equals(txtNombreDelProducto.Text))
                     {
                         existeProducto = true;
@@ -291,12 +298,17 @@ namespace SITS
             reiniciarCamposYDataGridView();
         }
 
-
+        /*
+         * Método que permite revertir los cambios después de realizar la busqueda de un producto.
+         * Habilita los botones que se habían modificado y oculta nuevamente los botones que se mostraron.
+         * Limpia los textBox y vuelve a llenar el dataGridView con la información de todos los productos.
+         */
         private void reiniciarCamposYDataGridView()
         {
             txtCodigoDeBarras.Enabled = true;
             txtNombreDelProducto.Enabled = true;
             txtPrecio.Enabled = true;
+            btnBuscar.Enabled = true;
             btnCancelarBuscar.Visible = false;
             btnEditarNombreProducto.Visible = false;
             btnEditarPrecio.Visible = false;
@@ -304,6 +316,16 @@ namespace SITS
             llenarProducto();
         }
 
+        /*
+         * Evento de botón para Editar el precio del producto.
+         * Para poder utilizar la ventana emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar Visual Basic.
+         * Seguir los siguiente pasos:
+            * 1. Explorador de soluciones
+            * 2. Referencias -> Clic derecho
+            * 3. Agregar Referencia
+            * 4. Seleccionar Microsoft.VisualBasic
+            * 5. Aceptar
+         */
         private void btnEditarPrecio_Click(object sender, EventArgs e)
         {
             string nuevoPrecioProducto;
@@ -331,7 +353,5 @@ namespace SITS
                 }
             }
         }
-
-
     }
 }
