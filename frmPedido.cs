@@ -28,13 +28,6 @@ namespace SITS
          * Método que permite llenar el DataGridView con la información de los productos existentes.
          * La información de los productos es extraida de la base de datos por medio del procedimiento almacenado.
          */
-
-
-        private void frmPedido_Load(object sender, EventArgs e)
-        {
-            llenarProductoEnPedido();
-        }
-
         void llenarProductoEnPedido()
         {
             int n = 0, cantidad = 0;
@@ -147,6 +140,20 @@ namespace SITS
             txtNombreDelCombo.Enabled = true;
             dgvComboEnPedido.Rows.Clear();
             lblSubtotalCalculado.Text = "__";
+        }
+
+        private void cbAgregar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAgregar.Checked == true)
+            {
+                pnlAgregar.Visible = true;
+                llenarProductoEnPedido();
+            }
+            else
+            {
+                pnlAgregar.Visible = false;
+                dgvInventarioEnPedido.Rows.Clear();                
+            }
         }
     }
 }
