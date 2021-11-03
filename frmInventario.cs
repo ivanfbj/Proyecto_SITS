@@ -36,7 +36,7 @@ namespace SITS
         private void btnIngresar_MouseHover(object sender, EventArgs e)
         {
             btnIngresar.Size = new Size(121, 41);
-          
+
         }
 
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
@@ -44,6 +44,13 @@ namespace SITS
             btnIngresar.Size = new Size(121, 36);
         }
 
+        /**/
+        /*
+         * Evento del botón Ingresar: Valida que los campos código de barras y nombre del productos no estén vacíos.
+         * Control de error por medio de un try Catch
+         * Se capturan los datos ingresados desde la aplicación y se llevan como parametros al procedimiento almacenado.
+         * Procedimiento almacenado encargado de insertar la información a la base de datos y complementar validaciones.
+         */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtCodigoDeBarras.Text != "" & txtNombreDelProducto.Text != "")
@@ -81,10 +88,14 @@ namespace SITS
             Form frmNovedad = new frmNovedad();
             frmNovedad.Show();
         }
+        /*
+         * Método que permite llenar el DataGridView con la información de los productos existentes.
+         * La información de los productos es extraida de la base de datos por medio del procedimiento almacenado.
+         */
         void llenarProducto()
         {
-            int n = 0, cantidad=0;
-            Double total = 0, precio=0;
+            int n = 0, cantidad = 0;
+            Double total = 0, precio = 0;
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -94,7 +105,9 @@ namespace SITS
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
-                dgvInventario.Rows.Add(n - 1);
+                //condicionnal SI: Para controlar el error en caso de que exista 1 o más registros para el DataGridView
+                if (n > 1) { dgvInventario.Rows.Add(n - 1); }
+
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvInventario.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
@@ -111,6 +124,7 @@ namespace SITS
             }
         }
 
+        //Método para borrar la información de los campos ingresados en la ventana.
         void limpiar()
         {
             txtCodigoDeBarras.Clear();
@@ -120,13 +134,16 @@ namespace SITS
             this.dgvInventario.Rows.Clear();
         }
 
-
         private void frmInventario_Load(object sender, EventArgs e)
         {
             llenarProducto();
         }
 
-
+        /*
+         * Método que permite autocompletar los campos del código de barras y el nombre del producto.
+         * Para implementar está funcionalidad se requiere que los textBox a lo que se les vaya implementar tengas estás opciones habilitadas en sus propiedades
+            *AutoCompleteMode esté en Suggest.
+            *AutoCompleteSource esté en CustomSource*/
         void autoCompletar()
         {
 
@@ -143,11 +160,18 @@ namespace SITS
         }
 
 
-
-
+        /*
+         * Evento de botón para Editar el nombre del producto.
+         * Para poder utilizar la ventana emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar Visual Basic.
+         * Seguir los siguiente pasos:
+            * 1. Explorador de soluciones
+            * 2. Referencias -> Clic derecho
+            * 3. Agregar Referencia
+            * 4. Seleccionar Microsoft.VisualBasic
+            * 5. Aceptar
+         */
         private void btnEditarNombreProducto_Click(object sender, EventArgs e)
         {
-
             string nuevoNombreProducto;
             nuevoNombreProducto = Interaction.InputBox($"Ingrese el nuevo nombre para el producto {txtCodigoDeBarras.Text} - {txtNombreDelProducto.Text}");
 
@@ -188,12 +212,14 @@ namespace SITS
             buscarMostrarProducto();
         }
 
-
-
-
-
-
-
+        /*
+         * Método que permite filtrar un producto puntual y mostrarlo en el dataGridView.
+         * Se validan los parametros de entrada que el producto si exista y tenga un id en el DataTable.
+         * Se dehabilitan y muestran varios botones.
+         * Se limpia todo el DataGridView
+         * Se carga en el DataGridView el producto que se está filtrando.
+         * Si el producto no existe se muestra un mensaje.
+         */
         private void filtrarDgvInventario(bool existeProducto, int idDataTable)
         {
             if (existeProducto && idDataTable >= 0)
@@ -201,6 +227,7 @@ namespace SITS
                 txtCodigoDeBarras.Enabled = false;
                 txtNombreDelProducto.Enabled = false;
                 txtPrecio.Enabled = false;
+                btnBuscar.Enabled = false;
                 btnCancelarBuscar.Visible = true;
                 btnEditarNombreProducto.Visible = true;
                 btnEditarPrecio.Visible = true;
@@ -228,7 +255,11 @@ namespace SITS
                 MessageBox.Show("El producto no existe");
             }
         }
-        
+
+        /*
+         * Método para buscar un producto.
+         * Se valida que el producto exista en el DataTable y se captura el ID para pasarlo como parametros al método que permite filtrar un producto puntual y mostrarlo en el dataGridView.
+         */
         private void buscarMostrarProducto()
         {
             bool existeProducto = false;
@@ -245,15 +276,12 @@ namespace SITS
                         idDataTable = i;
                     }
                 }
-
                 filtrarDgvInventario(existeProducto, idDataTable);
-
             }
             else if (txtNombreDelProducto.Text != "")
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-
                     if (dt.Rows[i]["nombre"].ToString().Equals(txtNombreDelProducto.Text))
                     {
                         existeProducto = true;
@@ -270,12 +298,17 @@ namespace SITS
             reiniciarCamposYDataGridView();
         }
 
-
+        /*
+         * Método que permite revertir los cambios después de realizar la busqueda de un producto.
+         * Habilita los botones que se habían modificado y oculta nuevamente los botones que se mostraron.
+         * Limpia los textBox y vuelve a llenar el dataGridView con la información de todos los productos.
+         */
         private void reiniciarCamposYDataGridView()
         {
             txtCodigoDeBarras.Enabled = true;
             txtNombreDelProducto.Enabled = true;
             txtPrecio.Enabled = true;
+            btnBuscar.Enabled = true;
             btnCancelarBuscar.Visible = false;
             btnEditarNombreProducto.Visible = false;
             btnEditarPrecio.Visible = false;
@@ -283,6 +316,16 @@ namespace SITS
             llenarProducto();
         }
 
+        /*
+         * Evento de botón para Editar el precio del producto.
+         * Para poder utilizar la ventana emergente del "Interaction.InputBox" que recibe el texto del nuevo nombre se debe habilitar Visual Basic.
+         * Seguir los siguiente pasos:
+            * 1. Explorador de soluciones
+            * 2. Referencias -> Clic derecho
+            * 3. Agregar Referencia
+            * 4. Seleccionar Microsoft.VisualBasic
+            * 5. Aceptar
+         */
         private void btnEditarPrecio_Click(object sender, EventArgs e)
         {
             string nuevoPrecioProducto;
@@ -310,7 +353,5 @@ namespace SITS
                 }
             }
         }
-
-
     }
 }

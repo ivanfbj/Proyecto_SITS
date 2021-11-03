@@ -12,7 +12,7 @@ ALTER PROCEDURE [stprInsertarMovimientoProducto]
 @codigoBarras               NVARCHAR(50), 
 @nombre                     NVARCHAR(255), 
 @cantidad                   INT, 
-@precio                     MONEY, 
+@precio                     INT, 
 @tipoMovimiento_Descripcion NVARCHAR(50)
 AS
     BEGIN

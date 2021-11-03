@@ -20,37 +20,140 @@ namespace SITS
         int i = 0;
         public frmPedido()
         {
-            cn = new clsConexionSql();
             InitializeComponent();
+            autoCompletarNumeroNombreCombo();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /*
+         * Método que permite llenar el DataGridView con la información de los productos existentes.
+         * La información de los productos es extraida de la base de datos por medio del procedimiento almacenado.
+         */
+        void llenarProductoEnPedido()
         {
-            int n = 0;
-            Double total = 0;
-            cmd = new SqlCommand("select * from tblCombo", cn.abrirConexion());
+            int n = 0, cantidad = 0;
+            Double total = 0, precio = 0;
+            cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
+
             if (dt.Rows.Count != 0)
             {
                 n = dt.Rows.Count;
-                dgvInventario.Rows.Add(n - 1);
+                //condicionnal SI: Para controlar el error en caso de que exista 1 o más registros para el DataGridView
+                if (n > 1) { dgvInventarioEnPedido.Rows.Add(n - 1); }
+
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
-                    dgvInventario.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
-                    dgvInventario.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
-                    dgvInventario.Rows[i].Cells[5].Value = dt.Rows[i][3].ToString();
-                    dgvInventario.Rows[i].Cells[6].Value = dt.Rows[i][4].ToString();
-                    total = (Convert.ToDouble(dt.Rows[i][3].ToString()) * Convert.ToInt32(dt.Rows[i][4].ToString()));
-                    dgvInventario.Rows[i].Cells[7].Value = total;
+                    dgvInventarioEnPedido.Rows[i].Cells["cCodigoBarras"].Value = dt.Rows[i]["codigoBarras"].ToString();
+                    dgvInventarioEnPedido.Rows[i].Cells["cNombreProducto"].Value = dt.Rows[i]["nombre"].ToString();
+                    dgvInventarioEnPedido.Rows[i].Cells["clCantidad"].Value = dt.Rows[i]["stock"].ToString();
+                    dgvInventarioEnPedido.Rows[i].Cells["clPrecio"].Value = dt.Rows[i]["precio"].ToString();
                 }
             }
         }
 
-        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        void autoCompletarNumeroNombreCombo()
         {
 
+            AutoCompleteStringCollection listaNumeroCombos = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection listaNombreCombos = new AutoCompleteStringCollection();
+
+            cn = new clsConexionSql();
+            cmd = new SqlCommand("select distinct nroCombo,nombre from tblCombo", cn.abrirConexion());
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listaNumeroCombos.Add(dt.Rows[i]["nroCombo"].ToString());
+                listaNombreCombos.Add(dt.Rows[i]["nombre"].ToString());
+            }
+
+            txtNumeroCombo.AutoCompleteCustomSource = listaNumeroCombos;
+            txtNombreDelCombo.AutoCompleteCustomSource = listaNombreCombos;
+        }
+
+        private void btnBuscarComboEnPedido_Click(object sender, EventArgs e)
+        {
+            buscarMostrarCombo();
+            btnBuscarComboEnPedido.Enabled = false;
+            btnCancelarBuscarComboEnPedido.Visible = true;
+            txtNumeroCombo.Enabled = false;
+            txtNombreDelCombo.Enabled = false;
+        }
+
+        private void buscarMostrarCombo()
+        {
+            int n = 0;
+            if (txtNombreDelCombo.Text != "")
+            {
+                try
+                {
+                    cn = new clsConexionSql();
+                    cmd = new SqlCommand("stprConsultarProductosDelCombo", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@tblCombo_nombre", txtNombreDelCombo.Text));
+                    cmd.ExecuteNonQuery();
+
+                    da = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    dgvComboEnPedido.Rows.Clear();
+
+
+                    if (dt.Rows.Count != 0)
+                    {
+
+                        n = dt.Rows.Count;
+                        if (n > 1) { dgvComboEnPedido.Rows.Add(n - 1); }
+
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            dgvComboEnPedido.Rows[i].Cells["cCodigoBarrasComboEnPedido"].Value = dt.Rows[i]["codigoBarras"].ToString();
+                            dgvComboEnPedido.Rows[i].Cells["cNombreProductoComboEnPedido"].Value = dt.Rows[i]["nombreProducto"].ToString();
+                            dgvComboEnPedido.Rows[i].Cells["cStockComboEnPedido"].Value = dt.Rows[i]["stock"].ToString();
+                            dgvComboEnPedido.Rows[i].Cells["cPrecioComboEnPedido"].Value = dt.Rows[i]["precio"].ToString();
+                        }
+                        lblSubtotalCalculado.Text = dt.Rows[0]["subtotalCombo"].ToString();
+                        lblTotalCalculado.Text = dt.Rows[0]["subtotalCombo"].ToString();
+                    }
+                    else
+                        MessageBox.Show("Combo no existe", "Combo no existe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                }
+            }
+        }
+
+        private void btnCancelarBuscarComboEnPedido_Click(object sender, EventArgs e)
+        {
+            btnBuscarComboEnPedido.Enabled = true;
+            btnCancelarBuscarComboEnPedido.Visible = true;
+            txtNumeroCombo.Enabled = true;
+            txtNombreDelCombo.Enabled = true;
+            dgvComboEnPedido.Rows.Clear();
+            lblSubtotalCalculado.Text = "__";
+        }
+
+        private void cbAgregar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAgregar.Checked == true)
+            {
+                pnlAgregar.Visible = true;
+                llenarProductoEnPedido();
+            }
+            else
+            {
+                pnlAgregar.Visible = false;
+                dgvInventarioEnPedido.Rows.Clear();                
+            }
         }
     }
 }

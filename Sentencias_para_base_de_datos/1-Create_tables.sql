@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[tblProducto]
   [codigoBarras]  NVARCHAR(50) NOT NULL, 
   [nombre]        NVARCHAR(255) NOT NULL, 
   [cantidad]      INT NOT NULL, 
-  [precio]        MONEY NOT NULL, 
+  [precio]        INT NOT NULL, 
   [fechaCreacion] DATETIME NOT NULL
 					  DEFAULT GETDATE(),
   CONSTRAINT [PK_tblProducto_id] PRIMARY KEY ([id]),
@@ -44,9 +44,10 @@ CREATE TABLE [dbo].[tblCombo]
   [id]       INT NOT NULL IDENTITY, 
   [nroCombo] int NOT NULL, 
   [nombre]   NVARCHAR(255) NOT NULL, 
-  [subtotal] MONEY NOT NULL,
+  [subtotal] INT NULL,
   CONSTRAINT [PK_tblCombo_id] PRIMARY KEY([id]),
-  CONSTRAINT [UQ_tblCombo_nombre] UNIQUE([nombre])
+  CONSTRAINT [UQ_tblCombo_nroCombo] UNIQUE([nroCombo]),
+  CONSTRAINT [UQ_tblCombo_nombre] UNIQUE([nombre]),
 );
 
 CREATE TABLE [dbo].[tblProductoxCombo]
@@ -54,9 +55,11 @@ CREATE TABLE [dbo].[tblProductoxCombo]
   [id]          INT NOT NULL IDENTITY, 
   [combo_id]    INT NOT NULL, 
   [producto_id] INT NOT NULL,
+  [cantidad]	INT NOT NULL,
   CONSTRAINT [PK_tblProductoxCombo_id] PRIMARY KEY ([id]),
   CONSTRAINT [FK_tblCombo_Id_tblproductoxCombo_combo_Id] FOREIGN KEY([combo_Id]) REFERENCES [tblCombo]([Id]), 
-  CONSTRAINT [FK_tblProducto_Id_tblproductoxCombo_producto_Id] FOREIGN KEY([producto_Id]) REFERENCES [tblProducto]([Id])
+  CONSTRAINT [FK_tblProducto_Id_tblproductoxCombo_producto_Id] FOREIGN KEY([producto_Id]) REFERENCES [tblProducto]([Id]),
+  CONSTRAINT [UQ_tblProductoxCombo_combo_id_producto_id] UNIQUE ([combo_id] , [producto_id])
 );
 
 CREATE TABLE [dbo].[tblPedido]
@@ -67,9 +70,9 @@ CREATE TABLE [dbo].[tblPedido]
   [fechaPedido] DATETIME NOT NULL
 					DEFAULT GETDATE(), 
   [envio]       BIT NOT NULL, 
-  [valorEnvio]  MONEY NOT NULL, 
-  [subtotal]    MONEY NOT NULL, 
-  [total]       MONEY NOT NULL,
+  [valorEnvio]  INT NOT NULL, 
+  [subtotal]    INT NOT NULL, 
+  [total]       INT NOT NULL,
   CONSTRAINT [PK_tblPedido_id] PRIMARY KEY([id]),
   CONSTRAINT [UQ_tblPedido_nroPedido] UNIQUE([nroPedido]),
   CONSTRAINT [UQ_tblPedido_nombreCombo] UNIQUE([nombreCombo]),
