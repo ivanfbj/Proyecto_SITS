@@ -32,9 +32,9 @@ namespace SITS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.btnProductosVendidos = new System.Windows.Forms.Button();
-            this.btnProxPedidos = new System.Windows.Forms.Button();
             this.btnCombosVendidos = new System.Windows.Forms.Button();
+            this.btnProxPedidos = new System.Windows.Forms.Button();
+            this.btnProductosVendidos = new System.Windows.Forms.Button();
             this.btnAuditoria = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnCombos = new System.Windows.Forms.Button();
@@ -60,8 +60,6 @@ namespace SITS
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-
-
             this.pnlMenu.Controls.Add(this.button9);
             this.pnlMenu.Controls.Add(this.btnCombosVendidos);
             this.pnlMenu.Controls.Add(this.btnProxPedidos);
@@ -99,26 +97,26 @@ namespace SITS
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // btnProductosVendidos
+            // btnCombosVendidos
             // 
-            this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
-            this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Image")));
-            this.btnProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductosVendidos.Location = new System.Drawing.Point(0, 460);
-            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProductosVendidos.Name = "btnProductosVendidos";
-            this.btnProductosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnProductosVendidos.Size = new System.Drawing.Size(269, 50);
-            this.btnProductosVendidos.TabIndex = 9;
-            this.btnProductosVendidos.Text = "Productos mas Vendidos";
-            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProductosVendidos.UseVisualStyleBackColor = true;
-            this.btnProductosVendidos.Visible = false;
+            this.btnCombosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCombosVendidos.FlatAppearance.BorderSize = 0;
+            this.btnCombosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCombosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCombosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombosVendidos.Image")));
+            this.btnCombosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombosVendidos.Location = new System.Drawing.Point(0, 460);
+            this.btnCombosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCombosVendidos.Name = "btnCombosVendidos";
+            this.btnCombosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCombosVendidos.Size = new System.Drawing.Size(269, 50);
+            this.btnCombosVendidos.TabIndex = 7;
+            this.btnCombosVendidos.Text = "Combos mas vendidos";
+            this.btnCombosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCombosVendidos.UseVisualStyleBackColor = true;
+            this.btnCombosVendidos.Visible = false;
             // 
             // btnProxPedidos
             // 
@@ -141,26 +139,26 @@ namespace SITS
             this.btnProxPedidos.UseVisualStyleBackColor = true;
             this.btnProxPedidos.Visible = false;
             // 
-            // btnCombosVendidos
+            // btnProductosVendidos
             // 
-            this.btnCombosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCombosVendidos.FlatAppearance.BorderSize = 0;
-            this.btnCombosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCombosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCombosVendidos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCombosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnCombosVendidos.Image")));
-            this.btnCombosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCombosVendidos.Location = new System.Drawing.Point(0, 360);
-            this.btnCombosVendidos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCombosVendidos.Name = "btnCombosVendidos";
-            this.btnCombosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCombosVendidos.Size = new System.Drawing.Size(269, 50);
-            this.btnCombosVendidos.TabIndex = 7;
-            this.btnCombosVendidos.Text = "Combos mas vendidos";
-            this.btnCombosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCombosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCombosVendidos.UseVisualStyleBackColor = true;
-            this.btnCombosVendidos.Visible = false;
+            this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
+            this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductosVendidos.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Image")));
+            this.btnProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.Location = new System.Drawing.Point(0, 360);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductosVendidos.Name = "btnProductosVendidos";
+            this.btnProductosVendidos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnProductosVendidos.Size = new System.Drawing.Size(269, 50);
+            this.btnProductosVendidos.TabIndex = 9;
+            this.btnProductosVendidos.Text = "Productos mas Vendidos";
+            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductosVendidos.UseVisualStyleBackColor = true;
+            this.btnProductosVendidos.Visible = false;
             // 
             // btnAuditoria
             // 
