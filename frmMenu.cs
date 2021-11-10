@@ -50,6 +50,7 @@ namespace SITS
         private void btnInventario_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmInventario(), sender);
+            pnlBarra.BackColor = Color.FromArgb(10,112,93);
         }
 
         private void btnCombos_Click(object sender, EventArgs e)

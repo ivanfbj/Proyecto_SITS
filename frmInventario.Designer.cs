@@ -422,9 +422,9 @@ namespace SITS
             // 
             // frmInventario
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(930, 547);
             this.Controls.Add(this.panel1);

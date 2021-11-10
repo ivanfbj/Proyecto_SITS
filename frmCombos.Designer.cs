@@ -30,8 +30,7 @@ namespace SITS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlInformacion = new System.Windows.Forms.Panel();
             this.btnCancelarBuscarCombo = new System.Windows.Forms.Button();
             this.btnNovedad = new System.Windows.Forms.Button();
             this.lblNroComboSiguiente = new System.Windows.Forms.Label();
@@ -40,7 +39,7 @@ namespace SITS
             this.lblNroCombo = new System.Windows.Forms.Label();
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
             this.txtNombreDelCombo = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSeleccionar = new System.Windows.Forms.Panel();
             this.lblResultadoSubtotal = new System.Windows.Forms.Label();
             this.dgvInventarioCombos = new System.Windows.Forms.DataGridView();
             this.clAgregar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -50,42 +49,40 @@ namespace SITS
             this.clPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidadAgregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlInformacion.SuspendLayout();
+            this.pnlSeleccionar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlInformacion
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlInformacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnCancelarBuscarCombo);
-            this.panel1.Controls.Add(this.btnNovedad);
-            this.panel1.Controls.Add(this.lblNroComboSiguiente);
-            this.panel1.Controls.Add(this.btnIngresar);
-            this.panel1.Controls.Add(this.btnBuscarCombo);
-            this.panel1.Controls.Add(this.lblNroCombo);
-            this.panel1.Controls.Add(this.lblNombreDelCombo);
-            this.panel1.Controls.Add(this.txtNombreDelCombo);
-            this.panel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(23, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1065, 157);
-            this.panel1.TabIndex = 0;
+            this.pnlInformacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInformacion.Controls.Add(this.btnCancelarBuscarCombo);
+            this.pnlInformacion.Controls.Add(this.btnNovedad);
+            this.pnlInformacion.Controls.Add(this.lblNroComboSiguiente);
+            this.pnlInformacion.Controls.Add(this.btnIngresar);
+            this.pnlInformacion.Controls.Add(this.btnBuscarCombo);
+            this.pnlInformacion.Controls.Add(this.lblNroCombo);
+            this.pnlInformacion.Controls.Add(this.lblNombreDelCombo);
+            this.pnlInformacion.Controls.Add(this.txtNombreDelCombo);
+            this.pnlInformacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlInformacion.Location = new System.Drawing.Point(17, 12);
+            this.pnlInformacion.Name = "pnlInformacion";
+            this.pnlInformacion.Size = new System.Drawing.Size(799, 128);
+            this.pnlInformacion.TabIndex = 0;
             // 
             // btnCancelarBuscarCombo
             // 
-            this.btnCancelarBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarBuscarCombo.FlatAppearance.BorderSize = 0;
             this.btnCancelarBuscarCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscarCombo.Image")));
-            this.btnCancelarBuscarCombo.Location = new System.Drawing.Point(808, 58);
-            this.btnCancelarBuscarCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarBuscarCombo.Location = new System.Drawing.Point(606, 47);
             this.btnCancelarBuscarCombo.Name = "btnCancelarBuscarCombo";
-            this.btnCancelarBuscarCombo.Size = new System.Drawing.Size(56, 46);
+            this.btnCancelarBuscarCombo.Size = new System.Drawing.Size(42, 37);
             this.btnCancelarBuscarCombo.TabIndex = 20;
             this.btnCancelarBuscarCombo.UseVisualStyleBackColor = true;
             this.btnCancelarBuscarCombo.Visible = false;
@@ -93,15 +90,14 @@ namespace SITS
             // 
             // btnNovedad
             // 
-            this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
             this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovedad.Location = new System.Drawing.Point(639, 106);
-            this.btnNovedad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNovedad.Location = new System.Drawing.Point(479, 86);
+            this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNovedad.Name = "btnNovedad";
-            this.btnNovedad.Size = new System.Drawing.Size(161, 44);
+            this.btnNovedad.Size = new System.Drawing.Size(121, 36);
             this.btnNovedad.TabIndex = 19;
             this.btnNovedad.Text = "Novedad";
             this.btnNovedad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,24 +110,22 @@ namespace SITS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNroComboSiguiente.AutoSize = true;
             this.lblNroComboSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroComboSiguiente.Location = new System.Drawing.Point(289, 7);
-            this.lblNroComboSiguiente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNroComboSiguiente.Location = new System.Drawing.Point(217, 6);
             this.lblNroComboSiguiente.Name = "lblNroComboSiguiente";
-            this.lblNroComboSiguiente.Size = new System.Drawing.Size(74, 31);
+            this.lblNroComboSiguiente.Size = new System.Drawing.Size(60, 25);
             this.lblNroComboSiguiente.TabIndex = 18;
             this.lblNroComboSiguiente.Text = "____";
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(639, 7);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIngresar.Location = new System.Drawing.Point(479, 6);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(161, 44);
+            this.btnIngresar.Size = new System.Drawing.Size(121, 36);
             this.btnIngresar.TabIndex = 16;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,12 +134,14 @@ namespace SITS
             // 
             // btnBuscarCombo
             // 
+            this.btnBuscarCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCombo.Image")));
             this.btnBuscarCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCombo.Location = new System.Drawing.Point(639, 57);
-            this.btnBuscarCombo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscarCombo.Location = new System.Drawing.Point(479, 46);
+            this.btnBuscarCombo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscarCombo.Name = "btnBuscarCombo";
-            this.btnBuscarCombo.Size = new System.Drawing.Size(161, 44);
+            this.btnBuscarCombo.Size = new System.Drawing.Size(121, 36);
             this.btnBuscarCombo.TabIndex = 17;
             this.btnBuscarCombo.Text = "Buscar";
             this.btnBuscarCombo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -154,62 +150,67 @@ namespace SITS
             // 
             // lblNroCombo
             // 
+            this.lblNroCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNroCombo.AutoSize = true;
-            this.lblNroCombo.Location = new System.Drawing.Point(60, 27);
-            this.lblNroCombo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNroCombo.Location = new System.Drawing.Point(45, 22);
             this.lblNroCombo.Name = "lblNroCombo";
-            this.lblNroCombo.Size = new System.Drawing.Size(157, 22);
+            this.lblNroCombo.Size = new System.Drawing.Size(126, 20);
             this.lblNroCombo.TabIndex = 13;
             this.lblNroCombo.Text = "Número Combo";
             // 
             // lblNombreDelCombo
             // 
+            this.lblNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNombreDelCombo.AutoSize = true;
-            this.lblNombreDelCombo.Location = new System.Drawing.Point(60, 74);
-            this.lblNombreDelCombo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreDelCombo.Location = new System.Drawing.Point(45, 60);
             this.lblNombreDelCombo.Name = "lblNombreDelCombo";
-            this.lblNombreDelCombo.Size = new System.Drawing.Size(196, 22);
+            this.lblNombreDelCombo.Size = new System.Drawing.Size(158, 20);
             this.lblNombreDelCombo.TabIndex = 12;
             this.lblNombreDelCombo.Text = "Nombre del  Combo";
             // 
             // txtNombreDelCombo
             // 
-            this.txtNombreDelCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtNombreDelCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtNombreDelCombo.Location = new System.Drawing.Point(289, 71);
-            this.txtNombreDelCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNombreDelCombo.Name = "txtNombreDelCombo";
-            this.txtNombreDelCombo.Size = new System.Drawing.Size(259, 30);
-            this.txtNombreDelCombo.TabIndex = 14;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.lblResultadoSubtotal);
-            this.panel2.Controls.Add(this.dgvInventarioCombos);
-            this.panel2.Controls.Add(this.lblSubtotal);
-            this.panel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(23, 180);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1065, 422);
-            this.panel2.TabIndex = 1;
+            this.txtNombreDelCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNombreDelCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtNombreDelCombo.Location = new System.Drawing.Point(217, 58);
+            this.txtNombreDelCombo.Name = "txtNombreDelCombo";
+            this.txtNombreDelCombo.Size = new System.Drawing.Size(195, 26);
+            this.txtNombreDelCombo.TabIndex = 14;
+            // 
+            // pnlSeleccionar
+            // 
+            this.pnlSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSeleccionar.Controls.Add(this.lblResultadoSubtotal);
+            this.pnlSeleccionar.Controls.Add(this.dgvInventarioCombos);
+            this.pnlSeleccionar.Controls.Add(this.lblSubtotal);
+            this.pnlSeleccionar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlSeleccionar.Location = new System.Drawing.Point(17, 146);
+            this.pnlSeleccionar.Name = "pnlSeleccionar";
+            this.pnlSeleccionar.Size = new System.Drawing.Size(799, 343);
+            this.pnlSeleccionar.TabIndex = 1;
             // 
             // lblResultadoSubtotal
             // 
+            this.lblResultadoSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblResultadoSubtotal.AutoSize = true;
-            this.lblResultadoSubtotal.Location = new System.Drawing.Point(380, 374);
-            this.lblResultadoSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblResultadoSubtotal.Location = new System.Drawing.Point(285, 304);
             this.lblResultadoSubtotal.Name = "lblResultadoSubtotal";
-            this.lblResultadoSubtotal.Size = new System.Drawing.Size(30, 22);
+            this.lblResultadoSubtotal.Size = new System.Drawing.Size(25, 20);
             this.lblResultadoSubtotal.TabIndex = 17;
             this.lblResultadoSubtotal.Text = "__";
             // 
             // dgvInventarioCombos
             // 
-            this.dgvInventarioCombos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvInventarioCombos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInventarioCombos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventarioCombos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -220,12 +221,12 @@ namespace SITS
             this.clCantidad,
             this.clPrecio,
             this.clCantidadAgregar});
-            this.dgvInventarioCombos.Location = new System.Drawing.Point(16, 20);
-            this.dgvInventarioCombos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvInventarioCombos.Location = new System.Drawing.Point(12, 16);
+            this.dgvInventarioCombos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvInventarioCombos.Name = "dgvInventarioCombos";
             this.dgvInventarioCombos.RowHeadersWidth = 51;
             this.dgvInventarioCombos.RowTemplate.Height = 25;
-            this.dgvInventarioCombos.Size = new System.Drawing.Size(1021, 336);
+            this.dgvInventarioCombos.Size = new System.Drawing.Size(766, 273);
             this.dgvInventarioCombos.TabIndex = 1;
             // 
             // clAgregar
@@ -274,34 +275,33 @@ namespace SITS
             // 
             // lblSubtotal
             // 
+            this.lblSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(269, 374);
-            this.lblSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubtotal.Location = new System.Drawing.Point(202, 304);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(86, 22);
+            this.lblSubtotal.Size = new System.Drawing.Size(68, 20);
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "Subtotal";
             // 
             // frmCombos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1253, 730);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(953, 631);
+            this.Controls.Add(this.pnlSeleccionar);
+            this.Controls.Add(this.pnlInformacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(1271, 777);
-            this.MinimumSize = new System.Drawing.Size(1271, 777);
             this.Name = "frmCombos";
             this.Text = "Combos";
             this.Load += new System.EventHandler(this.frmCombos_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlInformacion.ResumeLayout(false);
+            this.pnlInformacion.PerformLayout();
+            this.pnlSeleccionar.ResumeLayout(false);
+            this.pnlSeleccionar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioCombos)).EndInit();
             this.ResumeLayout(false);
 
@@ -309,8 +309,8 @@ namespace SITS
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlInformacion;
+        private System.Windows.Forms.Panel pnlSeleccionar;
         private System.Windows.Forms.Label lblNroCombo;
         private System.Windows.Forms.Label lblNombreDelCombo;
         private System.Windows.Forms.TextBox txtNombreDelCombo;
