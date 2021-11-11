@@ -72,8 +72,8 @@ namespace SITS
             OpenChildForm(new frmPedido(), sender);
             pnlBarra.BackColor = Color.FromArgb(214, 84, 4);
             pnlLogo.BackColor = Color.FromArgb(139, 55, 3);
-            btnInventario.BackColor = Color.FromArgb(214, 84, 4);
-            btnPedidos.BackColor = Color.FromArgb(2, 66, 86);
+            btnInventario.BackColor = Color.FromArgb(2, 66, 86);
+            btnPedidos.BackColor = Color.FromArgb(214, 84, 4);
             btnCombos.BackColor = Color.FromArgb(2, 66, 86);
         }
 
