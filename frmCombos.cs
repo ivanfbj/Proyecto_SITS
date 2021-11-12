@@ -305,6 +305,19 @@ namespace SITS
             lblResultadoSubtotal.Text = "__";
         }
 
+        private void btnNovedad_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lblNombreDelCombo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNroComboSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

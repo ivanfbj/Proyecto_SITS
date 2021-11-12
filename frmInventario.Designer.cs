@@ -89,7 +89,7 @@ namespace SITS
             this.pnlProducto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Padding = new System.Windows.Forms.Padding(50);
-            this.pnlProducto.Size = new System.Drawing.Size(842, 199);
+            this.pnlProducto.Size = new System.Drawing.Size(861, 199);
             this.pnlProducto.TabIndex = 0;
             // 
             // btnCancelarBuscar
@@ -99,7 +99,7 @@ namespace SITS
             this.btnCancelarBuscar.FlatAppearance.BorderSize = 0;
             this.btnCancelarBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarBuscar.Image")));
-            this.btnCancelarBuscar.Location = new System.Drawing.Point(782, 72);
+            this.btnCancelarBuscar.Location = new System.Drawing.Point(801, 72);
             this.btnCancelarBuscar.Name = "btnCancelarBuscar";
             this.btnCancelarBuscar.Size = new System.Drawing.Size(42, 37);
             this.btnCancelarBuscar.TabIndex = 9;
@@ -117,7 +117,7 @@ namespace SITS
             this.btnEditarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPrecio.Image")));
             this.btnEditarPrecio.Location = new System.Drawing.Point(532, 148);
             this.btnEditarPrecio.Name = "btnEditarPrecio";
-            this.btnEditarPrecio.Size = new System.Drawing.Size(73, 25);
+            this.btnEditarPrecio.Size = new System.Drawing.Size(92, 25);
             this.btnEditarPrecio.TabIndex = 8;
             this.btnEditarPrecio.UseVisualStyleBackColor = true;
             this.btnEditarPrecio.Visible = false;
@@ -133,7 +133,7 @@ namespace SITS
             this.btnEditarNombreProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarNombreProducto.Image")));
             this.btnEditarNombreProducto.Location = new System.Drawing.Point(532, 57);
             this.btnEditarNombreProducto.Name = "btnEditarNombreProducto";
-            this.btnEditarNombreProducto.Size = new System.Drawing.Size(73, 25);
+            this.btnEditarNombreProducto.Size = new System.Drawing.Size(92, 25);
             this.btnEditarNombreProducto.TabIndex = 7;
             this.btnEditarNombreProducto.UseVisualStyleBackColor = true;
             this.btnEditarNombreProducto.Visible = false;
@@ -149,7 +149,7 @@ namespace SITS
             this.btnIngresar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(654, 15);
+            this.btnIngresar.Location = new System.Drawing.Point(673, 15);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(121, 37);
@@ -171,7 +171,7 @@ namespace SITS
             this.btnBuscar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(654, 72);
+            this.btnBuscar.Location = new System.Drawing.Point(673, 72);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(121, 37);
@@ -191,7 +191,7 @@ namespace SITS
             this.btnNovedad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
             this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovedad.Location = new System.Drawing.Point(654, 129);
+            this.btnNovedad.Location = new System.Drawing.Point(673, 129);
             this.btnNovedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnNovedad.Name = "btnNovedad";
             this.btnNovedad.Size = new System.Drawing.Size(121, 37);
@@ -212,7 +212,7 @@ namespace SITS
             this.txtCodigoDeBarras.Location = new System.Drawing.Point(248, 9);
             this.txtCodigoDeBarras.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtCodigoDeBarras.Name = "txtCodigoDeBarras";
-            this.txtCodigoDeBarras.Size = new System.Drawing.Size(318, 30);
+            this.txtCodigoDeBarras.Size = new System.Drawing.Size(337, 30);
             this.txtCodigoDeBarras.TabIndex = 0;
             this.txtCodigoDeBarras.Leave += new System.EventHandler(this.txtCodigoDeBarras_Leave);
             // 
@@ -257,7 +257,7 @@ namespace SITS
             this.txtNombreDelProducto.Location = new System.Drawing.Point(248, 56);
             this.txtNombreDelProducto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNombreDelProducto.Name = "txtNombreDelProducto";
-            this.txtNombreDelProducto.Size = new System.Drawing.Size(318, 30);
+            this.txtNombreDelProducto.Size = new System.Drawing.Size(337, 30);
             this.txtNombreDelProducto.TabIndex = 1;
             this.txtNombreDelProducto.Leave += new System.EventHandler(this.txtNombreDelProducto_Leave);
             // 
@@ -270,7 +270,7 @@ namespace SITS
             this.txtPrecio.Location = new System.Drawing.Point(248, 148);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(318, 30);
+            this.txtPrecio.Size = new System.Drawing.Size(337, 30);
             this.txtPrecio.TabIndex = 3;
             // 
             // txtCantidad
@@ -282,7 +282,7 @@ namespace SITS
             this.txtCantidad.Location = new System.Drawing.Point(248, 105);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(318, 30);
+            this.txtCantidad.Size = new System.Drawing.Size(337, 30);
             this.txtCantidad.TabIndex = 2;
             // 
             // lblCodigoDeBarras
@@ -338,7 +338,7 @@ namespace SITS
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvInventario.GridColor = System.Drawing.Color.Silver;
-            this.dgvInventario.Location = new System.Drawing.Point(14, 19);
+            this.dgvInventario.Location = new System.Drawing.Point(15, 19);
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgvInventario.Name = "dgvInventario";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -356,7 +356,7 @@ namespace SITS
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInventario.RowTemplate.Height = 25;
-            this.dgvInventario.Size = new System.Drawing.Size(925, 335);
+            this.dgvInventario.Size = new System.Drawing.Size(861, 323);
             this.dgvInventario.TabIndex = 7;
             // 
             // cCodigoBarras
@@ -415,9 +415,9 @@ namespace SITS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dgvInventario);
             this.panel1.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 235);
+            this.panel1.Location = new System.Drawing.Point(44, 235);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(955, 378);
+            this.panel1.Size = new System.Drawing.Size(890, 366);
             this.panel1.TabIndex = 8;
             // 
             // frmInventario

@@ -155,5 +155,10 @@ namespace SITS
                 dgvInventarioEnPedido.Rows.Clear();                
             }
         }
+
+        private void btnNovedad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
