@@ -9,7 +9,7 @@ GO
 -- =============================================
 ALTER PROCEDURE stprInsertarPedido 
 	-- Add the parameters for the stored procedure here
-	@INidPedido int, 
+	@INidPedido int = NULL, 
 	@codigoDeBarras nvarchar(50),
 	@OUTidPedido int OUTPUT
 AS
@@ -19,12 +19,12 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT @INidPedido, @codigoDeBarras;
+	SELECT @INidPedido as 'pedido', @codigoDeBarras as 'codBarras';
 
 	select @OUTidPedido = 123;
 
-	if @INidPedido = ''
-		select 'INidPedido está vacío'
+	if @INidPedido IS NULL
+		select 'INidPedido es nulo'
 END
 GO
 
@@ -32,7 +32,10 @@ GO
 /*
 DECLARE @parametroSalida int;
 
-exec stprInsertarPedido '123','dfj',@parametroSalida Output
+exec stprInsertarPedido 
+@INidPedido = '12345',
+@codigoDeBarras = 'dfj'
+,@OUTidPedido = @parametroSalida Output
 
 select @parametroSalida
 */

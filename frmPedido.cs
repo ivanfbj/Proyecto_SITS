@@ -158,6 +158,32 @@ namespace SITS
 
         private void btnNovedad_Click(object sender, EventArgs e)
         {
+            try
+            {
+                cn = new clsConexionSql();
+                cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                //cmd.Parameters.Add(new SqlParameter("@INidPedido", "12345"));
+                cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", "dfj"));
+                cmd.Parameters.Add("@OUTidPedido", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.ExecuteNonQuery();
+
+                String ParamentroSQLSalida = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
+
+                
+                MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {ParamentroSQLSalida}");
+                
+
+            }
+                catch (Exception error)
+            {
+                MessageBox.Show("Ha ocurrido un error" + error.Message);
+            }
+        }
+
+        private void btnIngresarPedido_Click(object sender, EventArgs e)
+        {
 
         }
     }
