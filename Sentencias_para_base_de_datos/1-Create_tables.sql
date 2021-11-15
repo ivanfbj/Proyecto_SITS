@@ -65,8 +65,8 @@ CREATE TABLE [dbo].[tblProductoxCombo]
 CREATE TABLE [dbo].[tblPedido]
 (
   [id]          INT NOT NULL IDENTITY, 
-  [nroPedido]   NVARCHAR(50) NOT NULL, 
-  [nombreCombo] NVARCHAR(50) NOT NULL, 
+  [nroPedido]   INT NOT NULL, 
+  [nombreCombo] NVARCHAR(255) NOT NULL, 
   [fechaPedido] DATETIME NOT NULL
 					DEFAULT GETDATE(), 
   [envio]       BIT NOT NULL, 
@@ -75,7 +75,7 @@ CREATE TABLE [dbo].[tblPedido]
   [total]       INT NOT NULL,
   CONSTRAINT [PK_tblPedido_id] PRIMARY KEY([id]),
   CONSTRAINT [UQ_tblPedido_nroPedido] UNIQUE([nroPedido]),
-  CONSTRAINT [UQ_tblPedido_nombreCombo] UNIQUE([nombreCombo]),
+  --CONSTRAINT [UQ_tblPedido_nombreCombo] UNIQUE([nombreCombo]),
 );
 
 CREATE TABLE [dbo].[tblProductoxPedido]
@@ -83,9 +83,11 @@ CREATE TABLE [dbo].[tblProductoxPedido]
   [id]          INT NOT NULL IDENTITY, 
   [pedido_id]   INT NOT NULL, 
   [producto_id] INT NOT NULL,
+  [cantidad_producto]	INT NOT NULL,
   CONSTRAINT [PK_tblProductoxPedido_id] PRIMARY KEY(id),
   CONSTRAINT [FK_tblPedido_id_tblproductoxPedido_pedido_id] FOREIGN KEY([pedido_id]) REFERENCES [tblPedido]([id]), 
   CONSTRAINT [FK_tblProducto_id_tblproductoxPedido_producto_id] FOREIGN KEY([producto_id]) REFERENCES [tblProducto]([id]));
+
 /*
 Drop table tblproductoxPedido
 Drop table tblPedido

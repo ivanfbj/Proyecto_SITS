@@ -9,22 +9,65 @@ GO
 -- =============================================
 ALTER PROCEDURE stprInsertarPedido 
 	-- Add the parameters for the stored procedure here
-	@INidPedido int = NULL, 
-	@codigoDeBarras nvarchar(50),
-	@OUTidPedido int OUTPUT
+	@INidPedido int = NULL,
+	@nombreCombo nvarchar(255) = NULL,
+	@envio bit = NULL,
+	@valorEnvio int = NULL,
+	@subtotal int = NULL,
+	@total int = NULL,
+	@codigoDeBarras nvarchar(50) = NULL,
+	@cantidad_producto INT = NULL,
+	@OUTidPedido int = NULL OUTPUT
 AS
 BEGIN
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
+	BEGIN TRY
+		BEGIN TRANSACTION;
+			IF @INidPedido IS NULL
+				BEGIN
+					DECLARE @nroPedido int;
 
-    -- Insert statements for procedure here
-	SELECT @INidPedido as 'pedido', @codigoDeBarras as 'codBarras';
+					--Obtener el nroPedido que se va a registrar
+					select @nroPedido = ISNULL(max(nroPedido),0) + 1
+						from tblPedido
 
-	select @OUTidPedido = 123;
+					insert into tblPedido (nroPedido, nombreCombo, envio, valorEnvio, subtotal, total) values (@nroPedido, @nombreCombo, @envio, @valorEnvio, @subtotal, @total);
 
-	if @INidPedido IS NULL
-		select 'INidPedido es nulo'
+					set @OUTidPedido = SCOPE_IDENTITY();
+				END
+			ELSE IF @INidPedido IS NOT NULL
+				BEGIN
+					IF EXISTS(SELECT id FROM tblProducto where codigoBarras = @codigoDeBarras)
+						BEGIN
+
+							DECLARE @producto_id INT;
+
+							SELECT @producto_id = id
+								FROM tblProducto
+								where codigoBarras = @codigoDeBarras;
+
+							IF NOT EXISTS (select id from tblProductoxPedido where pedido_id = @INidPedido and producto_id = @producto_id)
+								INSERT INTO tblProductoxPedido (pedido_id, producto_id, cantidad_producto) values (@INidPedido, @producto_id, @cantidad_producto);
+							ELSE 
+								BEGIN
+									DECLARE @tblProductoxPedido_id INT;
+									
+									select @tblProductoxPedido_id  = id 
+										from tblProductoxPedido
+										where pedido_id = @INidPedido and producto_id = @producto_id
+
+									UPDATE tblProductoxPedido set cantidad_producto += @cantidad_producto where id = @tblProductoxPedido_id;
+								END
+						END
+					ELSE
+							SELECT 'PRODUCTO NO EXISTE';
+				END
+		COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION;
+		SELECT ERROR_MESSAGE();
+	END CATCH;
 END
 GO
 
@@ -33,9 +76,39 @@ GO
 DECLARE @parametroSalida int;
 
 exec stprInsertarPedido 
-@INidPedido = '12345',
-@codigoDeBarras = 'dfj'
-,@OUTidPedido = @parametroSalida Output
+@INidPedido = '3',
+@nombreCombo = 'Combo prueba Ivan',
+@envio = 0,
+@valorEnvio = '1000',
+@subtotal = '1500',
+@total = '2500',
+--@codigoDeBarras = '7702993028261',
+--@cantidad_producto = '2',
+@OUTidPedido = @parametroSalida Output
 
-select @parametroSalida
+--select @parametroSalida
+
+select *
+from tblPedido;
+
+exec stprInsertarPedido @INidPedido = 3, @codigoDeBarras = '7702133879494', @cantidad_producto = '2';
+
+select *
+from tblProductoxPedido;
+
+/*
+truncate table tblProductoxPedido
+
+ALTER TABLE [dbo].[tblProductoxPedido] DROP CONSTRAINT [FK_tblPedido_id_tblproductoxPedido_pedido_id]
+
+truncate table tblPedido
+
+ALTER TABLE [dbo].[tblProductoxPedido]  WITH CHECK ADD  CONSTRAINT [FK_tblPedido_id_tblproductoxPedido_pedido_id] FOREIGN KEY([pedido_id]) REFERENCES [dbo].[tblPedido] ([id])
+GO
+
+ALTER TABLE [dbo].[tblProductoxPedido] CHECK CONSTRAINT [FK_tblPedido_id_tblproductoxPedido_pedido_id]
+
+
+*/
+
 */

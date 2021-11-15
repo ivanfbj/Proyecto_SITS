@@ -180,6 +180,10 @@ namespace SITS
             {
                 MessageBox.Show("Ha ocurrido un error" + error.Message);
             }
+            finally
+            {
+                cn.cerrarConexion();
+            }
         }
 
         private void btnIngresarPedido_Click(object sender, EventArgs e)
