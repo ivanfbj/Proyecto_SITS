@@ -13,7 +13,7 @@ namespace SITS
 {
     public partial class frmPedido : Form
     {
-        clsConexionSql cn;
+        ClsConexionSql cn;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
@@ -30,8 +30,7 @@ namespace SITS
          */
         void llenarProductoEnPedido()
         {
-            int n = 0, cantidad = 0;
-            Double total = 0, precio = 0;
+            int n = 0;
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -60,7 +59,7 @@ namespace SITS
             AutoCompleteStringCollection listaNumeroCombos = new AutoCompleteStringCollection();
             AutoCompleteStringCollection listaNombreCombos = new AutoCompleteStringCollection();
 
-            cn = new clsConexionSql();
+            cn = new ClsConexionSql();
             cmd = new SqlCommand("select distinct nroCombo,nombre from tblCombo", cn.abrirConexion());
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -92,7 +91,7 @@ namespace SITS
             {
                 try
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprConsultarProductosDelCombo", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -116,7 +115,8 @@ namespace SITS
                         {
                             dgvComboEnPedido.Rows[i].Cells["cCodigoBarrasComboEnPedido"].Value = dt.Rows[i]["codigoBarras"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cNombreProductoComboEnPedido"].Value = dt.Rows[i]["nombreProducto"].ToString();
-                            dgvComboEnPedido.Rows[i].Cells["cStockComboEnPedido"].Value = dt.Rows[i]["stock"].ToString();
+                            // TODO: Se debe actualizar el nombre de cStockComboEnPedido ya que no es Stock sino Cantidad de prouctos asignados al combo
+                            dgvComboEnPedido.Rows[i].Cells["cStockComboEnPedido"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cPrecioComboEnPedido"].Value = dt.Rows[i]["precio"].ToString();
                         }
                         lblSubtotalCalculado.Text = dt.Rows[0]["subtotalCombo"].ToString();
@@ -166,7 +166,7 @@ namespace SITS
 
                 if (idPedidoGenerado == "NULL")
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 

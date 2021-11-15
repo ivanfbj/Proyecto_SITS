@@ -13,7 +13,7 @@ namespace SITS
 {
     public partial class frmCombos : Form
     {
-        clsConexionSql cn;
+        ClsConexionSql cn;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
@@ -40,7 +40,7 @@ namespace SITS
         {
             AutoCompleteStringCollection listaNombreCombos = new AutoCompleteStringCollection();
 
-            cn = new clsConexionSql();
+            cn = new ClsConexionSql();
             cmd = new SqlCommand("select distinct nombre from tblCombo", cn.abrirConexion());
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -182,7 +182,7 @@ namespace SITS
 
                             try
                             {
-                                cn = new clsConexionSql();
+                                cn = new ClsConexionSql();
                                 cmd = new SqlCommand("stprInsertarProductosPorCombos", cn.abrirConexion());
                                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -244,7 +244,7 @@ namespace SITS
             {
                 try
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprConsultarProductosDelCombo", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 

@@ -520,10 +520,6 @@ namespace SITS
         private System.Windows.Forms.TextBox txtNombreDelCombo;
         private System.Windows.Forms.Panel pnlDgvInventario;
         private System.Windows.Forms.DataGridView dgvComboEnPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label lblTotalCalculado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSubtotalCalculado;

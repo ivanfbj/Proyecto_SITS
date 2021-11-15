@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace SITS
 {
-    class clsConexionSql
+    class ClsConexionSql
     {
 
         ////Conexión a Base de datos Computador trabajo Ivan

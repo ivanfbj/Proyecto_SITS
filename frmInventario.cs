@@ -14,14 +14,14 @@ namespace SITS
 {
     public partial class frmInventario : Form
     {
-        clsConexionSql cn;
+        ClsConexionSql cn;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
         int i = 0;
         public frmInventario()
         {
-            cn = new clsConexionSql();
+            cn = new ClsConexionSql();
             cmd = new SqlCommand("stprConsultarMovimientoProductoGeneral", cn.abrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
@@ -57,7 +57,7 @@ namespace SITS
             {
                 try
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprInsertarMovimientoProducto", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -179,7 +179,7 @@ namespace SITS
             {
                 try
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -335,7 +335,7 @@ namespace SITS
             {
                 try
                 {
-                    cn = new clsConexionSql();
+                    cn = new ClsConexionSql();
                     cmd = new SqlCommand("stprActualizarNombrePrecioProducto", cn.abrirConexion());
                     cmd.CommandType = CommandType.StoredProcedure;
 
