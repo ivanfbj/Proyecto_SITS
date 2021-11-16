@@ -115,8 +115,8 @@ namespace SITS
                         {
                             dgvComboEnPedido.Rows[i].Cells["cCodigoBarrasComboEnPedido"].Value = dt.Rows[i]["codigoBarras"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cNombreProductoComboEnPedido"].Value = dt.Rows[i]["nombreProducto"].ToString();
-                            // TODO: Se debe actualizar el nombre de cStockComboEnPedido ya que no es Stock sino Cantidad de prouctos asignados al combo
-                            dgvComboEnPedido.Rows[i].Cells["cStockComboEnPedido"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
+                            
+                            dgvComboEnPedido.Rows[i].Cells["cCantidadComboEnPedido"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cPrecioComboEnPedido"].Value = dt.Rows[i]["precio"].ToString();
                         }
                         lblSubtotalCalculado.Text = dt.Rows[0]["subtotalCombo"].ToString();
@@ -158,6 +158,11 @@ namespace SITS
 
         private void btnNovedad_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnIngresarPedido_Click(object sender, EventArgs e)
+        {
+
             String idPedidoGenerado = "NULL";
 
             try
@@ -178,32 +183,32 @@ namespace SITS
                     cmd.Parameters.Add("@OUTidPedido", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
                     idPedidoGenerado = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
-                    
 
-                    
                     MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
                         $"Y el total es {lblTotalCalculado.Text}");
                 }
 
+
+                //Se recorre el primer DataGridView que contiene la información del combo seleccionado.
+                foreach (DataGridViewRow rowCombo in dgvComboEnPedido.Rows)
+                {
+                    cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
+                    cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", rowCombo.Cells["cCodigoBarrasComboEnPedido"].Value.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@cantidad_producto", rowCombo.Cells["cCantidadComboEnPedido"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                }
+
                 //cmd.Parameters.Add(new SqlParameter("@INidPedido", "12345"));
 
-
-
-                
-                
-                
-
             }
-                catch (Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show("Ha ocurrido un error" + error.Message);
             }
 
         }
 
-        private void btnIngresarPedido_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

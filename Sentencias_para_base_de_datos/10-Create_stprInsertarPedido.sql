@@ -91,10 +91,16 @@ exec stprInsertarPedido
 select *
 from tblPedido;
 
-exec stprInsertarPedido @INidPedido = 3, @codigoDeBarras = '7702133879494', @cantidad_producto = '2';
+--exec stprInsertarPedido @INidPedido = 3, @codigoDeBarras = '7702133879494', @cantidad_producto = '2';
 
 select *
 from tblProductoxPedido;
+
+
+select *
+from tblProducto
+where id in (select producto_id
+from tblProductoxPedido)
 
 /*
 truncate table tblProductoxPedido
@@ -110,5 +116,4 @@ ALTER TABLE [dbo].[tblProductoxPedido] CHECK CONSTRAINT [FK_tblPedido_id_tblprod
 
 
 */
-
 */

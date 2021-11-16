@@ -232,7 +232,7 @@
         80X81T87LZHdbj+Isz2PVtDHRfNeymT6A4g1ppKR+FoEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="cStockComboEnPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="cCantidadComboEnPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

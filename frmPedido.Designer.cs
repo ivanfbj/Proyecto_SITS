@@ -29,13 +29,13 @@ namespace SITS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAgregar = new System.Windows.Forms.Panel();
             this.lblTotalCalculado = new System.Windows.Forms.Label();
             this.dgvInventarioEnPedido = new System.Windows.Forms.DataGridView();
@@ -50,21 +50,21 @@ namespace SITS
             this.btnCancelarBuscarComboEnPedido = new System.Windows.Forms.Button();
             this.btnEditarNombreProducto = new System.Windows.Forms.Button();
             this.txtNumeroCombo = new System.Windows.Forms.TextBox();
-            this.btnIngresarPedido = new System.Windows.Forms.Button();
-            this.btnBuscarComboEnPedido = new System.Windows.Forms.Button();
             this.lblNroCombo = new System.Windows.Forms.Label();
-            this.btnNovedad = new System.Windows.Forms.Button();
             this.lblNombreDelCombo = new System.Windows.Forms.Label();
+            this.btnIngresarPedido = new System.Windows.Forms.Button();
             this.txtNombreDelCombo = new System.Windows.Forms.TextBox();
+            this.btnBuscarComboEnPedido = new System.Windows.Forms.Button();
+            this.btnNovedad = new System.Windows.Forms.Button();
             this.pnlDgvInventario = new System.Windows.Forms.Panel();
             this.cbAgregar = new System.Windows.Forms.CheckBox();
             this.lblSubtotalCalculado = new System.Windows.Forms.Label();
             this.dgvComboEnPedido = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.cCodigoBarrasComboEnPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreProductoComboEnPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cStockComboEnPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCantidadComboEnPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPrecioComboEnPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlAgregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioEnPedido)).BeginInit();
             this.pnlInfoCombo.SuspendLayout();
@@ -79,7 +79,7 @@ namespace SITS
             this.pnlAgregar.Controls.Add(this.lblTotalCalculado);
             this.pnlAgregar.Controls.Add(this.dgvInventarioEnPedido);
             this.pnlAgregar.Controls.Add(this.label2);
-            this.pnlAgregar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlAgregar.Location = new System.Drawing.Point(37, 460);
             this.pnlAgregar.Name = "pnlAgregar";
             this.pnlAgregar.Size = new System.Drawing.Size(910, 174);
@@ -93,31 +93,31 @@ namespace SITS
             this.lblTotalCalculado.AutoSize = true;
             this.lblTotalCalculado.Location = new System.Drawing.Point(113, 146);
             this.lblTotalCalculado.Name = "lblTotalCalculado";
-            this.lblTotalCalculado.Size = new System.Drawing.Size(30, 22);
+            this.lblTotalCalculado.Size = new System.Drawing.Size(30, 24);
             this.lblTotalCalculado.TabIndex = 17;
             this.lblTotalCalculado.Text = "__";
             // 
             // dgvInventarioEnPedido
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvInventarioEnPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvInventarioEnPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventarioEnPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInventarioEnPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventarioEnPedido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInventarioEnPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventarioEnPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventarioEnPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventarioEnPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventarioEnPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clAgregar,
@@ -126,14 +126,14 @@ namespace SITS
             this.clCantidad,
             this.clPrecio,
             this.clCantidadAgregar});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventarioEnPedido.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventarioEnPedido.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventarioEnPedido.Location = new System.Drawing.Point(22, 8);
             this.dgvInventarioEnPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvInventarioEnPedido.Name = "dgvInventarioEnPedido";
@@ -187,10 +187,10 @@ namespace SITS
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(50, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 22);
+            this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "Total";
             // 
@@ -208,7 +208,7 @@ namespace SITS
             this.pnlInfoCombo.Controls.Add(this.txtNombreDelCombo);
             this.pnlInfoCombo.Controls.Add(this.btnBuscarComboEnPedido);
             this.pnlInfoCombo.Controls.Add(this.btnNovedad);
-            this.pnlInfoCombo.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlInfoCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlInfoCombo.Location = new System.Drawing.Point(59, 25);
             this.pnlInfoCombo.Name = "pnlInfoCombo";
             this.pnlInfoCombo.Size = new System.Drawing.Size(861, 133);
@@ -255,8 +255,32 @@ namespace SITS
             this.txtNumeroCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNumeroCombo.Location = new System.Drawing.Point(248, 27);
             this.txtNumeroCombo.Name = "txtNumeroCombo";
-            this.txtNumeroCombo.Size = new System.Drawing.Size(375, 30);
+            this.txtNumeroCombo.Size = new System.Drawing.Size(375, 29);
             this.txtNumeroCombo.TabIndex = 0;
+            // 
+            // lblNroCombo
+            // 
+            this.lblNroCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNroCombo.AutoSize = true;
+            this.lblNroCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroCombo.Location = new System.Drawing.Point(28, 30);
+            this.lblNroCombo.Name = "lblNroCombo";
+            this.lblNroCombo.Size = new System.Drawing.Size(158, 24);
+            this.lblNroCombo.TabIndex = 13;
+            this.lblNroCombo.Text = "Número Combo";
+            // 
+            // lblNombreDelCombo
+            // 
+            this.lblNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNombreDelCombo.AutoSize = true;
+            this.lblNombreDelCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreDelCombo.Location = new System.Drawing.Point(28, 82);
+            this.lblNombreDelCombo.Name = "lblNombreDelCombo";
+            this.lblNombreDelCombo.Size = new System.Drawing.Size(199, 24);
+            this.lblNombreDelCombo.TabIndex = 12;
+            this.lblNombreDelCombo.Text = "Nombre del  Combo";
             // 
             // btnIngresarPedido
             // 
@@ -265,7 +289,7 @@ namespace SITS
             this.btnIngresarPedido.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnIngresarPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
             this.btnIngresarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresarPedido.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarPedido.Image")));
             this.btnIngresarPedido.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnIngresarPedido.Location = new System.Drawing.Point(680, 5);
@@ -276,6 +300,19 @@ namespace SITS
             this.btnIngresarPedido.Text = "Ingresar";
             this.btnIngresarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresarPedido.UseVisualStyleBackColor = true;
+            this.btnIngresarPedido.Click += new System.EventHandler(this.btnIngresarPedido_Click);
+            // 
+            // txtNombreDelCombo
+            // 
+            this.txtNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombreDelCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNombreDelCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtNombreDelCombo.Location = new System.Drawing.Point(248, 79);
+            this.txtNombreDelCombo.Name = "txtNombreDelCombo";
+            this.txtNombreDelCombo.Size = new System.Drawing.Size(375, 29);
+            this.txtNombreDelCombo.TabIndex = 1;
             // 
             // btnBuscarComboEnPedido
             // 
@@ -284,7 +321,7 @@ namespace SITS
             this.btnBuscarComboEnPedido.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnBuscarComboEnPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
             this.btnBuscarComboEnPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarComboEnPedido.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarComboEnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarComboEnPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarComboEnPedido.Image")));
             this.btnBuscarComboEnPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarComboEnPedido.Location = new System.Drawing.Point(680, 47);
@@ -297,18 +334,6 @@ namespace SITS
             this.btnBuscarComboEnPedido.UseVisualStyleBackColor = true;
             this.btnBuscarComboEnPedido.Click += new System.EventHandler(this.btnBuscarComboEnPedido_Click);
             // 
-            // lblNroCombo
-            // 
-            this.lblNroCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNroCombo.AutoSize = true;
-            this.lblNroCombo.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroCombo.Location = new System.Drawing.Point(28, 30);
-            this.lblNroCombo.Name = "lblNroCombo";
-            this.lblNroCombo.Size = new System.Drawing.Size(160, 22);
-            this.lblNroCombo.TabIndex = 13;
-            this.lblNroCombo.Text = "Número Combo";
-            // 
             // btnNovedad
             // 
             this.btnNovedad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -316,7 +341,7 @@ namespace SITS
             this.btnNovedad.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnNovedad.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
             this.btnNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNovedad.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovedad.Image = ((System.Drawing.Image)(resources.GetObject("btnNovedad.Image")));
             this.btnNovedad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovedad.Location = new System.Drawing.Point(680, 89);
@@ -329,30 +354,6 @@ namespace SITS
             this.btnNovedad.UseVisualStyleBackColor = true;
             this.btnNovedad.Click += new System.EventHandler(this.btnNovedad_Click);
             // 
-            // lblNombreDelCombo
-            // 
-            this.lblNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNombreDelCombo.AutoSize = true;
-            this.lblNombreDelCombo.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreDelCombo.Location = new System.Drawing.Point(28, 82);
-            this.lblNombreDelCombo.Name = "lblNombreDelCombo";
-            this.lblNombreDelCombo.Size = new System.Drawing.Size(204, 22);
-            this.lblNombreDelCombo.TabIndex = 12;
-            this.lblNombreDelCombo.Text = "Nombre del  Combo";
-            // 
-            // txtNombreDelCombo
-            // 
-            this.txtNombreDelCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombreDelCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtNombreDelCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtNombreDelCombo.Location = new System.Drawing.Point(248, 79);
-            this.txtNombreDelCombo.Name = "txtNombreDelCombo";
-            this.txtNombreDelCombo.Size = new System.Drawing.Size(375, 30);
-            this.txtNombreDelCombo.TabIndex = 1;
-            // 
             // pnlDgvInventario
             // 
             this.pnlDgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -362,7 +363,7 @@ namespace SITS
             this.pnlDgvInventario.Controls.Add(this.lblSubtotalCalculado);
             this.pnlDgvInventario.Controls.Add(this.dgvComboEnPedido);
             this.pnlDgvInventario.Controls.Add(this.label6);
-            this.pnlDgvInventario.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlDgvInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlDgvInventario.Location = new System.Drawing.Point(37, 165);
             this.pnlDgvInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDgvInventario.Name = "pnlDgvInventario";
@@ -373,11 +374,11 @@ namespace SITS
             // 
             this.cbAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAgregar.AutoSize = true;
-            this.cbAgregar.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAgregar.Location = new System.Drawing.Point(671, 257);
+            this.cbAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAgregar.Location = new System.Drawing.Point(672, 255);
             this.cbAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.cbAgregar.Name = "cbAgregar";
-            this.cbAgregar.Size = new System.Drawing.Size(204, 26);
+            this.cbAgregar.Size = new System.Drawing.Size(203, 28);
             this.cbAgregar.TabIndex = 19;
             this.cbAgregar.Text = "Agregar productos";
             this.cbAgregar.UseVisualStyleBackColor = true;
@@ -390,46 +391,46 @@ namespace SITS
             this.lblSubtotalCalculado.AutoSize = true;
             this.lblSubtotalCalculado.Location = new System.Drawing.Point(142, 258);
             this.lblSubtotalCalculado.Name = "lblSubtotalCalculado";
-            this.lblSubtotalCalculado.Size = new System.Drawing.Size(30, 22);
+            this.lblSubtotalCalculado.Size = new System.Drawing.Size(30, 24);
             this.lblSubtotalCalculado.TabIndex = 17;
             this.lblSubtotalCalculado.Text = "__";
             // 
             // dgvComboEnPedido
             // 
             this.dgvComboEnPedido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvComboEnPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvComboEnPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvComboEnPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvComboEnPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvComboEnPedido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvComboEnPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvComboEnPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComboEnPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvComboEnPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComboEnPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cCodigoBarrasComboEnPedido,
             this.cNombreProductoComboEnPedido,
-            this.cStockComboEnPedido,
+            this.cCantidadComboEnPedido,
             this.cPrecioComboEnPedido});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvComboEnPedido.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComboEnPedido.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvComboEnPedido.Location = new System.Drawing.Point(22, 8);
             this.dgvComboEnPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvComboEnPedido.Name = "dgvComboEnPedido";
@@ -438,6 +439,18 @@ namespace SITS
             this.dgvComboEnPedido.RowTemplate.Height = 25;
             this.dgvComboEnPedido.Size = new System.Drawing.Size(861, 246);
             this.dgvComboEnPedido.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(50, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 24);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Subtotal";
             // 
             // cCodigoBarrasComboEnPedido
             // 
@@ -455,13 +468,13 @@ namespace SITS
             this.cNombreProductoComboEnPedido.Name = "cNombreProductoComboEnPedido";
             this.cNombreProductoComboEnPedido.ReadOnly = true;
             // 
-            // cStockComboEnPedido
+            // cCantidadComboEnPedido
             // 
-            this.cStockComboEnPedido.FillWeight = 150F;
-            this.cStockComboEnPedido.HeaderText = "Stock";
-            this.cStockComboEnPedido.MinimumWidth = 6;
-            this.cStockComboEnPedido.Name = "cStockComboEnPedido";
-            this.cStockComboEnPedido.ReadOnly = true;
+            this.cCantidadComboEnPedido.FillWeight = 150F;
+            this.cCantidadComboEnPedido.HeaderText = "Cantidad";
+            this.cCantidadComboEnPedido.MinimumWidth = 6;
+            this.cCantidadComboEnPedido.Name = "cCantidadComboEnPedido";
+            this.cCantidadComboEnPedido.ReadOnly = true;
             // 
             // cPrecioComboEnPedido
             // 
@@ -470,18 +483,6 @@ namespace SITS
             this.cPrecioComboEnPedido.MinimumWidth = 6;
             this.cPrecioComboEnPedido.Name = "cPrecioComboEnPedido";
             this.cPrecioComboEnPedido.ReadOnly = true;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Futura Bk BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 22);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Subtotal";
             // 
             // frmPedido
             // 
@@ -529,10 +530,6 @@ namespace SITS
         private System.Windows.Forms.Button btnIngresarPedido;
         private System.Windows.Forms.Button btnBuscarComboEnPedido;
         private System.Windows.Forms.Button btnNovedad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarrasComboEnPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNombreProductoComboEnPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cStockComboEnPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPrecioComboEnPedido;
         private System.Windows.Forms.CheckBox cbAgregar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarras;
@@ -540,5 +537,9 @@ namespace SITS
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidadAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigoBarrasComboEnPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNombreProductoComboEnPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCantidadComboEnPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cPrecioComboEnPedido;
     }
 }
