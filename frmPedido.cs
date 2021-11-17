@@ -115,7 +115,7 @@ namespace SITS
                         {
                             dgvComboEnPedido.Rows[i].Cells["cCodigoBarrasComboEnPedido"].Value = dt.Rows[i]["codigoBarras"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cNombreProductoComboEnPedido"].Value = dt.Rows[i]["nombreProducto"].ToString();
-                            
+
                             dgvComboEnPedido.Rows[i].Cells["cCantidadComboEnPedido"].Value = dt.Rows[i]["cantidadDelCombo"].ToString();
                             dgvComboEnPedido.Rows[i].Cells["cPrecioComboEnPedido"].Value = dt.Rows[i]["precio"].ToString();
                         }
@@ -152,7 +152,7 @@ namespace SITS
             else
             {
                 pnlAgregar.Visible = false;
-                dgvInventarioEnPedido.Rows.Clear();                
+                dgvInventarioEnPedido.Rows.Clear();
             }
         }
 
@@ -200,7 +200,86 @@ namespace SITS
                     cmd.ExecuteNonQuery();
                 }
 
-                //cmd.Parameters.Add(new SqlParameter("@INidPedido", "12345"));
+                if (!string.IsNullOrEmpty(txtNombreDelCombo.Text))
+                {
+                    if (cbAgregar.Checked == true)
+                    {
+                        bool minimoUnProductoSeleccionado = false;
+                        foreach (DataGridViewRow row in dgvInventarioEnPedido.Rows)
+                        {
+                            bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                            if (isSelected)
+                            {
+                                minimoUnProductoSeleccionado = true;
+                            }
+
+                        }
+
+
+                        if (minimoUnProductoSeleccionado)
+                        {
+
+                            foreach (DataGridViewRow row in dgvInventarioEnPedido.Rows)
+                            {
+                                bool isSelected = Convert.ToBoolean(row.Cells["clAgregar"].Value);
+                                if (isSelected)
+                                {
+
+                                    if (row.Cells["clCantidadAgregar"].Value == null)
+                                    {
+                                        MessageBox.Show($"La cantidad del producto {row.Cells["cCodigoBarras"].Value} - {row.Cells["cNombreProducto"].Value} está vacía", "Producto Sin Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        //Si se cumplen las condiciones el sistema no permitirá avanzar al la lógica para guarda, para esto se implmenta el return.
+                                        return;
+                                    }
+                                }
+                            }
+
+                            foreach (DataGridViewRow rowInventarioParaPedido in dgvInventarioEnPedido.Rows)
+                            {
+                                bool isSelected = Convert.ToBoolean(rowInventarioParaPedido.Cells["clAgregar"].Value);
+
+                                if (isSelected)
+                                {
+                                    try
+                                    {
+                                        cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                                        cmd.CommandType = CommandType.StoredProcedure;
+                                        cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
+                                        cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", rowInventarioParaPedido.Cells["cCodigoBarras"].Value.ToString()));
+                                        cmd.Parameters.Add(new SqlParameter("@cantidad_producto", rowInventarioParaPedido.Cells["clCantidadAgregar"].Value.ToString()));
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                    catch (Exception error)
+                                    {
+
+                                        MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                                    }
+
+
+
+                                }
+
+
+
+                            }
+                        }
+                        else if (minimoUnProductoSeleccionado == false)
+                        {
+                            MessageBox.Show("POR FAVOR SELECCIONA ALGÚN PRODUCTO", "Producto NO seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+
+
+
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El nombre del Combo se encuentra vacío, por favor ingresar un nombre del combo para el pedido", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
 
             }
             catch (Exception error)
