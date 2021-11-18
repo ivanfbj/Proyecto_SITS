@@ -169,36 +169,8 @@ namespace SITS
             {
 
 
-                if (idPedidoGenerado == "NULL")
-                {
-                    cn = new ClsConexionSql();
-                    cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add(new SqlParameter("@nombreCombo", txtNombreDelCombo.Text));
-                    cmd.Parameters.Add(new SqlParameter("@envio", "0"));
-                    cmd.Parameters.Add(new SqlParameter("@valorEnvio", "0"));
-                    cmd.Parameters.Add(new SqlParameter("@subtotal", lblSubtotalCalculado.Text));
-                    cmd.Parameters.Add(new SqlParameter("@total", lblTotalCalculado.Text));
-                    cmd.Parameters.Add("@OUTidPedido", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.ExecuteNonQuery();
-                    idPedidoGenerado = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
-
-                    MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
-                        $"Y el total es {lblTotalCalculado.Text}");
-                }
 
 
-                //Se recorre el primer DataGridView que contiene la información del combo seleccionado.
-                foreach (DataGridViewRow rowCombo in dgvComboEnPedido.Rows)
-                {
-                    cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
-                    cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", rowCombo.Cells["cCodigoBarrasComboEnPedido"].Value.ToString()));
-                    cmd.Parameters.Add(new SqlParameter("@cantidad_producto", rowCombo.Cells["cCantidadComboEnPedido"].Value.ToString()));
-                    cmd.ExecuteNonQuery();
-                }
 
                 if (!string.IsNullOrEmpty(txtNombreDelCombo.Text))
                 {
@@ -242,6 +214,37 @@ namespace SITS
                                 {
                                     try
                                     {
+                                        if (idPedidoGenerado == "NULL")
+                                        {
+                                            cn = new ClsConexionSql();
+                                            cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                                            cmd.CommandType = CommandType.StoredProcedure;
+
+                                            cmd.Parameters.Add(new SqlParameter("@nombreCombo", txtNombreDelCombo.Text));
+                                            cmd.Parameters.Add(new SqlParameter("@envio", "0"));
+                                            cmd.Parameters.Add(new SqlParameter("@valorEnvio", "0"));
+                                            cmd.Parameters.Add(new SqlParameter("@subtotal", lblSubtotalCalculado.Text));
+                                            cmd.Parameters.Add(new SqlParameter("@total", lblTotalCalculado.Text));
+                                            cmd.Parameters.Add("@OUTidPedido", SqlDbType.Int).Direction = ParameterDirection.Output;
+                                            cmd.ExecuteNonQuery();
+                                            idPedidoGenerado = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
+
+                                            MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
+                                                $"Y el total es {lblTotalCalculado.Text}");
+                                        }
+
+
+                                        //Se recorre el primer DataGridView que contiene la información del combo seleccionado.
+                                        foreach (DataGridViewRow rowCombo in dgvComboEnPedido.Rows)
+                                        {
+                                            cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                                            cmd.CommandType = CommandType.StoredProcedure;
+                                            cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
+                                            cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", rowCombo.Cells["cCodigoBarrasComboEnPedido"].Value.ToString()));
+                                            cmd.Parameters.Add(new SqlParameter("@cantidad_producto", rowCombo.Cells["cCantidadComboEnPedido"].Value.ToString()));
+                                            cmd.ExecuteNonQuery();
+                                        }
+
                                         cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
                                         cmd.CommandType = CommandType.StoredProcedure;
                                         cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
@@ -271,6 +274,39 @@ namespace SITS
 
 
 
+
+                    } else if (cbAgregar.Checked == false)
+                    {
+                        if (idPedidoGenerado == "NULL")
+                        {
+                            cn = new ClsConexionSql();
+                            cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.Add(new SqlParameter("@nombreCombo", txtNombreDelCombo.Text));
+                            cmd.Parameters.Add(new SqlParameter("@envio", "0"));
+                            cmd.Parameters.Add(new SqlParameter("@valorEnvio", "0"));
+                            cmd.Parameters.Add(new SqlParameter("@subtotal", lblSubtotalCalculado.Text));
+                            cmd.Parameters.Add(new SqlParameter("@total", lblTotalCalculado.Text));
+                            cmd.Parameters.Add("@OUTidPedido", SqlDbType.Int).Direction = ParameterDirection.Output;
+                            cmd.ExecuteNonQuery();
+                            idPedidoGenerado = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
+
+                            MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
+                                $"Y el total es {lblTotalCalculado.Text}");
+                        }
+
+
+                        //Se recorre el primer DataGridView que contiene la información del combo seleccionado.
+                        foreach (DataGridViewRow rowCombo in dgvComboEnPedido.Rows)
+                        {
+                            cmd = new SqlCommand("stprInsertarPedido", cn.abrirConexion());
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@INidPedido", idPedidoGenerado));
+                            cmd.Parameters.Add(new SqlParameter("@codigoDeBarras", rowCombo.Cells["cCodigoBarrasComboEnPedido"].Value.ToString()));
+                            cmd.Parameters.Add(new SqlParameter("@cantidad_producto", rowCombo.Cells["cCantidadComboEnPedido"].Value.ToString()));
+                            cmd.ExecuteNonQuery();
+                        }
 
                     }
                 }
