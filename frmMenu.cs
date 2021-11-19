@@ -177,6 +177,37 @@ namespace SITS
         private void pnlProcesosOperaciones_Paint(object sender, PaintEventArgs e)
         {
 
+
+        }
+
+        private void btnProductosVendidos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmProductosVendidos(), sender);
+            pnlBarra.BackColor = Color.FromArgb(10, 112, 93);
+            pnlLogo.BackColor = Color.FromArgb(7, 81, 67);
+            btnInventario.BackColor = Color.FromArgb(10, 112, 93);
+            btnPedidos.BackColor = Color.FromArgb(2, 66, 86);
+            btnCombos.BackColor = Color.FromArgb(2, 66, 86);
+        }
+
+        private void btnProxPedidos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmProxPedidos(), sender);
+            pnlBarra.BackColor = Color.FromArgb(99, 0, 134);
+            pnlLogo.BackColor = Color.FromArgb(59, 0, 80);
+            btnCombos.BackColor = Color.FromArgb(99, 0, 134);
+            btnInventario.BackColor = Color.FromArgb(2, 66, 86);
+            btnPedidos.BackColor = Color.FromArgb(2, 66, 86);
+        }
+
+        private void btnCombosVendidos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCombosVendidos(), sender);
+            pnlBarra.BackColor = Color.FromArgb(214, 84, 4);
+            pnlLogo.BackColor = Color.FromArgb(139, 55, 3);
+            btnInventario.BackColor = Color.FromArgb(2, 66, 86);
+            btnPedidos.BackColor = Color.FromArgb(214, 84, 4);
+            btnCombos.BackColor = Color.FromArgb(2, 66, 86);
         }
     }
     

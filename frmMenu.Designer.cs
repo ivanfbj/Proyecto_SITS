@@ -117,6 +117,7 @@ namespace SITS
             this.btnCombosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCombosVendidos.UseVisualStyleBackColor = true;
             this.btnCombosVendidos.Visible = false;
+            this.btnCombosVendidos.Click += new System.EventHandler(this.btnCombosVendidos_Click);
             // 
             // btnProxPedidos
             // 
@@ -138,6 +139,7 @@ namespace SITS
             this.btnProxPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProxPedidos.UseVisualStyleBackColor = true;
             this.btnProxPedidos.Visible = false;
+            this.btnProxPedidos.Click += new System.EventHandler(this.btnProxPedidos_Click);
             // 
             // btnProductosVendidos
             // 
@@ -159,6 +161,7 @@ namespace SITS
             this.btnProductosVendidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductosVendidos.UseVisualStyleBackColor = true;
             this.btnProductosVendidos.Visible = false;
+            this.btnProductosVendidos.Click += new System.EventHandler(this.btnProductosVendidos_Click);
             // 
             // btnAuditoria
             // 
