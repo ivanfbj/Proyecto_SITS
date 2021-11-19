@@ -221,9 +221,29 @@ namespace SITS
                                 cmd.ExecuteNonQuery();
                                 idPedidoGenerado = Convert.ToString(cmd.Parameters["@OUTidPedido"].Value);
 
-                                MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
-                                    $"Y el total es {lblTotalCalculado.Text}");
+                                //MessageBox.Show($"Ejecución del SP exitosa el parametro de salida es: {idPedidoGenerado} \n" +
+                                //    $"Y el total es {lblTotalCalculado.Text}");
                             }
+
+                            try
+                            {
+
+                                cmd = new SqlCommand($"select nroPedido from tblpedido where id = '{idPedidoGenerado}'", cn.abrirConexion());
+                                da = new SqlDataAdapter(cmd);
+                                DataTable dt = new DataTable();
+                                da.Fill(dt);
+
+                                MessageBox.Show($"El número del pedido es: {dt.Rows[0][0].ToString()} \n" +
+                                    $"Y el total es {lblTotalCalculado.Text}");
+
+                            }
+                            catch (Exception error)
+                            {
+
+                                MessageBox.Show("Ha ocurrido un error:" + error.Message);
+
+                            }
+
 
 
                             //Se recorre el primer DataGridView que contiene la información del combo seleccionado.
@@ -261,7 +281,6 @@ namespace SITS
                                     }
 
 
-
                                 }
 
 
@@ -277,7 +296,8 @@ namespace SITS
 
 
 
-                    } else if (cbAgregar.Checked == false)
+                    }
+                    else if (cbAgregar.Checked == false)
                     {
                         if (idPedidoGenerado == "NULL")
                         {
@@ -327,5 +347,37 @@ namespace SITS
 
         }
 
+        private void dgvInventarioEnPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int cantidad = 0, precio_unit = 0, precio_total_producto_seleccionado = 0, total = 0;
+
+
+            if (dgvInventarioEnPedido.Columns[e.ColumnIndex].Name == "clCantidadAgregar")
+            {
+                try
+                {
+                    cantidad = int.Parse(dgvInventarioEnPedido.Rows[e.RowIndex].Cells["clCantidadAgregar"].Value.ToString());
+                    precio_unit = int.Parse(dgvInventarioEnPedido.Rows[e.RowIndex].Cells["clPrecio"].Value.ToString());
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Debe ingresar una cantidad");
+                }
+                if (cantidad != 0)
+                {
+                    precio_total_producto_seleccionado = cantidad * precio_unit;
+
+                    total = int.Parse(lblTotalCalculado.Text) + precio_total_producto_seleccionado;
+
+
+                    lblTotalCalculado.Text = total.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una cantidad");
+                }
+            }
+        }
     }
 }
