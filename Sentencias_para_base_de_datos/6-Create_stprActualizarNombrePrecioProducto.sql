@@ -7,7 +7,7 @@ GO
 -- Create date: 2021-10-10
 -- Description:	Actualización del nombre o precio del producto
 -- =============================================
-ALTER PROCEDURE [dbo].[stprActualizarNombrePrecioProducto]
+CREATE PROCEDURE [dbo].[stprActualizarNombrePrecioProducto]
 	@codigoBarras		NVARCHAR(50),
 	@nombreOprecio		NVARCHAR(255),
 	@columnaActualizar	NVARCHAR(255)

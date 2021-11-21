@@ -7,7 +7,7 @@ GO
 -- Create date: 2021-09-12
 -- Description:	Pendiente la definición con base en su funcionalidad final
 -- =============================================
-ALTER PROCEDURE [stprInsertarMovimientoProducto]
+CREATE PROCEDURE [stprInsertarMovimientoProducto]
 -- Add the parameters for the stored procedure here
 @codigoBarras               NVARCHAR(50), 
 @nombre                     NVARCHAR(255), 
